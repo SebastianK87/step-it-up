@@ -33,7 +33,8 @@ a{color:inherit}
 .narrow{max-width:880px}
 h1,h2,h3{font-variation-settings:'wdth' 118,'wght' 900;text-transform:uppercase;line-height:.9;letter-spacing:-.028em}
 h2{font-size:clamp(32px,6vw,76px)}
-h3{font-size:clamp(18px,2vw,24px);font-variation-settings:'wdth' 113,'wght' 800;line-height:1.06;letter-spacing:-.015em}
+h3{font-size:clamp(17px,1.7vw,21px);font-variation-settings:'wdth' 112,'wght' 800;line-height:1.1;
+  letter-spacing:-.01em;overflow-wrap:anywhere;hyphens:auto;min-width:0}
 em.s{font-family:'Fraunces',Georgia,serif;font-style:italic;font-variation-settings:'SOFT' 45,'WONK' 1,'opsz' 90;
   font-weight:400;text-transform:none;letter-spacing:-.005em;color:var(--terra)}
 p{max-width:64ch}
@@ -141,8 +142,8 @@ body.flat .cue{display:none}
 .band .n{font-variation-settings:'wdth' 118,'wght' 900;font-size:clamp(34px,4.8vw,56px);line-height:.92;color:var(--terra)}
 .band .l{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-38);margin-top:10px;font-variation-settings:'wdth' 108,'wght' 700}
 .dark .band .l,.deep .band .l{color:var(--on-dark-62)}
-.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(16px,2.4vw,26px)}
-.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:clamp(16px,2.4vw,24px)}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:clamp(16px,2.4vw,26px)}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,282px),1fr));gap:clamp(16px,2.4vw,24px)}
 .card{background:var(--blush);border-radius:4px;padding:clamp(24px,3vw,34px)}
 .dark .card,.deep .card{background:var(--plum-2)} .tint .card{background:#fff}
 .card h3{margin-bottom:11px}
@@ -219,6 +220,28 @@ footer a{color:rgba(246,235,227,.8)}
   nav{padding:0 14px}.logo .wm{font-size:13px}
   .btn{padding:14px 20px;font-size:12.5px}
 }
+
+table{width:100%;border-collapse:collapse;font-size:15px;margin-top:18px}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--hair);vertical-align:top}
+.dark th,.dark td,.deep th,.deep td{border-bottom-color:var(--on-dark-20)}
+th{font-variation-settings:'wdth' 110,'wght' 700;text-transform:uppercase;font-size:10.5px;
+  letter-spacing:.15em;color:var(--ink-38)}
+.dark th,.deep th{color:var(--on-dark-62)}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.big{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:1px;
+  background:var(--hair);margin-top:clamp(28px,4vw,44px)}
+.dark .big,.deep .big{background:var(--on-dark-20)}
+.big>div{background:var(--cream);padding:26px 22px}
+.dark .big>div{background:var(--plum)} .deep .big>div{background:var(--plum-deep)}
+.big .v{font-variation-settings:'wdth' 118,'wght' 900;font-size:clamp(30px,4vw,46px);line-height:.95;color:var(--terra)}
+.big .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-38);margin-top:9px;
+  font-variation-settings:'wdth' 108,'wght' 700}
+.dark .big .k,.deep .big .k{color:var(--on-dark-62)}
+.big .d{font-size:14px;color:var(--ink-64);margin-top:8px;line-height:1.5}
+.dark .big .d,.deep .big .d{color:var(--on-dark-62)}
+.hero .datum{font-family:'Archivo',sans-serif;font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+  font-variation-settings:'wdth' 108,'wght' 700;color:var(--on-dark-62);margin-top:26px;
+  opacity:0;animation:up 1s var(--e) .92s both}
 </style>
 </head>
 <body>
@@ -230,10 +253,10 @@ footer a{color:rgba(246,235,227,.8)}
     <span class="wm"><span>Step</span><span>It</span><span>Up.</span></span>
   </a>
   <div class="rings">
-    <a href="#struktur"><i aria-hidden="true"></i><span>Struktur</span></a>
-    <a href="#system"><i aria-hidden="true"></i><span>System</span></a>
-    <a href="#moodboards"><i aria-hidden="true"></i><span>Moodboards</span></a>
-    <a href="#homepage"><i aria-hidden="true"></i><span>Homepage</span></a>
+    <a href="#warum"><i aria-hidden="true"></i><span>Warum</span></a>
+    <a href="#videothek"><i aria-hidden="true"></i><span>Videothek</span></a>
+    <a href="#lizenz"><i aria-hidden="true"></i><span>Lizenz</span></a>
+    <a href="#zahlen"><i aria-hidden="true"></i><span>Zahlen</span></a>
   </div>
 </nav>
 
@@ -246,157 +269,291 @@ footer a{color:rgba(246,235,227,.8)}
     <h1><span>Step</span><span class="l2">it</span><span class="l3">up.</span></h1>
     <p class="by">by Nikeata Thompson</p>
     <p class="claim">Bewegung muss man sich nicht verdienen.</p>
+    <p class="datum">Zur Abnahme &middot; 24. August 2026</p>
     <div class="cta">
-      <a class="btn btn-p" href="#warum">Warum es das gibt</a>
-      <a class="btn btn-g" href="#was">Was daraus wird</a>
+      <a class="btn btn-p" href="#warum">Durchgehen</a>
+      <a class="btn btn-g" href="#zahlen">Direkt zu den Zahlen</a>
     </div>
   </div>
   <div class="cue"><i></i>scrollen</div>
 </header>
-
-<!-- ═══ I — STRUKTUR ═══ -->
-<section class="deep" id="struktur">
+<section class="deep" id="warum">
   <div class="wrap">
-    <div class="chapter rv"><span class="num">I</span>
-      <span><span class="lbl">Struktur</span><span class="sub">Was steht — und in welcher Reihenfolge wir bauen</span></span></div>
-    <h2 class="rv d1" style="color:var(--on-dark)">Erst der Pilot.<br>Dann die <em class="s" style="color:var(--blush-2)">Lizenz.</em></h2>
-    <p class="lead rv d2" style="margin-top:26px;max-width:54ch;color:var(--on-dark-62)">Das Fundament steht,
-      bevor der erste Kurs läuft. Name, Domains und Zielgruppe sind geklärt. Alles andere folgt einer
-      Reihenfolge, die wir nicht umdrehen.</p>
-    <div class="g3" style="margin-top:clamp(32px,4.5vw,50px)">
-      <div class="card rv"><h3>Name gesichert</h3><p class="sm">„STEP IT UP by Nikeata Thompson" steht fest,
-        die Domains sind registriert. Markenanmeldung und Vertragswerk laufen über mich. Du musst dafür
-        kein Dokument anfassen.</p></div>
-      <div class="card rv d1"><h3>Frauen ab 18</h3><p class="sm">Eine Zielgruppe, nicht drei. Studentin,
-        junge Mutter, Frau mit 40, Frau mit 60 — alle bekommen dieselbe Einladung. Diese eine Entscheidung
-        steuert jedes Foto, jeden Text und jeden Preis.</p></div>
-      <div class="card rv d2"><h3>Du vorn, ich dahinter</h3><p class="sm">Du unterrichtest und bist das
-        Gesicht. Ich baue Website, Anmeldung, Bezahlung, Verträge, Werbung und Auswertung. Den Rest löse
-        ich, ohne dass du Software lernst.</p></div>
+    <div class="chapter rv"><span class="num">01</span>
+      <span><span class="lbl">Warum</span><span class="sub">Der Satz, auf dem alles steht</span></span></div>
+    <p class="statement rv d1" style="color:var(--on-dark)">Bewegung muss man sich nicht verdienen.</p>
+    <div class="negations rv d2">
+      <span>Nicht durch Talent.</span>
+      <span>Nicht durch die richtige Figur.</span>
+      <span>Nicht durch eine Ausbildung, die ich selbst nie hatte.</span>
     </div>
-    <div class="tl" id="tl" style="margin-top:clamp(40px,5vw,64px)">
+    <p class="lead rv d2" style="margin-top:34px;max-width:54ch;color:var(--on-dark-62)">Das ist keine
+      Textzeile für die Website. Es ist die Entscheidung, aus der alles Weitere folgt: welche Fotos wir
+      machen, wie eine Stunde beginnt, was im Lizenzvertrag steht und wen wir ansprechen.</p>
+  </div>
+</section>
+
+<section class="tint" id="produkte">
+  <div class="wrap">
+    <div class="chapter rv"><span class="num">02</span>
+      <span><span class="lbl">Was wir bauen</span><span class="sub">Zwei Produkte, ein Fundament</span></span></div>
+    <h2 class="rv d1">Deine Schule.<br>Und das <em class="s">Format.</em></h2>
+    <div class="g2" style="margin-top:clamp(32px,4.5vw,50px)">
+      <div class="card rv"><h3>1 &middot; Deine Schule</h3>
+        <p class="sm muted">Deine Kurse in Berlin. Anmeldung, Bezahlung, Check-in, Kundenportal &mdash;
+          komplett digital. Das ist der Ort, an dem das Format bewiesen wird, bevor es jemand kauft.</p></div>
+      <div class="card rv d1"><h3>2 &middot; Das Lizenzformat</h3>
+        <p class="sm muted">Studios, Tanzschulen und Vereine übernehmen STEP IT UP in ihren Kursplan &mdash;
+          mit Choreografien, Musik, Marke, Ausbildung und Gebietsschutz. Das ist das Geschäft, das
+          wächst, ohne dass du mehr arbeitest.</p></div>
+    </div>
+    <p class="rv d2" style="margin-top:24px;font-size:16px"><strong>Die Reihenfolge ist nicht verhandelbar:</strong>
+      <span class="muted">erst die Schule, dann die Lizenz. Wir verkaufen kein Format, das nur auf Papier existiert.</span></p>
+  </div>
+</section>
+
+<section id="logo">
+  <div class="wrap">
+    <div class="chapter rv"><span class="num">03</span>
+      <span><span class="lbl">Das Logo</span><span class="sub">Entwurf &mdash; vier Fassungen</span></span></div>
+    <h2 class="rv d1">Der Name<br>steigt selbst.</h2>
+    <p class="lead rv d2" style="margin-top:24px;max-width:52ch">Drei Zeilen, jede eine Stufe weiter
+      rechts. Darunter dein Name in Handschrift, damit die Marke ein Gesicht behält. „by Nikeata Thompson"
+      ist dabei kein Zierrat &mdash; er ist der Teil, der die Marke überhaupt schützbar macht.</p>
+    <p class="rv d2" style="margin-top:28px"><a class="btn btn-p" href="logo/">Die vier Entwürfe ansehen</a></p>
+  </div>
+</section>
+
+<section class="dark" id="homepage">
+  <div class="wrap">
+    <div class="chapter rv"><span class="num">04</span>
+      <span><span class="lbl">Die Homepage</span><span class="sub">Was drauf ist und wann sie live geht</span></span></div>
+    <h2 class="rv d1" style="color:var(--on-dark)">Am 27. August<br><em class="s">öffentlich.</em></h2>
+    <div class="g2" style="margin-top:clamp(30px,4.5vw,48px)">
+      <div class="card rv"><h3 style="color:var(--on-dark)">Was drauf kommt</h3><ul>
+        <li>Der Satz, auf dem alles steht &mdash; im ersten Bild</li>
+        <li>Was der Kurs ist, für wen, wo, ab wann</li>
+        <li>Deine Geschichte in vier Zeilen</li>
+        <li>Ein Bereich für Studios, die das Format übernehmen wollen</li>
+        <li>Die Anmeldung zur Liste &mdash; Name und E-Mail, mehr nicht</li></ul></div>
+      <div class="card rv d1"><h3 style="color:var(--on-dark)">Der Zeitplan</h3>
+        <table><tr><td>bis 24.08.</td><td class="n">Entwurf abgenommen</td></tr>
+        <tr><td>bis 26.08.</td><td class="n">Texte, Bilder, Rechtstexte</td></tr>
+        <tr><td><strong style="color:var(--on-dark)">27.08.</strong></td><td class="n"><strong style="color:var(--on-dark)">Live &middot; Anmeldung offen</strong></td></tr>
+        <tr><td>September</td><td class="n">Kursbereich mit Terminen</td></tr>
+        <tr><td>Dezember</td><td class="n">Lizenzbereich für Studios</td></tr></table></div>
+    </div>
+    <p class="rv d2" style="margin-top:26px;color:var(--on-dark-62)">Ab dem ersten Tag gibt es eine
+      <strong style="color:var(--on-dark)">Newsletter-Anmeldung</strong> mit doppelter Bestätigung, wie
+      es das Datenschutzrecht verlangt. Wer sich im August einträgt, sitzt im Oktober im Kurs.</p>
+    <p class="rv d2" style="margin-top:26px">
+      <a class="btn btn-p" href="boutique/">Die Homepage ansehen</a>
+      <a class="btn btn-g" style="margin-left:10px" href="moodboards/">Andere Richtungen</a></p>
+  </div>
+</section>
+
+<section class="tint" id="system">
+  <div class="wrap">
+    <div class="chapter rv"><span class="num">05</span>
+      <span><span class="lbl">Das System</span><span class="sub">Die Schule wird digital &mdash; von Anfang an</span></span></div>
+    <h2 class="rv d1">Nicht nachrüsten.<br>Sondern <em class="s">vorbauen.</em></h2>
+    <p class="lead rv d2" style="margin-top:24px;max-width:58ch">Die meisten Schulen bauen ihre Technik
+      erst, wenn es weh tut. Dann liegen Namen in WhatsApp, Zahlungen in einer Excel-Datei, und niemand
+      weiß, wie viele Frauen nach der dritten Stunde wiederkommen.</p>
+    <div class="g3" style="margin-top:clamp(30px,4.5vw,48px)">
+      <div class="card rv"><h3>Eine Zentrale</h3><p class="sm muted">In Nimbuscloud läuft alles zusammen,
+        was mit Menschen und Geld zu tun hat: Interessentenliste, Buchung, Bezahlung, SEPA-Lastschrift,
+        Check-in an der Tür, Kundenportal. Ich bin offizieller Partner der Software.</p></div>
+      <div class="card rv d1"><h3>Anmeldung in zwei Minuten</h3><p class="sm muted">Kurs wählen, Daten
+        eintragen, SEPA-Mandat erteilen, fertig &mdash; am Handy. Keine Liste am Eingang, keine
+        Überweisung, die jemand von Hand abhakt.</p></div>
+      <div class="card rv d2"><h3>Monitoring</h3><p class="sm muted">Ich sehe täglich, wie viele sich
+        eingetragen haben, wie viele gebucht haben und wer nach der ersten Stunde nicht wiederkam.
+        Nicht am Monatsende &mdash; am selben Tag.</p></div>
+    </div>
+    <div class="big rv d2">
+      <div><div class="v">1</div><div class="k">System</div><div class="d">Kunden, Kurse, Zahlungen und Videothek an einer Stelle.</div></div>
+      <div><div class="v">0</div><div class="k">Listen von Hand</div><div class="d">Keine Excel, keine Namen im Postfach.</div></div>
+      <div><div class="v">3</div><div class="k">Zahlen für dich</div><div class="d">Anmeldungen, Auslastung, Wiederkommer. Nicht vierzig.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="funnel">
+  <div class="wrap">
+    <div class="chapter rv"><span class="num">06</span>
+      <span><span class="lbl">Vom Klick zum Kunden</span><span class="sub">E-Mail-Funnel und Lead to Sale</span></span></div>
+    <h2 class="rv d1">Keine Anfrage<br>geht <em class="s">verloren.</em></h2>
+    <div class="g2" style="margin-top:clamp(30px,4.5vw,48px)">
+      <div class="card rv"><h3>Für Teilnehmerinnen</h3>
+        <p class="sm muted">Wer sich einträgt, bekommt automatisch eine Kette von Nachrichten &mdash; nicht
+          täglich, sondern zu den Momenten, die zählen: Bestätigung, dann die Geschichte dahinter,
+          dann die Termine, dann der Platz. Wer nicht bucht, bekommt nach drei Wochen eine letzte,
+          und danach Ruhe.</p>
+        <p class="sm muted" style="margin-top:12px">Nach der ersten Stunde eine Frage: Kommst du wieder?
+          Diese eine Antwort ist wertvoller als jede Umfrage.</p></div>
+      <div class="card rv d1"><h3>Für Studios</h3>
+        <p class="sm muted">Zuerst das Telefon, dann die Mail &mdash; Kaltakquise per E-Mail ist in
+          Deutschland abmahngefährdet. Jeder Kontakt bekommt einen Status: angesprochen, interessiert,
+          Testkurs, Angebot, unterschrieben. Ich sehe jederzeit, wo jemand hängen bleibt.</p>
+        <p class="sm muted" style="margin-top:12px">Die stärkste Stufe ist nicht die Mail. Es ist eine
+          Live-Stunde mit dir vor Studiobetreibern.</p></div>
+    </div>
+    <p class="rv d2" style="margin-top:24px;font-size:16px"><strong>Warum das automatisch laufen muss:</strong>
+      <span class="muted">Bei 30 Erstgesprächen im Monat schafft niemand die Nachfassarbeit von Hand.
+      Was automatisch läuft, kostet keine Zeit &mdash; und vergisst nichts.</span></p>
+  </div>
+</section>
+
+<section class="dark" id="videothek">
+  <div class="wrap">
+    <div class="chapter rv"><span class="num">07</span>
+      <span><span class="lbl">Die Videothek</span><span class="sub">Wie deine Arbeit geschützt wird</span></span></div>
+    <h2 class="rv d1" style="color:var(--on-dark)">Zugang.<br>Keine <em class="s">Datei.</em></h2>
+    <p class="lead rv d2" style="margin-top:24px;max-width:54ch;color:var(--on-dark-62)">Deine
+      Choreografien sind das Herz des Produkts. Sie werden nie verschickt, nie zum Download angeboten,
+      nie in einer Dropbox liegen. Sie liegen in einem Portal, das an das Abo gekoppelt ist.</p>
+    <div class="path rv d2">
+      <div class="p"><div><b>Studio schließt das Abo ab</b><span>monatlich, per Lastschrift</span></div></div>
+      <div class="p"><div><b>Zugang wird automatisch freigeschaltet</b><span>ohne dass jemand etwas von Hand macht</span></div></div>
+      <div class="p"><div><b>Die Bibliothek wächst mit</b><span>alle bisherigen Choreografien plus jede neue</span></div></div>
+      <div class="p"><div><b>Kündigung sperrt den Zugang</b><span>am nächsten Tag, automatisch</span></div></div>
+    </div>
+    <p class="rv d2" style="margin-top:26px;color:var(--on-dark-62)">So hängt deine Arbeit am Vertrag
+      statt am Vertrauen. <strong style="color:var(--on-dark)">Wer aufhört zu zahlen, sieht nichts mehr.</strong></p>
+  </div>
+</section>
+
+<section class="tint" id="lizenz">
+  <div class="wrap">
+    <div class="chapter rv"><span class="num">08</span>
+      <span><span class="lbl">Das Lizenzprodukt</span><span class="sub">Was ein Studio für sein Geld bekommt</span></span></div>
+    <h2 class="rv d1">Zehn zum Start.<br>Jeden Monat <em class="s">eine dazu.</em></h2>
+    <div class="g3" style="margin-top:clamp(30px,4.5vw,48px)">
+      <div class="card rv"><h3>Zehn plus eine</h3><p class="sm muted">Zehn fertige Choreografien
+        beim Start &mdash; genug für ein ganzes Jahr Kursplan. Und danach jeden Monat eine neue. Die
+        Bibliothek wird nie kleiner, nur größer.</p></div>
+      <div class="card rv d1"><h3>Musik ohne GEMA</h3><p class="sm muted">Eigens produziert. Für
+        SIU-Stunden zahlt das Studio keine GEMA-Gebühren &mdash; das spart je nach Größe 2.000 bis
+        3.000 € im Jahr und refinanziert die Lizenz fast allein.</p></div>
+      <div class="card rv d2"><h3>Gebietsschutz</h3><p class="sm muted">Wer zuerst da ist, bekommt sein
+        Gebiet &mdash; über eine feste Postleitzahlen-Liste im Vertrag. Gekoppelt an eine Mindestzahl an
+        Kursen: wer nicht liefert, verliert den Schutz.</p></div>
+      <div class="card rv"><h3>Trainerausbildung</h3><p class="sm muted">Zwei Tage in Berlin. Wer danach
+        unterrichtet, hat vorher selbst unterrichtet. Ab Jahr 2 bilden Master-Trainer aus, damit dein
+        Kalender nicht die Grenze des Geschäfts ist.</p></div>
+      <div class="card rv d1"><h3>Marke und Material</h3><p class="sm muted">Name, Logo, Formatbibel,
+        Marketingpaket für die eigenen Kanäle des Studios. Alles vorbereitet, nichts selbst zu bauen.</p></div>
+      <div class="card rv d2"><h3>Das Portal</h3><p class="sm muted">Zugang zur Choreo-Bibliothek,
+        solange das Abo läuft. Videos, Musik, Ablaufpläne, Sicherheitshinweise.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="zahlen">
+  <div class="wrap">
+    <div class="chapter rv"><span class="num">09</span>
+      <span><span class="lbl">Die Zahlen</span><span class="sub">Planungsgrößen, keine Zusagen</span></span></div>
+    <h2 class="rv d1">Was eine Lizenz<br>kostet &mdash; und bringt.</h2>
+
+    <h3 class="rv d1" style="margin-top:clamp(32px,4vw,48px)">Die Tarife, monatlich</h3>
+    <table class="rv d1">
+      <tr><th>Tarif</th><th>Für wen</th><th>Monatlich</th></tr>
+      <tr><td>S</td><td>1&ndash;2 Kurse pro Woche</td><td class="n">79 &euro;</td></tr>
+      <tr><td>M</td><td>3&ndash;5 Kurse pro Woche</td><td class="n">129 &euro;</td></tr>
+      <tr><td>L</td><td>6&ndash;10 Kurse pro Woche</td><td class="n">199 &euro;</td></tr>
+      <tr><td>Verein</td><td>Vereine, VHS, bis 3 Kurse</td><td class="n">49 &euro;</td></tr>
+      <tr><td>Einmalig</td><td>Onboarding &middot; Trainerausbildung je Person</td><td class="n">490 &euro; &middot; 549 &euro;</td></tr>
+    </table>
+    <p class="sm muted rv d1" style="margin-top:14px">Alle Beträge netto, zuzüglich Umsatzsteuer.
+      Zum Vergleich: Zumba nimmt rund 32 &euro; im Monat pro Trainer, Jumping 49&ndash;89 &euro; pro
+      Kursplatz, HYROX 1.500 &euro; im Jahr.</p>
+
+    <h3 class="rv" style="margin-top:clamp(36px,4.5vw,56px)">Was das für uns bedeutet</h3>
+    <div class="big rv d1">
+      <div><div class="v">65</div><div class="k">Lizenznehmer</div><div class="d">tragen den ganzen Betrieb allein aus den Monatsgebühren &mdash; auch ohne einen einzigen neuen Vertrag. Erreichbar im Lauf von Jahr 2.</div></div>
+      <div><div class="v">6&ndash;7</div><div class="k">Verträge im Monat</div><div class="d">ab Jahr 2. Dafür braucht es rund 30 Erstgespräche im Monat. Das ist die eigentliche Arbeit.</div></div>
+      <div><div class="v">6</div><div class="k">Teilnehmerinnen</div><div class="d">ab denen sich das Format für das Studio trägt. Ab der siebten verdient es.</div></div>
+    </div>
+
+    <h3 class="rv" style="margin-top:clamp(36px,4.5vw,56px)">Drei Jahre, realistisch gerechnet</h3>
+    <table class="rv d1">
+      <tr><th>Jahr</th><th>Lizenznehmer am Jahresende</th><th>Monatlich wiederkehrend</th><th>Umsatz im Jahr</th></tr>
+      <tr><td>2027</td><td class="n">25&ndash;40</td><td class="n">ca. 3.200 &euro;</td><td class="n">ca. 70.000&ndash;75.000 &euro;</td></tr>
+      <tr><td>2028</td><td class="n">85&ndash;125</td><td class="n">ca. 10.500 &euro;</td><td class="n">ca. 128.000&ndash;188.000 &euro;</td></tr>
+      <tr><td>2029</td><td class="n">120&ndash;200</td><td class="n">ca. 16.000 &euro;</td><td class="n">ca. 196.000&ndash;326.000 &euro;</td></tr>
+    </table>
+    <p class="sm muted rv d1" style="margin-top:14px"><strong>Ehrlich dazu:</strong> In den ersten zwei
+      Jahren kommen zwei Drittel des Geldes aus Neugeschäft, nicht aus dem Bestand. Hört der Verkauf auf,
+      bricht der Umsatz sofort ein. Erst ab Jahr 3 trägt sich die Hälfte von selbst. Und dagegen stehen
+      echte Kosten: Musikproduktion, Choreo-Dreh, Portal, Recht, Messen, Werbung.</p>
+  </div>
+</section>
+
+<section class="deep" id="fahrplan">
+  <div class="wrap">
+    <div class="chapter rv"><span class="num">10</span>
+      <span><span class="lbl">Der Fahrplan</span><span class="sub">Von Montag bis zum Breitenstart</span></span></div>
+    <div class="tl" id="tl">
       <div class="tl-fill" id="tlfill"></div>
-      <div class="step rv"><div class="when">27. August 2026</div><h3>Der erste Auftritt</h3>
-        <p>Die Marke wird öffentlich. Ab diesem Tag gibt es eine Seite, auf der sich Interessentinnen
-          eintragen — und eine Liste, in der ihre Namen landen. Wer im August fragt, sitzt im Oktober im Kurs.</p></div>
-      <div class="step rv"><div class="when">Oktober 2026</div><h3>Der Pilot</h3>
-        <p>Wir verkaufen keine Lizenz für ein Format, das nur auf Papier existiert. Erst läuft es bei uns —
-          mit echten Teilnehmerinnen, echten Zahlungen und echten Abbrüchen. Was der Pilot nicht aushält,
-          kommt nicht in die Lizenz.</p></div>
-      <div class="step rv"><div class="when">1. Januar 2027</div><h3>Die ersten Studios</h3>
-        <p>Die ersten Lizenzstudios starten mit einem Format, das drei Monate lang bewiesen hat, dass es trägt.</p></div>
+      <div class="step rv"><div class="when">24. August</div><h3>Heute</h3>
+        <p>Du nimmst ab: Warum, Logo, Struktur, Lizenzprodukt, Zahlen. Danach fange ich an zu bauen.</p></div>
+      <div class="step rv"><div class="when">27. August</div><h3>Die Marke wird öffentlich</h3>
+        <p>Homepage live, Anmeldung offen. Wer sich einträgt, landet automatisch im System.</p></div>
+      <div class="step rv"><div class="when">September</div><h3>Produktion</h3>
+        <p>Fototag, Musik beauftragt, die ersten Choreografien gedreht. Verträge anwaltlich fertig.</p></div>
+      <div class="step rv"><div class="when">Oktober</div><h3>Der Pilot</h3>
+        <p>Die erste Staffel läuft in Berlin. Echte Teilnehmerinnen, echte Zahlungen, echte Abbrüche.
+          Was der Pilot nicht aushält, kommt nicht in die Lizenz.</p></div>
+      <div class="step rv"><div class="when">November / Dezember</div><h3>Die ersten Studios</h3>
+        <p>Erste Trainerausbildung, Videothek steht, Verträge unterschrieben &mdash; Studios entscheiden
+          ihre Januar-Kurspläne im November.</p></div>
+      <div class="step rv"><div class="when">1. Januar 2027</div><h3>Start</h3>
+        <p>Die ersten Lizenzstudios unterrichten mit einem Format, das drei Monate lang bewiesen hat,
+          dass es trägt.</p></div>
       <div class="step rv"><div class="when">März / April 2027</div><h3>INTAKO und FIBO</h3>
         <p>Dort sitzen die Studios, die kaufen. Wir kommen mit Zahlen aus dem Pilot, nicht mit Versprechen.</p></div>
       <div class="step rv"><div class="when">ab September 2027</div><h3>In die Breite</h3>
-        <p>Der zweite große Kursplanzyklus des Jahres — mit einem Jahr Beweis im Rücken.</p></div>
+        <p>Der zweite große Kursplanzyklus &mdash; mit einem Jahr Beweis im Rücken.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ II — SYSTEM ═══ -->
-<section class="tint" id="system">
-  <div class="wrap">
-    <div class="chapter rv"><span class="num">II</span>
-      <span><span class="lbl">System</span><span class="sub">Was technisch dahinter läuft</span></span></div>
-    <h2 class="rv d1">Nicht nachrüsten.<br>Sondern <em class="s">vorbauen.</em></h2>
-    <p class="lead rv d2" style="margin-top:26px;max-width:58ch">Die meisten Formate bauen ihre Technik
-      erst, wenn es weh tut. Dann liegen Namen in WhatsApp, Zahlungen in einer Excel-Datei, und niemand
-      weiß, wie viele Frauen nach der dritten Stunde wiederkommen. Bei uns steht das System, bevor die
-      erste Teilnehmerin auf dem Step steht.</p>
-    <div class="g3" style="margin-top:clamp(32px,4.5vw,50px)">
-      <div class="card rv"><h3>Eine Zentrale</h3><p class="sm muted">In Nimbuscloud läuft alles zusammen,
-        was mit Menschen und Geld zu tun hat: Interessentenliste, Buchung, Bezahlung, SEPA, Check-in an
-        der Tür, Kundenportal. Jede Teilnehmerin ist genau einmal erfasst — an derselben Stelle wie ihre
-        Zahlung. Ich bin offizieller Partner der Software.</p></div>
-      <div class="card rv d1"><h3>Anmeldung in zwei Minuten</h3><p class="sm muted">Kurs wählen, Daten
-        eintragen, SEPA-Mandat erteilen, fertig — am Handy. Keine Liste am Eingang, keine Überweisung,
-        die jemand von Hand abhakt.</p></div>
-      <div class="card rv d2"><h3>Die Videothek</h3><p class="sm muted">Lizenznehmer bekommen dein Material
-        als Zugang, nicht als Datei. Wer sein Abo zahlt, sieht die Videos. Wer kündigt, verliert den Zugang
-        am nächsten Tag. So hängt deine Arbeit am Vertrag statt am Vertrauen.</p></div>
-      <div class="card rv"><h3>Vom Klick zum Kunden</h3><p class="sm muted">Jede Anfrage landet in einer
-        Liste, nicht in einem Postfach. Wer sich einträgt, bekommt automatisch die nächste passende
-        Nachricht — bis sie gebucht oder abgesagt hat.</p></div>
-      <div class="card rv d1"><h3>Werbung, die man nachrechnet</h3><p class="sm muted">Google Ads und
-        Meta Ads laufen auf unsere eigenen Zahlen. Für jede Anzeige sehe ich, ob sie eine Buchung gebracht
-        oder nur Geld gekostet hat. Was nicht liefert, schalte ich ab.</p></div>
-      <div class="card rv d2"><h3>Drei Zahlen statt vierzig</h3><p class="sm muted">Anmeldungen, Auslastung,
-        Umsatz pro Kurs und Kündigungen werden automatisch ausgewertet. Die KI meldet eine Gruppe, die
-        kippt, bevor die Kündigungen eintreffen. Du bekommst nicht vierzig Kennzahlen, sondern die drei,
-        aus denen eine Entscheidung folgt.</p></div>
+<section class="tint" id="abnahme">
+  <div class="wrap narrow">
+    <div class="chapter rv"><span class="num">11</span>
+      <span><span class="lbl">Von dir</span><span class="sub">Was ich heute brauche</span></span></div>
+    <h2 class="rv d1">Sechs Haken.</h2>
+    <div class="path rv d2">
+      <div class="p"><div><b>Das Warum</b><span>„Bewegung muss man sich nicht verdienen." &mdash; sagst du das selbst?</span></div></div>
+      <div class="p"><div><b>Das Logo</b><span>Eine der vier Fassungen. Danach wird sie angemeldet.</span></div></div>
+      <div class="p"><div><b>Die Richtung</b><span>Boutique, Urban oder Frisch &mdash; meine Empfehlung ist Boutique.</span></div></div>
+      <div class="p"><div><b>Die Zielgruppe</b><span>Frauen ab 18. Danach hängt jedes Foto und jeder Text daran.</span></div></div>
+      <div class="p"><div><b>Die Preise</b><span>79 / 129 / 199 &euro; im Monat, 490 &euro; Onboarding, 549 &euro; Ausbildung.</span></div></div>
+      <div class="p"><div><b>Unsere Zusammenarbeit</b><span>Wer trägt was, wer entscheidet was, wem gehört was.</span></div></div>
     </div>
+    <p class="rv d3" style="margin-top:28px;font-size:16px"><strong>Und was ich an Zeit von dir brauche:</strong>
+      <span class="muted">ein Fototag im September, drei bis vier Drehtage für die ersten Choreografien,
+      acht Pilotstunden im Oktober und November, zwei Tage Ausbildung im November.</span></p>
   </div>
 </section>
 
-<!-- ═══ III — MOODBOARDS ═══ -->
-<section id="moodboards">
-  <div class="wrap">
-    <div class="chapter rv"><span class="num">III</span>
-      <span><span class="lbl">Moodboards</span><span class="sub">Dieselbe Marke, drei Temperaturen</span></span></div>
-    <p class="lead rv d1" style="max-width:54ch">Das Warum steht fest. Wie es sich anfühlt, ist offen.
-      Jede Richtung führt sich auf der Moodboard-Seite selbst vor — in ihren eigenen Farben und Schriften.</p>
-    <div class="g3" style="margin-top:clamp(32px,4.5vw,50px)">
-      <a class="card rv" style="text-decoration:none;display:block;background:#F4EFE8;color:#231F1B" href="moodboards/#a">
-        <h3 style="color:#A8452C">01 · Boutique</h3>
-        <p class="sm" style="color:#5C554B">Warmes Papier, viel Luft, ein Ton aus gebranntem Lehm.
-          Wie ein guter Raum, nicht wie ein Studio.</p>
-        <p class="xs" style="color:#A8452C;margin-top:12px;font-variation-settings:'wdth' 110,'wght' 700">Empfehlung →</p></a>
-      <a class="card rv d1" style="text-decoration:none;display:block;background:#0B0B0D;color:#F2EFE9" href="moodboards/#b">
-        <h3 style="color:#FF2E6B">02 · Urban</h3>
-        <p class="sm" style="color:#A9A49C">Dunkel, laut, voll. Die Seite sieht aus wie der Raum,
-          in dem der Kurs stattfindet.</p>
-        <p class="xs" style="color:#FF2E6B;margin-top:12px;font-variation-settings:'wdth' 110,'wght' 700">Ansehen →</p></a>
-      <a class="card rv d2" style="text-decoration:none;display:block;background:#FBFAF6;color:#17191B" href="moodboards/#c">
-        <h3 style="color:#F05A28">03 · Frisch</h3>
-        <p class="sm" style="color:#4F545A">Tageslicht, helles Papier, ein Sonnenton.
-          Die Richtung, die am wenigsten voraussetzt.</p>
-        <p class="xs" style="color:#F05A28;margin-top:12px;font-variation-settings:'wdth' 110,'wght' 700">Ansehen →</p></a>
-    </div>
-    <p class="rv d2" style="margin-top:28px"><a class="btn btn-p" href="moodboards/">Alle drei im Vergleich</a></p>
-  </div>
-</section>
-
-<!-- ═══ IV — HOMEPAGE ═══ -->
-<section class="dark" id="homepage">
-  <div class="wrap">
-    <div class="chapter rv"><span class="num">IV</span>
-      <span><span class="lbl">Homepage</span><span class="sub">Boutique, als fertige Seite gebaut</span></span></div>
-    <h2 class="rv d1" style="color:var(--on-dark)">Nicht beschrieben.<br><em class="s">Gebaut.</em></h2>
-    <p class="lead rv d2" style="margin-top:26px;max-width:54ch;color:var(--on-dark-62)">Damit du nicht
-      raten musst, wie sich Boutique anfühlt: Die Richtung ist als echte Homepage umgesetzt — mit Schrift,
-      Farben, Formular und allem, was dazugehört. Anschauen, durchklicken, entscheiden.</p>
-    <div class="g2" style="margin-top:clamp(30px,4.5vw,48px)">
-      <div class="card rv"><h3 style="color:var(--on-dark)">Was drauf ist</h3><ul>
-        <li>Der Satz, auf dem alles steht — direkt im ersten Bild</li>
-        <li>Was der Kurs ist, für wen, wo und ab wann</li>
-        <li>Deine Geschichte in vier Zeilen</li>
-        <li>Ein Bereich für Studios, die das Format später übernehmen</li>
-        <li>Die Anmeldung zur Liste</li></ul></div>
-      <div class="card rv d1"><h3 style="color:var(--on-dark)">Was noch fehlt</h3><ul>
-        <li>Deine echten Fotos — die jetzigen sind Platzhalter</li>
-        <li>Ort und Termine, sobald der Raum steht</li>
-        <li>Die Anbindung der Anmeldung an Nimbuscloud</li>
-        <li>Impressum, Datenschutz, Widerruf</li></ul></div>
-    </div>
-    <p class="rv d2" style="margin-top:30px">
-      <a class="btn btn-p" href="boutique/">Die Homepage öffnen</a>
-      <a class="btn btn-g" style="margin-left:10px" href="moodboards/">Zurück zu den Richtungen</a></p>
-  </div>
-</section>
-
-<!-- ═══ ENDE ═══ -->
 <section class="end">
   <div class="bloom"></div>
   <div class="wrap" style="position:relative;z-index:2">
     <div class="stufe rv"><i></i><i></i><i></i></div>
     <h2 class="rv d1" style="margin-top:24px">Ganz Deutschland tanzt.<br><em class="s">Fang du an.</em></h2>
-    <p class="rv d2" style="margin:24px auto 0;max-width:44ch;font-size:16px;color:var(--on-dark-62)">
-      Alle Zahlen und Termine sind Planungsgrößen, keine Zusagen.
-      Entwurf zur Abstimmung, August 2026.</p>
+    <p class="rv d2" style="margin:24px auto 0;max-width:46ch;font-size:16px;color:var(--on-dark-62)">
+      Alle Zahlen sind Planungsgrößen, keine Zusagen. Stand August 2026.</p>
+    <p class="rv d2" style="margin-top:28px">
+      <a class="btn btn-p" href="boutique/">Homepage</a>
+      <a class="btn btn-g" style="margin-left:8px" href="logo/">Logo</a>
+      <a class="btn btn-g" style="margin-left:8px" href="moodboards/">Richtungen</a></p>
   </div>
 </section>
 
 <footer>
+
   <div class="wrap">
     <div style="display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap">
       <span>STEP IT UP by Nikeata Thompson</span>

@@ -10,6 +10,8 @@
   --color-accent:#A8452C;
   --color-on-ink:#EFE8DC;
   --color-line:#DCD3C4;
+  /* heller Akzent NUR fuer Schrift auf Espresso — 6.02:1 (Ton selbst waere 2.77:1) */
+  --color-accent-lift:#D97A5C;
 
   --font-display:'Fraunces',Georgia,serif;
   --font-body:'Schibsted Grotesk',system-ui,-apple-system,sans-serif;
