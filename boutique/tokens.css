@@ -1,0 +1,27 @@
+/* STEP IT UP · Boutique — Design-Tokens
+   Kontrast geprueft (WCAG 2.1): Espresso/Kalk 14.31:1 · Rauch/Kalk 6.43:1
+   Ton/Kalk 5.17:1 · Kalkweiss/Espresso 13.44:1 · Kalk/Ton 5.17:1
+   VERBOTEN: Ton als Schrift auf Espresso (2.77:1) — dort nur als Flaeche. */
+:root{
+  --color-paper:#F4EFE8;
+  --color-paper-2:#E9E1D5;
+  --color-ink:#231F1B;
+  --color-ink-2:#5C554B;
+  --color-accent:#A8452C;
+  --color-on-ink:#EFE8DC;
+  --color-line:#DCD3C4;
+
+  --font-display:'Fraunces',Georgia,serif;
+  --font-body:'Schibsted Grotesk',system-ui,-apple-system,sans-serif;
+  --font-sig:'Sacramento',cursive;
+
+  --space-1:8px; --space-2:16px; --space-3:24px; --space-4:40px;
+  --space-5:64px; --space-6:96px; --space-7:clamp(72px,10vw,160px);
+
+  --measure-page:1240px;
+  --radius:2px;
+  --rule:1px;
+
+  --dur:240ms; --dur-2:640ms;
+  --ease-out:cubic-bezier(.22,.61,.36,1);
+}

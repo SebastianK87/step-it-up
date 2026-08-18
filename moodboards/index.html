@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STEP IT UP — Drei Richtungen</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'><rect width='80' height='80' fill='%23231F1B'/><g fill='%23A8452C'><rect x='8' y='52' width='18' height='20'/><rect x='31' y='36' width='18' height='36'/><rect x='54' y='20' width='18' height='52'/></g></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Schibsted+Grotesk:wght@400;500;700&family=Archivo:wdth,wght@62..125,100..900&family=Chivo:wght@400;500&family=Space+Mono:wght@700&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · macrostructure: Catalogue · genre: editorial · tone: comparison-sheet
+ * nav: masthead · footer: statement · anchor hue: neutral shell, three embedded palettes
+ * pre-emit critique: P5 H5 E4 S5 R4 V5
+ */
+:root{
+  /* Schale */
+  --shell:#141315; --shell-2:#1D1B1E; --shell-ink:#EFE9E1; --shell-ink-60:rgba(239,233,225,.6);
+  --shell-line:rgba(239,233,225,.16);
+  /* A — Boutique */
+  --a-paper:#F4EFE8; --a-paper2:#E9E1D5; --a-ink:#231F1B; --a-ink2:#5C554B;
+  --a-accent:#A8452C; --a-line:#DCD3C4;
+  /* B — Urban */
+  --b-paper:#0B0B0D; --b-paper2:#17171A; --b-ink:#F2EFE9; --b-ink2:#A9A49C;
+  --b-accent:#FF2E6B; --b-line:#2A2A2E;
+  /* C — Frisch */
+  --c-paper:#FBFAF6; --c-paper2:#F0EDE5; --c-ink:#17191B; --c-ink2:#4F545A;
+  --c-accent:#F05A28; --c-line:#E2DED4; --c-wash:#FAE7DD;
+  --space-1:8px; --space-2:16px; --space-3:24px; --space-4:40px; --space-5:64px; --space-6:96px;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{background:var(--shell);color:var(--shell-ink);
+  font-family:'Schibsted Grotesk',system-ui,sans-serif;font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-style:normal;overflow-wrap:anywhere;min-width:0}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,44px)}
+
+/* Masthead */
+.masthead{border-bottom:1px solid var(--shell-line);padding:var(--space-3) 0}
+.masthead .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-3);flex-wrap:wrap}
+.masthead .t{font-family:'Archivo';font-variation-settings:'wdth' 118,'wght' 900;text-transform:uppercase;
+  font-size:15px;letter-spacing:-.02em}
+.masthead .d{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--shell-ink-60)}
+
+/* Intro */
+.intro{padding:var(--space-6) 0}
+.intro h1{font-family:'Archivo';font-variation-settings:'wdth' 118,'wght' 900;text-transform:uppercase;
+  font-size:clamp(38px,7.4vw,92px);line-height:.9;letter-spacing:-.03em}
+.intro p{max-width:60ch;margin-top:var(--space-3);color:var(--shell-ink-60);font-size:clamp(17px,1.9vw,21px);line-height:1.5}
+.jump{display:flex;gap:var(--space-2);flex-wrap:wrap;margin-top:var(--space-4)}
+.jump a{border:1px solid var(--shell-line);padding:12px 18px;border-radius:2px;text-decoration:none;
+  font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;white-space:nowrap;
+  transition:border-color .3s var(--ease-out),transform .3s var(--ease-out)}
+.jump a:hover{transform:translateY(-2px)}
+.jump a:focus-visible{outline:2px solid var(--shell-ink);outline-offset:3px}
+.jump a.a:hover{border-color:var(--a-accent)} .jump a.b:hover{border-color:var(--b-accent)} .jump a.c:hover{border-color:var(--c-accent)}
+
+/* Richtungsblock */
+.dir{padding:var(--space-6) 0}
+.dir .wrap{display:grid;gap:var(--space-4)}
+.dir .head{display:flex;align-items:baseline;gap:var(--space-3);flex-wrap:wrap}
+.dir .idx{font-family:'Archivo';font-variation-settings:'wdth' 118,'wght' 900;font-size:clamp(34px,5vw,64px);
+  line-height:.8;color:transparent;-webkit-text-stroke:2px currentColor;opacity:.5}
+.dir .name{font-size:clamp(12px,1.4vw,15px);letter-spacing:.28em;text-transform:uppercase;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:var(--space-3)}
+.panel{padding:clamp(24px,3vw,38px);border-radius:3px}
+.demo{padding:clamp(28px,4vw,56px);border-radius:3px}
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,104px),1fr));gap:2px;margin-top:var(--space-2)}
+.sw{padding:var(--space-2);min-height:96px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px}
+.sw b{font-size:11.5px;font-weight:700;letter-spacing:.06em}
+.sw span{font-size:10.5px;opacity:.75;font-variant-numeric:tabular-nums}
+.meta{font-size:14.5px;line-height:1.6}
+.meta dt{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;margin-top:var(--space-2)}
+.meta dt:first-child{margin-top:0}
+.meta dd{margin-top:3px}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+  padding:5px 10px;border-radius:99px;margin:0 4px 4px 0}
+.risk{font-size:14px;line-height:1.6;padding:var(--space-2) var(--space-3);border-left:3px solid;margin-top:var(--space-3)}
+
+/* A — Boutique */
+#a{background:var(--a-paper);color:var(--a-ink)}
+#a .idx,#a .name{color:var(--a-accent)}
+#a .demo{background:var(--a-paper2)}
+#a .panel{background:#fff}
+#a h2{font-family:'Fraunces';font-variation-settings:'SOFT' 40,'WONK' 1,'opsz' 144;font-weight:400;
+  font-size:clamp(34px,5.6vw,74px);line-height:.98;letter-spacing:-.02em}
+#a .kick{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--a-accent)}
+#a .body{color:var(--a-ink2);max-width:56ch;margin-top:var(--space-2)}
+#a .risk{border-color:var(--a-accent);background:#fff;color:var(--a-ink2)}
+#a .tag{background:var(--a-paper2);color:var(--a-ink2)}
+#a .cta{display:inline-block;margin-top:var(--space-3);background:var(--a-accent);color:var(--a-paper);
+  padding:14px 24px;text-decoration:none;font-weight:700;font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+
+/* B — Urban */
+#b{background:var(--b-paper);color:var(--b-ink)}
+#b .idx,#b .name{color:var(--b-accent)}
+#b .demo{background:var(--b-paper2);border:1px solid var(--b-line)}
+#b .panel{background:var(--b-paper2);border:1px solid var(--b-line);border-radius:0}
+#b h2{font-family:'Archivo';font-variation-settings:'wdth' 118,'wght' 900;text-transform:uppercase;
+  font-size:clamp(36px,7vw,96px);line-height:.86;letter-spacing:-.02em}
+#b .kick{font-family:'Space Mono';font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--b-accent)}
+#b .body{font-family:'Chivo';color:var(--b-ink2);max-width:56ch;margin-top:var(--space-2)}
+#b .risk{border-color:var(--b-accent);background:var(--b-paper2);color:var(--b-ink2)}
+#b .tag{background:var(--b-line);color:var(--b-ink2)}
+#b .cta{display:inline-block;margin-top:var(--space-3);background:var(--b-accent);color:#fff;border-radius:0;
+  padding:14px 24px;text-decoration:none;font-weight:700;font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+
+/* C — Frisch */
+#c{background:var(--c-paper);color:var(--c-ink)}
+#c .idx,#c .name{color:var(--c-accent)}
+#c .demo{background:var(--c-paper2)}
+#c .panel{background:#fff;border:1px solid var(--c-line)}
+#c h2{font-family:'Bricolage Grotesque';font-variation-settings:'wght' 800,'wdth' 100,'opsz' 96;
+  font-size:clamp(34px,6vw,80px);line-height:.92;letter-spacing:-.02em}
+#c .kick{font-family:'Bricolage Grotesque';font-variation-settings:'wght' 600,'wdth' 75;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-accent)}
+#c .body{font-family:'Figtree';color:var(--c-ink2);max-width:56ch;margin-top:var(--space-2);font-size:18px}
+#c .risk{border-color:var(--c-accent);background:var(--c-wash);color:var(--c-ink2)}
+#c .tag{background:var(--c-wash);color:var(--c-ink2)}
+#c .cta{display:inline-block;margin-top:var(--space-3);background:var(--c-accent);color:#fff;
+  padding:14px 24px;text-decoration:none;font-weight:700;font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+
+footer{border-top:1px solid var(--shell-line);padding:var(--space-5) 0;color:var(--shell-ink-60);font-size:13.5px}
+.rec{background:var(--shell-2);padding:var(--space-5) 0}
+.rec h2{font-family:'Archivo';font-variation-settings:'wdth' 118,'wght' 900;text-transform:uppercase;
+  font-size:clamp(26px,4vw,48px);line-height:.92;letter-spacing:-.03em}
+.rec p{max-width:62ch;margin-top:var(--space-2);color:var(--shell-ink-60)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <span class="t">Step It Up — Drei Richtungen</span>
+    <span class="d">Entwurf · August 2026 · Move Society</span>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="wrap">
+    <h1>Dieselbe Marke.<br>Drei Temperaturen.</h1>
+    <p>Das Warum steht fest: Bewegung muss man sich nicht verdienen. Wie sich das anfühlt, ist offen.
+      Jede der drei Richtungen führt sich hier selbst vor — in ihren eigenen Farben, ihrer eigenen
+      Schrift, ihrem eigenen Ton. Such dir eine aus. Mischen kommt danach.</p>
+    <nav class="jump">
+      <a class="a" href="#a">01 Boutique</a>
+      <a class="b" href="#b">02 Urban</a>
+      <a class="c" href="#c">03 Frisch</a>
+    </nav>
+  </div>
+</section>
+
+<!-- ══════ A · BOUTIQUE ══════ -->
+<section class="dir" id="a">
+  <div class="wrap">
+    <div class="head"><span class="idx">01</span><span class="name">Boutique — Der warme Raum</span></div>
+
+    <div class="demo">
+      <p class="kick">Kurs · Berlin</p>
+      <h2>Du musst nichts können.<br>Du musst nur kommen.</h2>
+      <p class="body">Eine Seite, die sich anfühlt wie ein guter Raum: warmes Papier statt Weiß, viel Luft,
+        ein einziger Ton aus gebranntem Lehm. Die Bilder machen die Arbeit, nicht die Effekte.</p>
+      <a class="cta" href="../boutique/">Als Homepage ansehen</a>
+    </div>
+
+    <div class="swatches">
+      <div class="sw" style="background:#F4EFE8;color:#231F1B"><b>Kalk</b><span>#F4EFE8</span></div>
+      <div class="sw" style="background:#E9E1D5;color:#231F1B"><b>Leinen</b><span>#E9E1D5</span></div>
+      <div class="sw" style="background:#231F1B;color:#EFE8DC"><b>Espresso</b><span>#231F1B</span></div>
+      <div class="sw" style="background:#5C554B;color:#EFE8DC"><b>Rauch</b><span>#5C554B</span></div>
+      <div class="sw" style="background:#A8452C;color:#F4EFE8"><b>Ton · Akzent</b><span>#A8452C</span></div>
+      <div class="sw" style="background:#DCD3C4;color:#231F1B"><b>Haarlinie</b><span>#DCD3C4</span></div>
+    </div>
+
+    <div class="grid">
+      <div class="panel"><dl class="meta">
+        <dt>Schrift</dt><dd>Fraunces (Serif, gemischt gesetzt — keine Versalien) + Schibsted Grotesk</dd>
+        <dt>Material</dt><dd>Papier statt Bildschirm. Feines Korn, randlose Farbbänder statt schwebender Karten. Keine Schatten.</dd>
+        <dt>Bewegung</dt><dd>Ein einziger Takt von 640 ms. Alles ist ein Vielfaches davon.</dd>
+      </dl></div>
+      <div class="panel"><dl class="meta">
+        <dt>Für wen besonders</dt><dd>Die Frau ab 35, die mit Fitnessstudios fertig ist und nach Atmosphäre entscheidet — besonders die über 50.</dd>
+        <dt>Referenzen</dt><dd>The Class by Taryn Toomey · FORWARD_Space · Château Royal Berlin · Casa Cook · Andreas Murkudis</dd>
+      </dl></div>
+      <div class="panel"><dl class="meta">
+        <dt>Ist nicht</dt><dd>
+          <span class="tag">kein Wellness</span><span class="tag">kein Luxus-Klischee</span>
+          <span class="tag">kein Beige-Einheitsbrei</span><span class="tag">kein Studio-Look</span></dd>
+      </dl></div>
+    </div>
+    <p class="risk"><strong>Risiko —</strong> die Beige-Falle. Warm-minimal gibt es seit 2020 überall.
+      Ohne den Lehmton und einen harten Größenkontrast in der Typografie wird daraus Hotel-Website Nummer
+      vierhundert. Und für eine 23-Jährige kann es zu ruhig werden.</p>
+  </div>
+</section>
+
+<!-- ══════ B · URBAN ══════ -->
+<section class="dir" id="b">
+  <div class="wrap">
+    <div class="head"><span class="idx">02</span><span class="name">Urban — Nachtschicht</span></div>
+
+    <div class="demo">
+      <p class="kick">MO 19:30 / BERLIN / 60 MIN</p>
+      <h2>Nicht schöner werden.<br>Lauter.</h2>
+      <p class="body">Die Seite sieht aus wie der Raum, in dem der Kurs stattfindet: dunkel, laut, voll —
+        und keiner prüft an der Tür, ob du das kannst.</p>
+      <a class="cta" href="#c">Weiter zu Frisch</a>
+    </div>
+
+    <div class="swatches">
+      <div class="sw" style="background:#0B0B0D;color:#F2EFE9"><b>Asphalt</b><span>#0B0B0D</span></div>
+      <div class="sw" style="background:#17171A;color:#F2EFE9"><b>Beton</b><span>#17171A</span></div>
+      <div class="sw" style="background:#F2EFE9;color:#0B0B0D"><b>Kalk</b><span>#F2EFE9</span></div>
+      <div class="sw" style="background:#A9A49C;color:#0B0B0D"><b>Nebel</b><span>#A9A49C</span></div>
+      <div class="sw" style="background:#FF2E6B;color:#0B0B0D"><b>Puls · Akzent</b><span>#FF2E6B</span></div>
+      <div class="sw" style="background:#2A2A2E;color:#F2EFE9"><b>Riss</b><span>#2A2A2E</span></div>
+    </div>
+
+    <div class="grid">
+      <div class="panel"><dl class="meta">
+        <dt>Schrift</dt><dd>Archivo 900 in Versalien + Chivo + Space Mono für Zeiten und Orte</dd>
+        <dt>Material</dt><dd>Radius 0, überall. Zwei Flächen, getrennt durch einen 1-px-Riss. Keine Schatten.</dd>
+        <dt>Bewegung</dt><dd>Die Seite zählt ein. Vier Zähler, hart gesetzt statt weich eingeblendet.</dd>
+      </dl></div>
+      <div class="panel"><dl class="meta">
+        <dt>Für wen besonders</dt><dd>Die Frau, die früher tanzen war und aufgehört hat. Grob 25 bis 45 — aber der Reflex zählt, nicht das Alter.</dd>
+        <dt>Referenzen</dt><dd>Places+Faces · Boiler Room · BLOK London · 1Rebel · Flying Steps Academy</dd>
+      </dl></div>
+      <div class="panel"><dl class="meta">
+        <dt>Ist nicht</dt><dd>
+          <span class="tag">kein Sneaker-Drop</span><span class="tag">kein Energydrink</span>
+          <span class="tag">kein Neon-Gimmick</span><span class="tag">kein Techno-Club</span></dd>
+      </dl></div>
+    </div>
+    <p class="risk"><strong>Risiko —</strong> dunkel und laut schließt aus. Ausgerechnet die Frau, die
+      sich nicht traut — 55, nie getanzt, unsicher im Körper — liest „Club" als „nicht für mich".
+      Damit arbeitet die Richtung gegen das eigene Warum.</p>
+  </div>
+</section>
+
+<!-- ══════ C · FRISCH ══════ -->
+<section class="dir" id="c">
+  <div class="wrap">
+    <div class="head"><span class="idx">03</span><span class="name">Frisch — Tageslicht</span></div>
+
+    <div class="demo">
+      <p class="kick">Kurs · 60 Minuten · Berlin</p>
+      <h2>Du musst nicht tanzen können.<br>Du musst nur aufsteigen.</h2>
+      <p class="body">Die Seite spielt bei Tageslicht: helles Papier, Farbfotos aus echten Kursräumen,
+        ein einziger Sonnenton — und alles bewegt sich im 8er-Takt, weil der Kurs im 8er-Takt läuft.</p>
+      <a class="cta" href="#a">Zurück zu Boutique</a>
+    </div>
+
+    <div class="swatches">
+      <div class="sw" style="background:#FBFAF6;color:#17191B"><b>Tageslicht</b><span>#FBFAF6</span></div>
+      <div class="sw" style="background:#F0EDE5;color:#17191B"><b>Milchglas</b><span>#F0EDE5</span></div>
+      <div class="sw" style="background:#17191B;color:#FBFAF6"><b>Tinte</b><span>#17191B</span></div>
+      <div class="sw" style="background:#4F545A;color:#FBFAF6"><b>Grafit</b><span>#4F545A</span></div>
+      <div class="sw" style="background:#F05A28;color:#FFFFFF"><b>Sonne · Akzent</b><span>#F05A28</span></div>
+      <div class="sw" style="background:#FAE7DD;color:#17191B"><b>Sonnenwäsche</b><span>#FAE7DD</span></div>
+    </div>
+
+    <div class="grid">
+      <div class="panel"><dl class="meta">
+        <dt>Schrift</dt><dd>Bricolage Grotesque 800 im Satzfall + Figtree, Grundgröße 18 px</dd>
+        <dt>Material</dt><dd>Zwei Papiere statt Weiß. Der Flächenwechsel gliedert, nicht der Schatten.</dd>
+        <dt>Bewegung</dt><dd>Der 8er-Takt. Ein Beat sind 469 ms — 128 bpm, wie im Kurs.</dd>
+      </dl></div>
+      <div class="panel"><dl class="meta">
+        <dt>Für wen besonders</dt><dd>Trägt die Spanne am breitesten. Verlangt am wenigsten Vorwissen und schließt niemanden aus.</dd>
+        <dt>Referenzen</dt><dd>The Sculpt Society · Bala · Girlfriend Collective · Our Place · Tracksmith</dd>
+      </dl></div>
+      <div class="panel"><dl class="meta">
+        <dt>Ist nicht</dt><dd>
+          <span class="tag">keine Krankenkasse</span><span class="tag">kein Wellness-Newsletter</span>
+          <span class="tag">nicht kindisch</span><span class="tag">kein Pastell</span></dd>
+      </dl></div>
+    </div>
+    <p class="risk"><strong>Risiko —</strong> hängt komplett an echten Fotos. Ohne eigenes Shooting in
+      einem echten Kursraum mit echten Teilnehmerinnen kippt die Richtung in dem Moment zur
+      Broschüre, in dem das erste Stockfoto eingesetzt wird.</p>
+  </div>
+</section>
+
+<section class="rec">
+  <div class="wrap">
+    <h2>Meine Empfehlung: Boutique.</h2>
+    <p>Sie trägt die Spanne von 18 bis 60 am ehesten, ohne jemanden auszuschließen, und sie ist die
+      einzige der drei, die auch für ein Lizenzgespräch mit einem Studiobetreiber funktioniert.
+      Urban ist die aufregendste — und die, die genau die Frau verliert, für die das Format gebaut wurde.
+      Frisch ist die sicherste und steht und fällt mit dem Fotoshooting.</p>
+    <p style="margin-top:16px">Was ich aus den anderen beiden hineinretten würde, damit Boutique nicht
+      brav wird: den harten Größensprung und die Zeitangaben-Typografie aus Urban, und die Grundgröße
+      18 px aus Frisch.</p>
+    <p style="margin-top:24px"><a class="jump" style="display:inline-block;border:1px solid var(--shell-line);
+      padding:14px 22px;text-decoration:none;font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+      font-weight:700;white-space:nowrap" href="../boutique/">Boutique als Homepage ansehen</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Entwurf zur Abstimmung · STEP IT UP by Nikeata Thompson · Sebastian Keller, Move Society.
+    Alle Farbwerte und Schriften sind produktionsfertig. Referenzmarken dienen der Einordnung,
+    es besteht keine Verbindung zu ihnen.
+  </div>
+</footer>
+</body>
+</html>
