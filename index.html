@@ -242,6 +242,23 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
 .hero .datum{font-family:'Archivo',sans-serif;font-size:13px;letter-spacing:.22em;text-transform:uppercase;
   font-variation-settings:'wdth' 108,'wght' 700;color:var(--on-dark-62);margin-top:26px;
   opacity:0;animation:up 1s var(--e) .92s both}
+
+.lockup{display:flex;flex-wrap:wrap;gap:clamp(16px,2.4vw,26px);margin-top:clamp(28px,4vw,44px)}
+.lockup .plate{flex:1 1 240px;min-width:0;display:flex;align-items:center;justify-content:center;
+  padding:clamp(30px,4vw,52px) clamp(20px,3vw,34px);border-radius:4px}
+.lockup .plate.a{background:#fff;border:1px solid var(--hair)} .lockup .plate.b{background:var(--plum-deep)}
+.lockup .plate.c{background:var(--terra)}
+.wm2{font-family:'Fraunces',Georgia,serif;font-weight:700;font-variation-settings:'SOFT' 30,'WONK' 0,'opsz' 144;
+  text-transform:none;line-height:.84;letter-spacing:-.035em;font-size:clamp(30px,3.4vw,44px)}
+.wm2 span{display:block} .wm2 .s2{padding-left:.14em} .wm2 .s3{padding-left:.28em}
+.wm2 .sig{font-family:'Sacramento',cursive;font-weight:400;font-size:.5em;line-height:1;
+  padding-left:.6em;margin-top:.3em;letter-spacing:0}
+.a .wm2{color:var(--ink)} .a .wm2 .s3{color:var(--terra)} .a .wm2 .sig{color:var(--ink-64)}
+.b .wm2{color:var(--on-dark)} .b .wm2 .s3{color:#D97A5C} .b .wm2 .sig{color:var(--on-dark-62)}
+.c .wm2{color:var(--cream)} .c .wm2 .s3{color:var(--ink)} .c .wm2 .sig{color:rgba(249,244,238,.85)}
+.toolrow{display:flex;align-items:center;gap:14px;margin-top:16px}
+.toolrow img{width:38px;height:38px;flex:none}
+.toolrow span{font-size:14px;line-height:1.45}
 </style>
 </head>
 <body>
@@ -287,9 +304,10 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
       <span>Nicht durch die richtige Figur.</span>
       <span>Nicht durch eine Ausbildung, die ich selbst nie hatte.</span>
     </div>
-    <p class="lead rv d2" style="margin-top:34px;max-width:54ch;color:var(--on-dark-62)">Das ist keine
-      Textzeile für die Website. Es ist die Entscheidung, aus der alles Weitere folgt: welche Fotos wir
-      machen, wie eine Stunde beginnt, was im Lizenzvertrag steht und wen wir ansprechen.</p>
+    <p class="lead rv d2" style="margin-top:34px;max-width:54ch;color:var(--on-dark-62)">Dieser Satz ist die
+      Grundlage für alles, was danach kommt: für die Bilder, die wir machen, für den Ton, in dem wir
+      schreiben, für die Menschen, die wir ansprechen &mdash; und dafür, wie sich eine Stunde anfühlt,
+      bevor sie überhaupt begonnen hat.</p>
   </div>
 </section>
 
@@ -308,8 +326,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
           Teilnehmerinnen, echten Zahlungen, echten Zahlen.</p></div>
       <div class="card rv d1"><h3>Das Lizenzformat</h3>
         <p class="sm muted">Parallel dazu bauen wir alles, was ein Studio braucht, um STEP IT UP in
-          seinen Kursplan zu nehmen: Choreografien, Videoportal, Verträge, Ausbildung, Gebietsschutz.
-          Verkauft wird erst, wenn der Pilot gelaufen ist.</p></div>
+          seinen Kursplan zu nehmen: Choreografien, Videoportal, Verträge, Ausbildung, Gebietsschutz.</p></div>
     </div>
   </div>
 </section>
@@ -325,8 +342,9 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
           Schweiz und Großbritannien. <strong>Ich habe keine eingetragene Marke gefunden, die uns
           gefährlich wird.</strong> Es gibt ältere Marken rund um das Wort „Step", aber keine, die
           „Step It Up" in unseren Klassen blockiert.</p>
-        <p class="xs muted" style="margin-top:12px">Die endgültige Bewertung macht vor der Anmeldung
-          ein Fachanwalt &mdash; eine Registerabfrage ist keine Freigabe.</p></div>
+        <p class="sm" style="margin-top:14px;color:var(--terra);font-variation-settings:'wdth' 108,'wght' 600">
+          Meine Empfehlung: Bevor wir anmelden, lässt ein Fachanwalt für Markenrecht das noch einmal
+          gegenprüfen. Eine Registerabfrage ist eine gute Grundlage &mdash; aber keine Freigabe.</p></div>
       <div class="card rv d1"><h3>Die Domain ist frei</h3>
         <p class="sm muted"><strong>step-it-up.de ist verfügbar</strong> und wird registriert.
           stepitup.de ist zwar vergeben, liegt aber nur geparkt und ohne Website &mdash; die frage ich
@@ -337,7 +355,18 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
     <p class="sm muted rv d1" style="margin-top:10px;max-width:52ch">Der Name steigt selbst &mdash; drei
       Zeilen, jede eine Stufe weiter rechts, darunter dein Name in Handschrift. Das ist ein erster
       Entwurf, kein fertiges Logo. Die Feinarbeit kommt, wenn die Designrichtung steht.</p>
-    <p class="rv d1" style="margin-top:24px"><a class="btn btn-p" href="logo/">Den Entwurf ansehen</a></p>
+    <div class="lockup rv d1">
+      <div class="plate a"><div class="wm2"><span>Step</span><span class="s2">It</span><span class="s3">Up.</span>
+        <span class="sig">by Nikeata Thompson</span></div></div>
+      <div class="plate b"><div class="wm2"><span>Step</span><span class="s2">It</span><span class="s3">Up.</span>
+        <span class="sig">by Nikeata Thompson</span></div></div>
+      <div class="plate c"><div class="wm2"><span>Step</span><span class="s2">It</span><span class="s3">Up.</span>
+        <span class="sig">by Nikeata Thompson</span></div></div>
+    </div>
+    <p class="sm muted rv d2" style="margin-top:16px">Auf hellem Grund, auf dunklem Grund, auf der
+      Akzentfarbe. Der Zusatz mit deinem Namen bleibt immer dabei &mdash; er ist der Teil, der die
+      Marke schützbar macht.</p>
+    <p class="rv d2" style="margin-top:22px"><a class="btn btn-p" href="logo/">Alle Anwendungen ansehen</a></p>
   </div>
 </section>
 
@@ -373,12 +402,18 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
         <p class="xs" style="margin-top:12px;color:var(--on-dark-62)">Das ist der breite Einstieg &mdash;
           daraus wird später die Liste, aus der die ersten Kurse gefüllt werden.</p></div>
       <div class="card rv d1"><h3 style="color:var(--terra)">Founder Member</h3>
-        <p class="sm">Für die, die von Anfang an dabei sein wollen. Wer sich als Founder Member
-          einträgt, bekommt <strong style="color:var(--on-dark)">einen lebenslang festen
-          Mitgliedsbeitrag</strong> &mdash; der Preis, zu dem sie einsteigt, bleibt ihr Preis.</p>
-        <p class="xs" style="margin-top:12px;color:var(--on-dark-62)">Bevor das online geht, legen wir
-          die Zahl der Plätze und den Betrag fest. „Lebenslang" ist ein Versprechen, das wir dauerhaft
-          halten müssen &mdash; deshalb entscheiden wir es bewusst und nicht nebenbei.</p></div>
+        <p class="sm">Für die, die von Anfang an dabei sein wollen.
+          <strong style="color:var(--on-dark)">Ihr Beitrag bleibt für immer der gleiche</strong> &mdash;
+          egal, wie sich die Preise später entwickeln. Wer als Erste dabei war, zahlt auch in fünf
+          Jahren noch den Preis von heute.</p>
+        <p class="sm" style="margin-top:12px">So machen wir es sauber: eine
+          <strong style="color:var(--on-dark)">begrenzte Zahl an Plätzen</strong>, damit es etwas wert
+          ist. Und die Garantie gilt, <strong style="color:var(--on-dark)">solange die Mitgliedschaft
+          ohne Unterbrechung weiterläuft</strong>. Wer kündigt und später zurückkommt, steigt zum dann
+          gültigen Preis ein.</p>
+        <p class="xs" style="margin-top:12px;color:var(--on-dark-62)">Das ist der Weg, den auch gute
+          Studios gehen: ein echtes Versprechen, das man dauerhaft halten kann &mdash; statt eines,
+          das man später zurücknehmen muss.</p></div>
     </div>
   </div>
 </section>
@@ -391,20 +426,27 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
     <p class="lead rv d2" style="margin-top:24px;max-width:58ch">Die meisten Schulen bauen ihre Technik
       erst, wenn es weh tut. Dann liegen Namen in WhatsApp, Zahlungen in einer Excel-Datei, und niemand
       weiß, wie viele Frauen nach der dritten Stunde wiederkommen.</p>
-    <div class="g3" style="margin-top:clamp(30px,4.5vw,48px)">
-      <div class="card rv"><h3>Eine Zentrale</h3><p class="sm muted">In Nimbuscloud läuft alles zusammen,
-        was mit Menschen und Geld zu tun hat: Interessentenliste, Buchung, Bezahlung, SEPA-Lastschrift,
-        Check-in an der Tür, Kundenportal. Ich bin offizieller Partner der Software.</p></div>
+    <div class="g2" style="margin-top:clamp(30px,4.5vw,48px)">
+      <div class="card rv"><h3>Eine Zentrale</h3><p class="sm muted">Hier läuft alles zusammen:
+        Interessentenliste, Kundendaten, <strong>Stundenpläne</strong>, Buchungen,
+        <strong>Auslastung jedes Kurses</strong>, Bezahlung, Check-in an der Tür und das Kundenportal.
+        Eine Software, in der jede Teilnehmerin genau einmal steht &mdash; an derselben Stelle wie ihr
+        Kursplatz und ihre Zahlung.</p>
+        <div class="toolrow"><img src="assets/nimbuscloud-logo.png" alt="Nimbuscloud">
+          <span class="muted">Nimbuscloud &mdash; die Software, mit der Tanzschulen arbeiten.</span></div></div>
       <div class="card rv d1"><h3>Anmeldung in zwei Minuten</h3><p class="sm muted">Kurs wählen, Daten
         eintragen, SEPA-Mandat erteilen, fertig &mdash; am Handy. Keine Liste am Eingang, keine
         Überweisung, die jemand von Hand abhakt.</p></div>
-      <div class="card rv d2"><h3>Zahlungen und Konten</h3><p class="sm muted">Lastschrift, Karte,
-        Rechnungen, Mahnungen und die E-Mail-Konten der Marke &mdash; alles eingerichtet, bevor die
-        erste Buchung kommt.</p></div>
+      <div class="card rv d2"><h3>Bezahlen, wie sie will</h3><p class="sm muted">Per
+        <strong>SEPA-Lastschrift</strong> oder über die gängigen <strong>Online-Zahlungsanbieter</strong>
+        &mdash; Karte, PayPal, Sofortüberweisung. Rechnungen und Mahnungen laufen automatisch mit.</p></div>
+      <div class="card rv"><h3>Die KI-Telefonanlage</h3><p class="sm muted">Sie nimmt Anrufe an,
+        beantwortet die immer gleichen Fragen und hält Termine fest &mdash; auch dann, wenn du gerade
+        im Kurs stehst. <strong>Das spart eine Kraft am Telefon,</strong> und kein Anruf geht verloren.</p></div>
     </div>
     <div class="big rv d2">
       <div><div class="v">1</div><div class="k">System</div><div class="d">Kunden, Kurse, Zahlungen und Videothek an einer Stelle.</div></div>
-      <div><div class="v">0</div><div class="k">Listen von Hand</div><div class="d">Keine Excel, keine Namen im Postfach.</div></div>
+      <div><div class="v">0</div><div class="k">Blatt Papier</div><div class="d">Keine Anmeldelisten, keine Excel, keine Zettel an der Tür. Das Unternehmen kommt ohne Papier aus.</div></div>
       <div><div class="v">24/7</div><div class="k">Live-Monitoring</div><div class="d">Anmeldungen laufen live ein, die Kennzahlen werden laufend überwacht &mdash; nicht am Monatsende, sondern in dem Moment, in dem sich etwas ändert.</div></div>
     </div>
   </div>
@@ -425,9 +467,9 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
       <div class="card rv d1"><h3>Der E-Mail-Funnel</h3><p class="sm muted">Jeder Kontakt bekommt die
         passende nächste Nachricht &mdash; automatisch, im richtigen Abstand, bis er zusagt oder absagt.
         Keine Anfrage bleibt liegen, weil gerade niemand Zeit hatte.</p></div>
-      <div class="card rv d2"><h3>Die KI-Telefonanlage</h3><p class="sm muted">Sie nimmt Anrufe an,
-        beantwortet Standardfragen und hält Termine fest &mdash; auch dann, wenn wir gerade im Kurs
-        stehen. Jeder Anruf landet im selben System wie alles andere.</p></div>
+      <div class="card rv d2"><h3>Der Weg zum Abschluss</h3><p class="sm muted">Jeder Kontakt hat einen
+        Status: angesprochen, interessiert, Testkurs, Angebot, unterschrieben. Ich sehe jederzeit, wo
+        jemand hängen bleibt &mdash; und wo nachgefasst werden muss.</p></div>
     </div>
     <p class="rv d2" style="margin-top:24px;font-size:16px"><strong>Was Menschen machen:</strong>
       <span class="muted">das Gespräch und die Live-Stunde. Alles davor macht die Technik.</span></p>
@@ -518,9 +560,13 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
         <p>Die Markenbibel steht: Farben, Schriften, Logo, Sprache, Bildregeln. Gleichzeitig ist
           Nimbuscloud als CRM eingerichtet &mdash; ab hier können wir Leads und später Kundinnen
           durchgehend beobachten.</p></div>
-      <div class="step rv"><div class="when">September / Oktober</div><h3>Homepage, Funnel, Zahlungen</h3>
-        <p>Aufbau der Homepage mit den Anmeldeformularen. KI-Telefonanlage, Funnel und Lead-System
-          gehen in Betrieb. Zahlungsmodalitäten und E-Mail-Konten werden eingerichtet.</p></div>
+      <div class="step rv"><div class="when">September / Oktober</div><h3>Homepage und alles dahinter</h3>
+        <p>Die Homepage wird gebaut, mit beiden Anmeldeformularen. Dazu alles, was eine Website
+          überhaupt erst betriebsfähig macht: Server und Hosting, die E-Mail-Konten der Marke,
+          Zertifikate, Rechtstexte und die Anbindung ans CRM.</p>
+        <p style="margin-top:8px">Parallel gehen KI-Telefonanlage, E-Mail-Funnel und Lead-System in
+          Betrieb, und die <strong>Zahlungsdienstleister werden eingerichtet</strong> &mdash;
+          SEPA-Lastschrift und Online-Zahlung, geprüft mit echten Testbuchungen.</p></div>
       <div class="step rv"><div class="when">Oktober</div><h3>Ein bis drei Pilotkurse</h3>
         <p>Die ersten Kurse laufen. Echte Teilnehmerinnen, echte Buchungen &mdash; und die ersten
           Zahlen, mit denen wir arbeiten können.</p></div>
@@ -542,21 +588,22 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
   </div>
 </section>
 
-<section class="tint" id="abnahme">
+<section class="tint" id="naechster">
   <div class="wrap narrow">
     <div class="chapter rv"><span class="num">11</span>
-      <span><span class="lbl">Von dir</span><span class="sub">Was ich brauche, um anzufangen</span></span></div>
-    <h2 class="rv d1">Fünf Haken.</h2>
+      <span><span class="lbl">Der nächste Schritt</span><span class="sub">Was passiert, sobald die Richtung steht</span></span></div>
+    <h2 class="rv d1">Sobald du<br><em class="s">Ja sagst.</em></h2>
+    <p class="lead rv d2" style="margin-top:24px;max-width:54ch">Es hängt an einer einzigen Entscheidung:
+      der Designrichtung. Die steuert die Markenbibel, die steuert die Homepage, und die wiederum steuert
+      alles, was danach kommt. Ist sie getroffen, läuft der Rest von selbst an.</p>
     <div class="path rv d2">
-      <div class="p"><div><b>Das Warum</b><span>„Bewegung muss man sich nicht verdienen." &mdash; sagst du das selbst?</span></div></div>
-      <div class="p"><div><b>Die Zielgruppe</b><span>Frauen ab 18. Danach hängt jedes Foto und jeder Text daran.</span></div></div>
-      <div class="p"><div><b>Die Designrichtung</b><span>Damit Markenbibel und Homepage im September starten können.</span></div></div>
-      <div class="p"><div><b>Founder Member</b><span>Wie viele Plätze, und zu welchem Beitrag &mdash; lebenslang gilt lebenslang.</span></div></div>
-      <div class="p"><div><b>Unsere Zusammenarbeit</b><span>Wer trägt was, wer entscheidet was, wem gehört was.</span></div></div>
+      <div class="p"><div><b>In der ersten Woche</b><span>Domains registriert, Marke zur Anmeldung vorbereitet, Anwalt angefragt</span></div></div>
+      <div class="p"><div><b>Im September</b><span>Markenbibel, CRM eingerichtet, Homepage im Aufbau</span></div></div>
+      <div class="p"><div><b>Im Oktober</b><span>Die ersten Kurse laufen &mdash; und mit ihnen die ersten echten Zahlen</span></div></div>
     </div>
-    <p class="rv d3" style="margin-top:28px;font-size:16px"><strong>Und was ich an Zeit von dir brauche:</strong>
-      <span class="muted">ein Fototag im September, Drehtage für die ersten Choreografien im Oktober,
-      die Pilotkurse, und zwei Tage für die erste Ausbildung.</span></p>
+    <p class="rv d3" style="margin-top:28px;font-size:16px"><strong>Was von dir kommt:</strong>
+      <span class="muted">deine Zeit für den Fototag, die Drehtage und die Kurse. Das Format und dein
+      Gesicht. Alles andere liegt bei mir.</span></p>
   </div>
 </section>
 
