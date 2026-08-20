@@ -1,0 +1,18 @@
+/* STEP IT UP · Palette 1 "Warmer Raum" — gesichert am 20.08.2026
+   Freigegeben, bleibt als Variante erhalten.
+   Kontrast geprueft: Espresso/Kalk 14.31:1 · Rauch/Kalk 6.43:1 · Ton/Kalk 5.17:1 */
+:root{
+  --color-paper:#F9F4EE;
+  --color-paper-2:#F3DED3;
+  --color-paper-3:#EBCEC0;
+  --color-ink:#1E1418;
+  --color-ink-2:#5C554B;
+  --color-plum:#3A1B30;
+  --color-plum-deep:#25101F;
+  --color-accent:#E2542B;
+  --color-accent-2:#C9556E;
+  --color-on-dark:#F6EBE3;
+  --font-display:'Archivo';
+  --font-serif:'Fraunces';
+  --font-sig:'Sacramento';
+}
