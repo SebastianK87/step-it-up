@@ -26,7 +26,7 @@
 html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h);overflow-x:clip}
 body{background:var(--cream);color:var(--ink);
   font-family:'Archivo',system-ui,sans-serif;font-variation-settings:'wdth' 100;
-  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:clip}
 img,video{max-width:100%;display:block}
 a{color:inherit}
 .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
@@ -75,7 +75,13 @@ nav.stuck{background:rgba(37,16,31,.93);backdrop-filter:blur(14px);box-shadow:0 
 @media(max-width:760px){.rings a span{display:none}.rings{gap:10px}}
 
 /* HERO */
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--plum-deep)}
+.hero{position:sticky;top:0;z-index:0;min-height:100svh;display:flex;align-items:flex-end;
+  overflow:hidden;background:var(--plum-deep)}
+section{position:relative;z-index:1}
+body.flat .hero{position:relative}
+/* Standbild: Endzustand erzwingen, sonst friert der Export auf dem Startbild ein */
+body.flat .hero h1 span,body.flat .hero .by,body.flat .hero .claim,
+body.flat .hero .datum,body.flat .hero .cta{animation:none;opacity:1;clip-path:none;transform:none}
 .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;
   transform:scale(1.06);animation:kb 26s ease-in-out infinite alternate}
 @keyframes kb{from{transform:scale(1.06)}to{transform:scale(1.16)}}
@@ -119,6 +125,17 @@ nav.stuck{background:rgba(37,16,31,.93);backdrop-filter:blur(14px);box-shadow:0 
   font-variation-settings:'wdth' 108,'wght' 700;opacity:0;animation:up 1s var(--e) 1.15s both}
 .cue i{width:1px;height:30px;background:linear-gradient(var(--on-dark-20),transparent);animation:pulse 2.1s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:.35;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+/* Räumliche Tiefe für die Kacheln */
+.g2,.g3,.g4,.feld,.split,.leiter{perspective:1400px}
+.card,.feld>div{transform-style:preserve-3d;
+  transition:box-shadow .45s var(--e),border-color .45s var(--e),background .45s var(--e)}
+.card:hover{box-shadow:0 26px 60px -28px rgba(37,16,31,.42)}
+.dark .card:hover,.deep .card:hover{box-shadow:0 26px 60px -24px rgba(0,0,0,.6)}
+.tint .card:hover{border-color:rgba(226,84,43,.4)}
+.card:hover .ico [pathLength]{stroke-dashoffset:0;transition:stroke-dashoffset .5s var(--e)}
+.feld>div:hover{background:#fff}
+.deep .feld>div:hover,.dark .feld>div:hover{background:var(--plum-2)}
 
 /* Symbole, zeichnen sich beim Sichtbarwerden */
 .ico{width:40px;height:40px;margin-bottom:15px}
@@ -1208,6 +1225,11 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
     if (!window.gsap || !window.ScrollTrigger) return;
     gsap.registerPlugin(ScrollTrigger);
 
+    // Der Hero bleibt liegen, also das Video anhalten, sobald er durch ist
+    if (hv) ScrollTrigger.create({trigger:'.hero', start:'bottom top',
+      onEnter:function(){ hv.pause(); },
+      onLeaveBack:function(){ var q = hv.play(); if (q && q.catch) q.catch(function(){}); }});
+
     // Das Video zieht langsamer als die Schrift, das gibt dem Hero Tiefe
     if (hv) gsap.to(hv, {yPercent:12, scale:1.14, ease:'none',
       scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:true}});
@@ -1232,6 +1254,51 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
       gsap.fromTo(d, {y:18 + i * 6}, {y:0, ease:'none',
         scrollTrigger:{trigger:'.feld', start:'top bottom', end:'top 55%', scrub:true}});
     });
+
+    // Kacheln kippen aus der Tiefe herein, gestaffelt
+    var kacheln = gsap.utils.toArray('.card, .feld > div');
+    kacheln.forEach(function(c){ c.classList.remove('rv','d1','d2','d3'); c.classList.add('in'); });
+    ScrollTrigger.batch(kacheln, {start:'top 90%', once:true, onEnter:function(b){
+      gsap.from(b, {y:52, rotateX:9, scale:.97, opacity:0, transformOrigin:'50% 100%',
+        duration:1, ease:'power3.out', stagger:{each:.085}});
+    }});
+
+    // Die Kacheln folgen dem Zeiger, leicht gekippt
+    kacheln.forEach(function(c){
+      c.addEventListener('pointermove', function(ev){
+        var r = c.getBoundingClientRect();
+        var px = (ev.clientX - r.left) / r.width - .5;
+        var py = (ev.clientY - r.top) / r.height - .5;
+        gsap.to(c, {rotateY:px * 7, rotateX:-py * 7, y:-5, duration:.45,
+          ease:'power2.out', overwrite:'auto'});
+      });
+      c.addEventListener('pointerleave', function(){
+        gsap.to(c, {rotateY:0, rotateX:0, y:0, duration:.7, ease:'power3.out', overwrite:'auto'});
+      });
+    });
+
+    // Zeilen laufen von links ein
+    [['.szen', .07], ['.leiter .r', .06], ['.rule', .07]].forEach(function(pair){
+      var rows = gsap.utils.toArray(pair[0]);
+      if (!rows.length) return;
+      rows.forEach(function(r){ r.classList.remove('rv','d1','d2'); r.classList.add('in'); });
+      ScrollTrigger.batch(rows, {start:'top 92%', once:true, onEnter:function(b){
+        gsap.from(b, {x:-26, opacity:0, duration:.75, ease:'power3.out', stagger:pair[1]});
+      }});
+    });
+
+    // Die Rechnung baut sich auf: erst die Faktoren, dann das Ergebnis
+    var rech = document.querySelector('.rechnung');
+    if (rech) {
+      rech.classList.remove('rv','d1'); rech.classList.add('in');
+      gsap.timeline({scrollTrigger:{trigger:rech, start:'top 82%', once:true}})
+        .from(rech, {opacity:0, y:34, duration:.7, ease:'power3.out'})
+        .from(rech.querySelectorAll('.rz')[0], {x:-24, opacity:0, duration:.5, ease:'power2.out'}, '-=.35')
+        .from(rech.querySelectorAll('.rx')[0], {scale:0, opacity:0, duration:.4, ease:'back.out(2.4)'}, '-=.2')
+        .from(rech.querySelectorAll('.rz')[1], {x:-18, opacity:0, duration:.5, ease:'power2.out'}, '-=.25')
+        .from(rech.querySelectorAll('.rx')[1], {scale:0, opacity:0, duration:.4, ease:'back.out(2.4)'}, '-=.2')
+        .from(rech.querySelector('.gross'), {scale:.8, opacity:0, duration:.7, ease:'back.out(1.7)'}, '-=.15');
+    }
 
     ScrollTrigger.refresh();
   }
