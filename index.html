@@ -81,8 +81,9 @@ nav.stuck{background:rgba(37,16,31,.93);backdrop-filter:blur(14px);box-shadow:0 
 @keyframes kb{from{transform:scale(1.06)}to{transform:scale(1.16)}}
 .hero .veil{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(37,16,31,.8) 0%,rgba(37,16,31,.44) 34%,rgba(37,16,31,.88) 78%,var(--plum-deep) 100%)}
 .hero .veil2{position:absolute;inset:0;z-index:2;background:radial-gradient(120% 80% at 78% 18%,rgba(226,84,43,.32),transparent 60%)}
-.hero .wrap{position:relative;z-index:4;width:100%;padding-bottom:clamp(52px,7vw,96px);padding-top:calc(var(--nav-h) + 40px)}
-.hero h1{font-size:clamp(52px,13.5vw,182px);color:var(--on-dark);line-height:.83;
+.hero .wrap{position:relative;z-index:4;width:100%;
+  padding-bottom:min(7vw,8.6vh,96px);padding-top:calc(var(--nav-h) + min(4vh,40px))}
+.hero h1{font-size:min(13.5vw,17.2vh,182px);color:var(--on-dark);line-height:.83;
   margin-bottom:clamp(6px,1vw,14px)}
 .hero h1 span{display:block;opacity:0;
   animation:up 1.1s var(--e) both, step 6.4s ease-in-out 1.6s infinite}
@@ -95,18 +96,18 @@ nav.stuck{background:rgba(37,16,31,.93);backdrop-filter:blur(14px);box-shadow:0 
   38%{translate:.052em -.05em}
   62%{translate:.052em -.05em}}
 .hero .by{font-family:'Allura',cursive;font-weight:400;font-variation-settings:normal;text-transform:none;
-  font-size:clamp(34px,5.4vw,70px);letter-spacing:.005em;line-height:1.12;color:var(--on-dark);
-  margin-top:clamp(16px,2.2vw,30px);padding-left:.34em;text-shadow:0 2px 22px rgba(37,16,31,.55);
+  font-size:min(5.4vw,7.4vh,70px);letter-spacing:.005em;line-height:1.12;color:var(--on-dark);
+  margin-top:min(2.2vw,2.8vh,30px);padding-left:.34em;text-shadow:0 2px 22px rgba(37,16,31,.55);
   opacity:0;animation:write 2.4s cubic-bezier(.42,0,.24,1) 3s both}
 /* die Signatur wird nach drei Sekunden geschrieben, von links nach rechts */
 @keyframes write{
   0%{opacity:0;clip-path:inset(0 100% -35% 0);transform:translateY(5px) rotate(-1.6deg)}
   6%{opacity:1}
   100%{opacity:1;clip-path:inset(0 -8% -35% 0);transform:none}}
-.hero .claim{margin-top:32px;max-width:22ch;font-size:clamp(20px,2.8vw,34px);line-height:1.2;
+.hero .claim{margin-top:min(3.4vh,32px);max-width:22ch;font-size:min(2.8vw,3.7vh,34px);line-height:1.2;
   font-variation-settings:'wdth' 112,'wght' 800;text-transform:uppercase;letter-spacing:-.02em;
   color:var(--on-dark);opacity:0;animation:up 1s var(--e) .66s both}
-.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;opacity:0;animation:up 1s var(--e) .8s both}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:min(3.4vh,32px);opacity:0;animation:up 1s var(--e) .8s both}
 .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;cursor:pointer;border:0;
   font-variation-settings:'wdth' 112,'wght' 800;text-transform:uppercase;font-size:13.5px;letter-spacing:.08em;
   padding:16px 26px;border-radius:2px;transition:transform .3s var(--e)}
@@ -135,11 +136,76 @@ nav.stuck{background:rgba(37,16,31,.93);backdrop-filter:blur(14px);box-shadow:0 
   .ico [pathLength]{transition:none;stroke-dashoffset:0}
   .hero h1 span{animation:up 1.1s var(--e) both}}
 
+
+/* ---- Wort-Enthüllung, Zeile für Zeile ---- */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.16em;margin-bottom:-.16em}
+.w>i{display:inline-block;font-style:inherit;font-weight:inherit;will-change:transform}
+
+/* ---- Checkliste: wer macht was ---- */
+.split{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);
+  gap:clamp(16px,2.4vw,28px);margin-top:clamp(32px,4.4vw,52px)}
+@media(max-width:880px){.split{grid-template-columns:1fr}}
+.col{background:#fff;border:1px solid var(--hair);padding:clamp(20px,2.6vw,30px);min-width:0}
+.col.mine{background:var(--plum-deep);border-color:transparent}
+.colhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  padding-bottom:14px;border-bottom:1px solid var(--hair)}
+.col.mine .colhead{border-bottom-color:var(--on-dark-20)}
+.who{font-variation-settings:'wdth' 118,'wght' 900;text-transform:uppercase;
+  font-size:clamp(30px,4vw,52px);line-height:.9;letter-spacing:-.035em}
+.col.mine .who{color:var(--on-dark)}
+.cnt{font-variation-settings:'wdth' 108,'wght' 700;font-size:11.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-38);white-space:nowrap}
+.col.mine .cnt{color:var(--on-dark-62)}
+.cnt b{font-variation-settings:'wdth' 118,'wght' 900;font-size:22px;letter-spacing:0;color:var(--terra)}
+.col.mine .cnt b{color:#E8825E}
+.chk{list-style:none;margin:14px 0 0;padding:0}
+.chk.cols2{columns:2;column-gap:clamp(18px,2.4vw,30px)}
+@media(max-width:640px){.chk.cols2{columns:1}}
+.chk li{display:grid;grid-template-columns:23px 1fr;gap:11px;align-items:start;
+  padding:7px 0;font-size:14.5px;line-height:1.42;break-inside:avoid;
+  opacity:.34;transition:opacity .45s var(--e)}
+.col.mine .chk li{color:var(--on-dark-62)}
+.chk li.done{opacity:1}
+.bx{width:21px;height:21px;border:1.6px solid var(--ink-38);border-radius:3px;position:relative;
+  margin-top:1px;transition:background .3s var(--e),border-color .3s var(--e),transform .38s var(--e)}
+.col.mine .bx{border-color:var(--on-dark-20)}
+.bx svg{position:absolute;left:-2px;top:-2px;width:23px;height:23px;overflow:visible}
+.bx path{fill:none;stroke:#fff;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:1;stroke-dashoffset:1}
+.chk li.done .bx{background:var(--terra);border-color:var(--terra)}
+.chk li.done .bx path{stroke-dashoffset:0;transition:stroke-dashoffset .38s var(--e) .06s}
+.chk li.pop .bx{transform:scale(1.22)}
+.flat .chk li{opacity:1}
+.flat .chk li .bx{background:var(--terra);border-color:var(--terra)}
+.flat .chk li .bx path{stroke-dashoffset:0}
+
+/* ---- Aufwandsbalken ---- */
+.loadbar{margin-top:clamp(28px,3.6vw,42px)}
+.lb{height:18px;display:flex;background:var(--hair)}
+.lb i{display:block;height:100%;width:0;transition:width 1.4s var(--e)}
+.lb .du{background:var(--ink)} .lb .ich{background:var(--terra)}
+.flat .lb .du{width:18%} .flat .lb .ich{width:82%}
+.lbfoot{display:flex;justify-content:space-between;gap:14px;margin-top:10px;
+  font-size:12.5px;letter-spacing:.04em;color:var(--ink-64)}
+.lbfoot b{font-variation-settings:'wdth' 112,'wght' 800;color:var(--ink)}
+@media(max-width:520px){.lbfoot{flex-direction:column;gap:4px}}
+
+/* ---- Haarlinie, die beim Eintreten aufzieht ---- */
+.edge{position:absolute;left:0;top:0;height:2px;width:100%;background:var(--terra);
+  transform:scaleX(0);transform-origin:0 50%}
+.flat .edge{transform:none}
+section{position:relative}
+
+/* ---- Knopf mit Magnet ---- */
+.btn{will-change:transform}
+
 /* Reveal */
 .rv{opacity:0;transform:translateY(30px);transition:opacity .9s var(--e),transform .9s var(--e)}
 .rv.in{opacity:1;transform:none}
 .rv.d1{transition-delay:.09s}.rv.d2{transition-delay:.18s}.rv.d3{transition-delay:.27s}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{animation:none!important}html{scroll-behavior:auto}}
+/* Standbild-Modus: keine Übergänge, sonst erwischt der Screenshot sie auf halbem Weg */
+body.flat .rv,body.flat .step,body.flat .lb i,body.flat .chk li,body.flat .bx{transition:none}
 body.flat .hero{min-height:auto}
 body.flat .cue{display:none}
 
@@ -443,18 +509,19 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
           Seite, die Google findet.</p>
         <p class="xs" style="margin-top:12px;color:var(--on-dark-62)">Vollständig, mit Menü,
           mit allen Inhalten.</p></div>
-      <div class="card"><h3 style="color:var(--on-dark)">Die Landingpage</h3>
-        <p class="sm">Eine einzige Seite mit einer einzigen Aufgabe: eintragen. Dorthin führen
-          Google Ads, Meta Ads und jeder Link aus einer Kampagne. Kein Menü, keine Nebenwege,
-          nichts, was ablenkt.</p>
-        <p class="xs" style="margin-top:12px;color:var(--on-dark-62)">Deshalb lässt sich hier
-          messen, was eine Anzeige wirklich bringt. Auf einer vollen Homepage geht das unter.</p></div>
+      <div class="card"><h3 style="color:var(--on-dark)">Die Landingpage für die Lizenz</h3>
+        <p class="sm">Eine eigene Seite, nur für Studios und Tanzschulen. Sie erklärt das
+          Lizenzprodukt, zeigt, was ein Betrieb bekommt und was er damit verdienen kann, und hat
+          genau eine Aufgabe: <strong style="color:var(--on-dark)">Anfrage abschicken.</strong></p>
+        <p class="xs" style="margin-top:12px;color:var(--on-dark-62)">Kein Menü, keine Nebenwege.
+          Dorthin führen die Akquise-Mails und die Anzeigen an Studios. Deshalb lässt sich hier
+          messen, was eine Ansprache wirklich bringt.</p></div>
     </div>
     <p class="rv d2" style="margin-top:20px;max-width:60ch;color:var(--on-dark-62)">
       <strong style="color:var(--on-dark)">Beide sind verknüpft.</strong> Gleiche Marke, gleiche
-      Anmeldung, gleiches CRM. Wer auf der Landingpage mehr wissen will, geht auf die Homepage.
-      Wer auf der Homepage bereit ist, landet im selben Formular. Es gibt nur eine Liste, egal,
-      durch welche Tür jemand hereinkommt.</p>
+      Technik, gleiches CRM. Von der Homepage führt ein eigener Bereich für Studios auf die
+      Landingpage, und von der Landingpage geht es zurück, wenn ein Studio wissen will, wer
+      dahintersteht. Zwei Zielgruppen, zwei Seiten, ein System.</p>
 
     <div class="g2" style="margin-top:clamp(30px,4.5vw,48px)">
       <div class="card rv"><h3>Der Aufbau</h3><ul>
@@ -562,17 +629,17 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
     <p class="sm muted rv d1" style="margin-top:10px;max-width:58ch">Nicht die große Zahl, sondern die
       Zahl, die man auch verteidigen kann, wenn jemand nachfragt. Stand der Erhebungen: Ende 2025.</p>
     <div class="feld rv d1">
-      <div><div class="n">4.202</div><div class="k">Inhabergeführte Studios</div>
+      <div><div class="n" data-c="4202">0</div><div class="k">Inhabergeführte Studios</div>
         <div class="d">Anlagen im Einzelsegment, also Betreiber mit einer bis höchstens vier Anlagen.
           Die entscheiden selbst, ohne Zentrale.</div></div>
-      <div><div class="n">2.443</div><div class="k">Boutique und Spezialstudios</div>
+      <div><div class="n" data-c="2443">0</div><div class="k">Boutique und Spezialstudios</div>
         <div class="d">Special-Interest-Anlagen, darunter Frauenstudios und reine Kurskonzepte.
           Genau die Umgebung, in die das Format passt.</div></div>
       <div><div class="n">1.500<span style="font-size:.5em"> bis </span>2.000</div>
         <div class="k">Tanzschulen mit eigenem Raum</div>
         <div class="d">Betriebe mit eigenem Saal und laufendem Kursbetrieb, davon 850 im ADTV.
           Nicht die 5.000 aus den Gewerbelisten, die halten keiner Nachfrage stand.</div></div>
-      <div class="off"><div class="n">3.002</div><div class="k">Kettenanlagen</div>
+      <div class="off"><div class="n" data-c="3002">0</div><div class="k">Kettenanlagen</div>
         <div class="d">Bewusst nicht unser erstes Ziel. Dort entscheidet eine Zentrale,
           das dauert Jahre. Später interessant, jetzt nicht.</div></div>
     </div>
@@ -586,11 +653,11 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
       Luft kommen: ein durchschnittliches deutsches Franchisesystem gewinnt <strong>zehn neue Partner
       im Jahr</strong>. Ich rechne bewusst darunter statt darüber.</p>
     <div class="rv d1" style="margin-top:22px;max-width:640px">
-      <div class="szen"><b>Jahr 1</b><span class="z">15</span><span>Lizenzstudios, das sind
+      <div class="szen"><b>Jahr 1</b><span class="z" data-c="15">0</span><span>Lizenzstudios, das sind
         0,25 Prozent des Feldes. Die ersten kommen aus Netzwerk und Empfehlung, nicht aus Kaltakquise.</span></div>
-      <div class="szen"><b>Jahr 2</b><span class="z">35</span><span>Wenn das Format läuft und die
+      <div class="szen"><b>Jahr 2</b><span class="z" data-c="35">0</span><span>Wenn das Format läuft und die
         ersten Studios Zahlen vorzeigen können. 0,6 Prozent.</span></div>
-      <div class="szen"><b>Jahr 3</b><span class="z">60</span><span>Ein Prozent des Feldes. Das ist
+      <div class="szen"><b>Jahr 3</b><span class="z" data-c="60">0</span><span>Ein Prozent des Feldes. Das ist
         die Zahl, mit der ich plane, nicht die, die ich verspreche.</span></div>
     </div>
     <p class="sm muted rv d2" style="margin-top:18px;max-width:58ch">Ein Prozent nach drei Jahren
@@ -709,14 +776,11 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
           weitergeben. Ohne eigenen Namen darauf bleiben wir <strong>reiner Händler</strong> und
           müssen nur prüfen, ob der Hersteller seine Angaben gemacht hat. Wenig Aufwand,
           ordentliche Spanne.</p></div>
-      <div class="card rv d2"><h3>Der Weg mit eigenem Namen</h3>
-        <p class="sm muted">Sobald unser Logo auf dem Gerät steht, gelten wir rechtlich als
-          <strong>Hersteller</strong>, auch wenn wir nichts selbst bauen. Dann brauchen wir
-          Risikobewertung, technische Unterlagen für zehn Jahre, unsere Anschrift auf jedem Stück
-          und einen Meldeweg für Mängel. Mehr Marge, aber ein eigenes kleines Geschäft.</p>
-        <p class="xs muted" style="margin-top:12px">Meine Empfehlung: erst ohne Branding starten.
-          Wenn die Stückzahl da ist, den zweiten Schritt gehen. Direktversand aus Asien an den
-          Kunden fällt aus, dabei fehlt der Verantwortliche in Europa.</p></div>
+      <div class="card rv d2"><h3>Eigene Stepper</h3>
+        <p class="sm muted">Reizvoll, aber mit Haken: Wer sein Logo auf das Gerät druckt, gilt
+          rechtlich als <strong>Hersteller</strong> und haftet wie einer. Mehr Marge, mehr Pflichten.</p>
+        <p class="xs muted" style="margin-top:12px">Meine Empfehlung: erst ohne Branding starten,
+          später prüfen.</p></div>
     </div>
     <p class="sm muted rv d2" style="margin-top:18px;max-width:58ch">Das ist eine Überlegung,
       keine Entscheidung. Sie gehört aber in die Preisrechnung, weil sie den Einstiegspreis für ein
@@ -834,21 +898,60 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
 </section>
 
 <section class="tint" id="naechster">
-  <div class="wrap narrow">
+  <div class="wrap">
     <div class="chapter rv"><span class="num">11</span>
-      <span><span class="lbl">Der nächste Schritt</span><span class="sub">Was passiert, sobald die Richtung steht</span></span></div>
-    <h2 class="rv d1">Sobald du<br><em class="s">Ja sagst.</em></h2>
-    <p class="lead rv d2" style="margin-top:24px;max-width:54ch">Es hängt an einer einzigen Entscheidung:
-      der Designrichtung. Die steuert die Markenbibel, die steuert die Homepage, und die wiederum steuert
-      alles, was danach kommt. Ist sie getroffen, läuft der Rest von selbst an.</p>
-    <div class="path rv d2">
-      <div class="p"><div><b>In der ersten Woche</b><span>Domains registriert, Marke zur Anmeldung vorbereitet, Anwalt angefragt</span></div></div>
-      <div class="p"><div><b>Im September</b><span>Markenbibel, CRM eingerichtet, Homepage im Aufbau</span></div></div>
-      <div class="p"><div><b>Im Oktober</b><span>Die ersten Kurse laufen, und mit ihnen die ersten echten Zahlen</span></div></div>
+      <span><span class="lbl">Der nächste Schritt</span><span class="sub">Wer was macht, vollständig aufgelistet</span></span></div>
+    <h2 class="rv d1">Du machst vier Dinge.<br>Den Rest <em class="s">mache ich.</em></h2>
+    <p class="lead rv d2" style="margin-top:24px;max-width:56ch">Es hängt an einer einzigen
+      Entscheidung: der Designrichtung. Die steuert die Markenbibel, die steuert die Homepage, und
+      die steuert alles danach. Ist sie getroffen, läuft der Rest an, ohne dass du etwas anschieben musst.</p>
+
+    <div class="split">
+      <div class="col rv" data-chk>
+        <div class="colhead"><span class="who">Du</span>
+          <span class="cnt"><b data-cnt>0</b> von 22</span></div>
+        <ul class="chk">
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Dein Gesicht und dein Name</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Die Choreografien und der Unterricht</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Ein Fototag und die Drehtage für die Videothek</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Entscheiden, wenn ich dir etwas vorlege</span></li>
+        </ul>
+      </div>
+      <div class="col mine rv d1" data-chk>
+        <div class="colhead"><span class="who">Ich</span>
+          <span class="cnt"><b data-cnt>0</b> von 22</span></div>
+        <ul class="chk cols2">
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Domains sichern</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Marke zur Anmeldung vorbereiten</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Designrichtungen entwickeln</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Markenbibel schreiben</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Server, Hosting und E-Mail-Konten einrichten</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Die Homepage der Schule bauen</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Die Landingpage für die Lizenz bauen</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Rechtstexte schreiben</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Nimbuscloud als CRM einrichten</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Zahlungsdienstleister anbinden, SEPA und online</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Die Videothek aufsetzen und befüllen</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Den E-Mail-Funnel bauen</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Den Weg von der Anfrage zum Abschluss überwachen</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Lizenzvertrag und Schulungsvertrag vorbereiten</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Foto- und Videopool anlegen und sortieren</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Das Akquise-Team aus KI-Bots aufbauen</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Google Ads und Meta Ads betreuen</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Anmeldungen und Auslastung live beobachten</span></li>
+        </ul>
+      </div>
     </div>
-    <p class="rv d3" style="margin-top:28px;font-size:16px"><strong>Was von dir kommt:</strong>
-      <span class="muted">deine Zeit für den Fototag, die Drehtage und die Kurse. Das Format und dein
-      Gesicht. Alles andere liegt bei mir.</span></p>
+
+    <div class="loadbar rv d2">
+      <div class="lb"><i class="du"></i><i class="ich"></i></div>
+      <div class="lbfoot"><span><b>18 Prozent</b> liegen bei dir</span><span><b>82 Prozent</b> liegen bei mir</span></div>
+    </div>
+
+    <p class="rv d2" style="margin-top:clamp(26px,3.4vw,36px);max-width:56ch;font-size:17px">
+      <strong>Das ist der Punkt.</strong> <span class="muted">Du sollst unterrichten und das Gesicht
+      der Marke sein. Nicht Server bestellen, nicht Verträge formulieren, nicht Anzeigen schalten.
+      Wenn du am ersten Januar in den Raum gehst, steht alles dahinter schon.</span></p>
   </div>
 </section>
 
@@ -924,7 +1027,13 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
 
   if (reduce) {
     document.querySelectorAll('.rv,.step').forEach(function(e){ e.classList.add('in'); });
-    document.querySelectorAll('[data-c]').forEach(function(e){ e.textContent = e.dataset.c; });
+    document.querySelectorAll('[data-c]').forEach(function(e){
+      var v = parseInt(e.dataset.c, 10);
+      e.textContent = v >= 1000 ? v.toLocaleString('de-DE') : v;
+    });
+    document.querySelectorAll('.chk li').forEach(function(li){ li.classList.add('done'); });
+    document.querySelectorAll('[data-cnt]').forEach(function(b){
+      b.textContent = b.closest('.col').querySelectorAll('.chk li').length; });
     return;
   }
   var io = new IntersectionObserver(function(es){
@@ -939,14 +1048,133 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
       cio.unobserve(el);
       requestAnimationFrame(function step(ts){
         if (!s) s = ts;
-        var p = Math.min(1, (ts - s) / 1100);
-        el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
+        var p = Math.min(1, (ts - s) / 1250);
+        var v = Math.round(to * (1 - Math.pow(1 - p, 3)));
+        el.textContent = v >= 1000 ? v.toLocaleString('de-DE') : v;
         if (p < 1) requestAnimationFrame(step);
       });
     });
   }, {threshold:.6});
   document.querySelectorAll('[data-c]').forEach(function(e){ cio.observe(e); });
+
+  /* ---------- Checkliste: hakt sich selbst ab ---------- */
+  var chkIo = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (!e.isIntersecting) return;
+      var col = e.target; chkIo.unobserve(col);
+      var items = [].slice.call(col.querySelectorAll('.chk li'));
+      var cnt = col.querySelector('[data-cnt]');
+      items.forEach(function(li, i){
+        setTimeout(function(){
+          li.classList.add('done', 'pop');
+          if (cnt) cnt.textContent = i + 1;
+          setTimeout(function(){ li.classList.remove('pop'); }, 260);
+        }, 260 + i * 95);
+      });
+    });
+  }, {threshold:.22});
+  document.querySelectorAll('[data-chk]').forEach(function(e){ chkIo.observe(e); });
+
+  /* ---------- Aufwandsbalken ---------- */
+  var lbIo = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (!e.isIntersecting) return;
+      lbIo.unobserve(e.target);
+      var du = e.target.querySelector('.lb .du'), ich = e.target.querySelector('.lb .ich');
+      setTimeout(function(){ du.style.width = '18%'; }, 200);
+      setTimeout(function(){ ich.style.width = '82%'; }, 480);
+    });
+  }, {threshold:.5});
+  document.querySelectorAll('.loadbar').forEach(function(e){ lbIo.observe(e); });
+
+  /* ---------- Wörter einzeln, in Zeilen maskiert ---------- */
+  function split(el){
+    if (el.dataset.split) return;
+    el.dataset.split = '1';
+    var walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), nodes = [];
+    while (walk.nextNode()) nodes.push(walk.currentNode);
+    nodes.forEach(function(n){
+      if (!n.nodeValue.trim()) return;
+      var frag = document.createDocumentFragment();
+      n.nodeValue.split(/(\s+)/).forEach(function(part){
+        if (!part) return;
+        if (!part.trim()) { frag.appendChild(document.createTextNode(part)); return; }
+        var s = document.createElement('span'); s.className = 'w';
+        var i = document.createElement('i'); i.textContent = part;
+        s.appendChild(i); frag.appendChild(s);
+      });
+      n.parentNode.replaceChild(frag, n);
+    });
+    el.classList.add('in');
+    return [].slice.call(el.querySelectorAll('.w > i'));
+  }
+
+  var wordEls = [].slice.call(document.querySelectorAll('h2, .statement'));
+  wordEls.forEach(function(el){
+    var parts = split(el);
+    if (!parts) return;
+    parts.forEach(function(i){ i.style.transform = 'translateY(108%)'; });
+    var wio = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting) return;
+        wio.unobserve(e.target);
+        parts.forEach(function(i, k){
+          i.style.transition = 'transform .82s cubic-bezier(.16,1,.3,1) ' + (k * 55) + 'ms';
+          i.style.transform = 'none';
+        });
+      });
+    }, {threshold:.3});
+    wio.observe(el);
+  });
+
+  /* ---------- Knöpfe folgen dem Zeiger ---------- */
+  document.querySelectorAll('.btn').forEach(function(b){
+    b.addEventListener('pointermove', function(ev){
+      var r = b.getBoundingClientRect();
+      var x = (ev.clientX - r.left - r.width / 2) / r.width;
+      var y = (ev.clientY - r.top - r.height / 2) / r.height;
+      b.style.transform = 'translate(' + (x * 10).toFixed(1) + 'px,' + (y * 7 - 2).toFixed(1) + 'px)';
+    });
+    b.addEventListener('pointerleave', function(){ b.style.transform = ''; });
+  });
+
+  /* ---------- GSAP, wenn verfügbar: Tiefe und Scroll-Kopplung ---------- */
+  function gsapLayer(){
+    if (!window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Das Video zieht langsamer als die Schrift, das gibt dem Hero Tiefe
+    if (hv) gsap.to(hv, {yPercent:12, scale:1.14, ease:'none',
+      scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:true}});
+    gsap.to('.hero .wrap', {y:-90, opacity:.15, ease:'none',
+      scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:true}});
+
+    // Die großen Kapitelzahlen driften gegen die Scrollrichtung
+    gsap.utils.toArray('.chapter .num').forEach(function(n){
+      gsap.fromTo(n, {y:28}, {y:-28, ease:'none',
+        scrollTrigger:{trigger:n, start:'top bottom', end:'bottom top', scrub:true}});
+    });
+
+    // Haarlinie zieht sich über jeden Abschnitt, sobald er ankommt
+    document.querySelectorAll('section').forEach(function(s){
+      var e = document.createElement('i'); e.className = 'edge'; s.appendChild(e);
+      gsap.to(e, {scaleX:1, duration:1.25, ease:'power3.out',
+        scrollTrigger:{trigger:s, start:'top 90%'}});
+    });
+
+    // Zahlenband und Kacheln bekommen einen leichten Tiefenversatz
+    gsap.utils.toArray('.feld > div').forEach(function(d, i){
+      gsap.fromTo(d, {y:18 + i * 6}, {y:0, ease:'none',
+        scrollTrigger:{trigger:'.feld', start:'top bottom', end:'top 55%', scrub:true}});
+    });
+
+    ScrollTrigger.refresh();
+  }
+  if (document.readyState === 'complete') gsapLayer();
+  else addEventListener('load', gsapLayer);
 })();
 </script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 </body>
 </html>
