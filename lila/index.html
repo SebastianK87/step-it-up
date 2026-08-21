@@ -12,16 +12,16 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'><rect width='80' height='80' fill='%23180425'/><g fill='%23D8FF33'><rect x='8' y='52' width='18' height='20'/><rect x='31' y='36' width='18' height='36'/><rect x='54' y='20' width='18' height='52'/></g></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@1&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@1&family=Allura&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* Entwurf 2: Lila und Signal. Lauter, frecher, jüngerer Ton. */
+  /* Entwurf 2: Lila und Signal. Lauter, frecher, juengerer Ton. */
   --cream:#F5F0FF; --blush:#E7DCFB; --blush-2:#D6C4F5;
   --ink:#190A28; --ink-64:rgba(25,10,40,.66); --ink-38:rgba(25,10,40,.4); --hair:rgba(25,10,40,.14);
   --plum:#2C0A47; --plum-2:#3D1263; --plum-deep:#180425;
-  --terra:#7B2CF5;            /* das Lila, auf hellem Grund lesbar (5,4:1) */
-  --terra-lift:#A96BFF;       /* dasselbe Lila, aufgehellt für dunklen Grund (5,0:1) */
-  --signal:#D8FF33;           /* Signalfarbe, nur auf Dunkel oder als Fläche */
+  --terra:#7B2CF5;            /* das Lila, auf hellem Grund lesbar, 5,4:1 */
+  --terra-lift:#A96BFF;       /* dasselbe Lila aufgehellt, fuer dunklen Grund, 5,0:1 */
+  --signal:#D8FF33;           /* Signalfarbe, nur auf Dunkel oder als Flaeche */
   --rose:#FF2E88;
   --on-dark:#F3ECFF; --on-dark-62:rgba(243,236,255,.66); --on-dark-20:rgba(243,236,255,.22);
   --nav-h:70px; --e:cubic-bezier(.16,1,.3,1);
@@ -87,17 +87,21 @@ nav.stuck{background:rgba(37,16,31,.93);backdrop-filter:blur(14px);box-shadow:0 
 .hero .veil{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(37,16,31,.8) 0%,rgba(37,16,31,.44) 34%,rgba(37,16,31,.88) 78%,var(--plum-deep) 100%)}
 .hero .veil2{position:absolute;inset:0;z-index:2;background:radial-gradient(120% 80% at 78% 18%,rgba(226,84,43,.32),transparent 60%)}
 .hero .wrap{position:relative;z-index:4;width:100%;padding-bottom:clamp(52px,7vw,96px);padding-top:calc(var(--nav-h) + 40px)}
-.hero h1{font-size:clamp(52px,13.5vw,182px);color:var(--on-dark);line-height:.83}
+.hero h1{font-size:clamp(52px,13.5vw,182px);color:var(--on-dark);line-height:.83;
+  margin-bottom:clamp(6px,1vw,14px)}
 .hero h1 span{display:block;opacity:0;
-  animation:up 1.1s var(--e) both, step 9s ease-in-out 1.6s infinite}
-.hero h1 .l2{padding-left:.09em;animation-delay:.16s,1.9s}
-.hero h1 .l3{padding-left:.185em;animation-delay:.32s,2.2s;color:var(--terra)}
+  animation:up 1.1s var(--e) both, step 6.4s ease-in-out 1.6s infinite}
+.hero h1 .l2{padding-left:.09em;animation-delay:.16s,2.05s}
+.hero h1 .l3{padding-left:.185em;animation-delay:.32s,2.5s;color:var(--terra)}
 @keyframes up{from{opacity:0;transform:translateY(52px)}to{opacity:1;transform:none}}
-/* die Wortmarke steigt weiter, ganz langsam, wie ein Atemzug auf der Stufe */
-@keyframes step{0%,100%{translate:0 0}50%{translate:.022em -.016em}}
-.hero .by{font-family:'Caveat',cursive;font-weight:400;font-variation-settings:normal;text-transform:none;
-  font-size:clamp(30px,4.6vw,58px);letter-spacing:.01em;line-height:1;color:var(--on-dark);
-  margin-top:12px;padding-left:.3em;text-shadow:0 2px 22px rgba(37,16,31,.55);
+/* Das Wortzeichen steigt weiter, Zeile für Zeile, wie jemand, der Stufen nimmt */
+@keyframes step{
+  0%,100%{translate:0 0}
+  38%{translate:.052em -.05em}
+  62%{translate:.052em -.05em}}
+.hero .by{font-family:'Allura',cursive;font-weight:400;font-variation-settings:normal;text-transform:none;
+  font-size:clamp(34px,5.4vw,70px);letter-spacing:.005em;line-height:1.12;color:var(--on-dark);
+  margin-top:clamp(16px,2.2vw,30px);padding-left:.34em;text-shadow:0 2px 22px rgba(37,16,31,.55);
   opacity:0;animation:write 2.4s cubic-bezier(.42,0,.24,1) 3s both}
 /* die Signatur wird nach drei Sekunden geschrieben, von links nach rechts */
 @keyframes write{
@@ -268,6 +272,21 @@ th{font-weight:700;text-transform:uppercase;font-size:10.5px;
   letter-spacing:.15em;color:var(--ink-38)}
 .dark th,.deep th{color:var(--on-dark-62)}
 td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.feld{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));
+  gap:1px;background:var(--hair);margin-top:clamp(26px,3.4vw,38px);border:1px solid var(--hair)}
+.feld>div{background:var(--cream);padding:clamp(18px,2.2vw,26px)}
+.feld .n{font-weight:700;font-size:clamp(28px,3.6vw,44px);
+  line-height:.95;color:var(--terra)}
+.feld .k{font-weight:700;text-transform:uppercase;font-size:11px;
+  letter-spacing:.18em;margin-top:9px}
+.feld .d{font-size:13.5px;line-height:1.5;color:var(--ink-64);margin-top:7px}
+.feld>div.off .n{color:var(--ink-38)}
+.szen{display:grid;grid-template-columns:clamp(74px,9vw,110px) clamp(64px,8vw,96px) 1fr;
+  gap:clamp(10px,1.8vw,22px);align-items:baseline;padding:13px 0;border-bottom:1px solid var(--hair)}
+.szen b{font-weight:700;text-transform:uppercase;font-size:12.5px;
+  letter-spacing:.12em;color:var(--terra)}
+.szen .z{font-weight:700;font-size:clamp(22px,2.6vw,30px);line-height:1}
+.szen span{font-size:14.5px;line-height:1.5;color:var(--ink-64)}
 .big{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:1px;
   background:var(--hair);margin-top:clamp(28px,4vw,44px)}
 .dark .big,.deep .big{background:var(--on-dark-20)}
@@ -291,7 +310,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
 .wm2{font-family:'Fraunces',Georgia,serif;font-weight:700;font-variation-settings:'SOFT' 30,'WONK' 0,'opsz' 144;
   text-transform:none;line-height:.84;letter-spacing:-.035em;font-size:clamp(30px,3.4vw,44px)}
 .wm2 span{display:block} .wm2 .s2{padding-left:.14em} .wm2 .s3{padding-left:.28em}
-.wm2 .sig{font-family:'Caveat',cursive;font-weight:400;font-size:.5em;line-height:1;
+.wm2 .sig{font-family:'Allura',cursive;font-weight:400;font-size:.5em;line-height:1;
   padding-left:.6em;margin-top:.3em;letter-spacing:0}
 .a .wm2{color:var(--ink)} .a .wm2 .s3{color:var(--terra)} .a .wm2 .sig{color:var(--ink-64)}
 .b .wm2{color:var(--on-dark)} .b .wm2 .s3{color:#D97A5C} .b .wm2 .sig{color:var(--on-dark-62)}
@@ -302,12 +321,11 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
 
 /* ============================================================
    ENTWURF LILA, die laute Schicht.
-   Regel für die Signalfarbe: nur auf Dunkel oder als Fläche
+   Regel fuer die Signalfarbe: nur auf Dunkel oder als Flaeche
    mit dunkler Schrift. Nie als Text auf Hell.
    ============================================================ */
 body{letter-spacing:-.005em}
 h2{font-size:clamp(34px,6.6vw,84px)}
-.lead{color:var(--ink-64)}
 
 /* Lila auf Dunkel immer aufgehellt, sonst zu wenig Kontrast */
 .deep em.s,.dark em.s{color:var(--terra-lift)}
@@ -318,20 +336,29 @@ h2{font-size:clamp(34px,6.6vw,84px)}
 .deep .step ul li::before,.dark .step ul li::before{background:var(--signal)}
 .deep .big .v,.dark .big .v,.deep .band .n,.dark .band .n{color:var(--signal)}
 .deep .step.in::before,.dark .step.in::before{background:var(--signal);border-color:var(--signal)}
+.negations span:last-child{color:var(--signal)}
+.logo .wm span:nth-child(3){color:var(--signal)}
+.logo .mark i{background:var(--signal)}
+.rings a.on i{background:var(--signal);border-color:var(--signal)}
+.dark .path .p::before,.deep .path .p::before{color:var(--signal)}
+.dark .rule .note,.deep .rule .note{color:var(--signal)}
+.dark .plan .m,.deep .plan .m{color:var(--signal)}
+.tl-fill{background:linear-gradient(var(--signal),var(--terra-lift))}
+#bar{background:linear-gradient(90deg,var(--signal),var(--terra-lift))}
 
 /* Der Signal-Knopf */
-.btn-p{background:var(--signal);color:var(--ink);font-weight:700}
-.btn-p:hover{background:#E4FF66}
 .btn{font-family:'Syne',sans-serif;font-weight:800;letter-spacing:.02em;border-radius:0}
+.btn-p{background:var(--signal);color:var(--ink);font-weight:800}
+.btn-p:hover{background:#E4FF66}
 .btn-g{border-color:var(--on-dark-20)}
 
-/* Kapitelzahlen: größer, kantiger, halb angeschnitten */
+/* Kapitelzahlen groesser und kantiger */
 .chapter .num{font-family:'Syne',sans-serif;font-weight:800;-webkit-text-stroke-width:2px}
 .deep .chapter .num,.dark .chapter .num{-webkit-text-stroke-color:var(--signal)}
 .chapter .lbl{font-family:'Syne',sans-serif;font-weight:800;letter-spacing:.16em}
 .deep .chapter .lbl,.dark .chapter .lbl{color:var(--signal)}
 
-/* Hero: das UP. in Signal, nicht in Lila */
+/* Hero */
 .hero h1 .l3{color:var(--signal)}
 .hero .veil{background:linear-gradient(180deg,rgba(24,4,37,.82) 0%,rgba(24,4,37,.4) 32%,rgba(24,4,37,.9) 78%,var(--plum-deep) 100%)}
 .hero .veil2{background:radial-gradient(120% 80% at 76% 16%,rgba(123,44,245,.55),transparent 62%)}
@@ -349,24 +376,12 @@ h2{font-size:clamp(34px,6.6vw,84px)}
 @keyframes roll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.ticker div{animation:none}}
 
-/* Aussagen und Karten etwas härter */
+/* Aussagen und Karten haerter */
 .statement{font-family:'Syne',sans-serif;font-weight:800;letter-spacing:-.038em}
 .card{border-radius:0}
 .tint .card{background:#fff;border:1px solid var(--hair)}
 .negations span{font-family:'Syne',sans-serif;font-weight:700}
 .nav .logo,.rings a{font-family:'Syne',sans-serif;font-weight:800}
-
-/* Kontrast: Lila trägt auf Dunkel nicht, dort Signal oder aufgehelltes Lila */
-.negations span:last-child{color:var(--signal)}
-.logo .wm span:nth-child(3){color:var(--signal)}
-.logo .mark i{background:var(--signal)}
-.rings a.on i{background:var(--signal);border-color:var(--signal)}
-.dark .path .p::before,.deep .path .p::before{color:var(--signal)}
-.dark .rule .note,.deep .rule .note{color:var(--signal)}
-.dark .plan .m,.deep .plan .m{color:var(--signal)}
-.tl-fill{background:linear-gradient(var(--signal),var(--terra-lift))}
-#bar{background:linear-gradient(90deg,var(--signal),var(--terra-lift))}
-.dark a:not(.btn):hover,.deep a:not(.btn):hover{color:var(--signal)}
 </style>
 </head>
 <body>
@@ -433,7 +448,7 @@ h2{font-size:clamp(34px,6.6vw,84px)}
       <strong>1. Januar</strong> beides startet und nicht eins auf das andere wartet.</p>
     <div class="g2" style="margin-top:clamp(32px,4.5vw,50px)">
       <div class="card rv"><h3>Die Schule</h3>
-        <p class="sm muted">Deine Kurse in Berlin. Anmeldung, Bezahlung, Check-in, Kundenportal ,
+        <p class="sm muted">Deine Kurse in Berlin. Anmeldung, Bezahlung, Check-in, Kundenportal,
           komplett digital von Tag eins. Hier entsteht der Beweis, dass das Format trägt: mit echten
           Teilnehmerinnen, echten Zahlungen, echten Zahlen.</p></div>
       <div class="card rv d1"><h3>Das Lizenzformat</h3>
@@ -490,9 +505,29 @@ h2{font-size:clamp(34px,6.6vw,84px)}
     <div class="chapter rv"><span class="num">04</span>
       <span><span class="lbl">Homepage-Konzeption</span><span class="sub">Aufbau, Inhalte, Anmeldungen</span></span></div>
     <h2 class="rv d1" style="color:var(--on-dark)">Die Seite erzählt<br>das <em class="s">Warum.</em></h2>
-    <p class="lead rv d2" style="margin-top:24px;max-width:56ch;color:var(--on-dark-62)">Die Startseite
+    <p class="lead rv d2" style="margin-top:24px;max-width:58ch;color:var(--on-dark-62)">Die Startseite
       verkauft keinen Kurs. Sie erklärt, warum es das Format gibt, und lässt Menschen sich
-      eintragen, lange bevor es losgeht. Zwei Wege hinein, zwei verschiedene Versprechen.</p>
+      eintragen, lange bevor es losgeht. Dahinter stehen zwei Seiten mit zwei verschiedenen Aufgaben.</p>
+
+    <div class="g2 rv d2" style="margin-top:clamp(28px,4vw,42px)">
+      <div class="card"><h3 style="color:var(--on-dark)">Die Homepage der Schule</h3>
+        <p class="sm">Das Zuhause der Marke. Hier steht das Warum, das Angebot, der Stundenplan,
+          wer du bist und wie man Mitglied wird. Sie ist gebaut, um zu bleiben, und sie ist die
+          Seite, die Google findet.</p>
+        <p class="xs" style="margin-top:12px;color:var(--on-dark-62)">Vollständig, mit Menü,
+          mit allen Inhalten.</p></div>
+      <div class="card"><h3 style="color:var(--on-dark)">Die Landingpage</h3>
+        <p class="sm">Eine einzige Seite mit einer einzigen Aufgabe: eintragen. Dorthin führen
+          Google Ads, Meta Ads und jeder Link aus einer Kampagne. Kein Menü, keine Nebenwege,
+          nichts, was ablenkt.</p>
+        <p class="xs" style="margin-top:12px;color:var(--on-dark-62)">Deshalb lässt sich hier
+          messen, was eine Anzeige wirklich bringt. Auf einer vollen Homepage geht das unter.</p></div>
+    </div>
+    <p class="rv d2" style="margin-top:20px;max-width:60ch;color:var(--on-dark-62)">
+      <strong style="color:var(--on-dark)">Beide sind verknüpft.</strong> Gleiche Marke, gleiche
+      Anmeldung, gleiches CRM. Wer auf der Landingpage mehr wissen will, geht auf die Homepage.
+      Wer auf der Homepage bereit ist, landet im selben Formular. Es gibt nur eine Liste, egal,
+      durch welche Tür jemand hereinkommt.</p>
 
     <div class="g2" style="margin-top:clamp(30px,4.5vw,48px)">
       <div class="card rv"><h3>Der Aufbau</h3><ul>
@@ -514,11 +549,11 @@ h2{font-size:clamp(34px,6.6vw,84px)}
       <div class="card rv"><h3 style="color:var(--on-dark)">Newsletter</h3>
         <p class="sm">Für alle, die einfach dabei bleiben wollen. Wir informieren über den Stand:
           wann es losgeht, wo, wie weit wir sind. Keine Verpflichtung, jederzeit abbestellbar.</p>
-        <p class="xs" style="margin-top:12px;color:var(--on-dark-62)">Das ist der breite Einstieg ,
+        <p class="xs" style="margin-top:12px;color:var(--on-dark-62)">Das ist der breite Einstieg,
           daraus wird später die Liste, aus der die ersten Kurse gefüllt werden.</p></div>
       <div class="card rv d1"><h3 style="color:var(--signal)">Founder Member</h3>
         <p class="sm">Für die, die von Anfang an dabei sein wollen.
-          <strong style="color:var(--on-dark)">Ihr Beitrag bleibt für immer der gleiche</strong> ,
+          <strong style="color:var(--on-dark)">Ihr Beitrag bleibt für immer der gleiche</strong>,
           egal, wie sich die Preise später entwickeln. Wer als Erste dabei war, zahlt auch in fünf
           Jahren noch den Preis von heute.</p>
         <p class="sm" style="margin-top:12px">So machen wir es sauber: eine
@@ -552,11 +587,13 @@ h2{font-size:clamp(34px,6.6vw,84px)}
       <div class="card rv d1"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M7 2.5 L17 2.5 L17 21.5 L7 21.5 Z"/><path pathLength="1" d="M9.5 11.5 L11.5 13.6 L15 9"/><path pathLength="1" d="M10.6 5 L13.4 5"/></svg></div><h3>Anmeldung in zwei Minuten</h3><p class="sm muted">Kurs wählen, Daten
         eintragen, SEPA-Mandat erteilen, fertig, am Handy. Keine Liste am Eingang, keine
         Überweisung, die jemand von Hand abhakt.</p></div>
-      <div class="card rv d2"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M2.5 5.5 L21.5 5.5 L21.5 18.5 L2.5 18.5 Z"/><path pathLength="1" d="M2.5 9.8 L21.5 9.8"/><path pathLength="1" d="M6 14.5 L11 14.5"/></svg></div><h3>Bezahlen, wie sie will</h3><p class="sm muted">Per
-        <strong>SEPA-Lastschrift</strong> oder über die gängigen <strong>Online-Zahlungsanbieter</strong>
-       Karte, PayPal, Sofortüberweisung. Rechnungen und Mahnungen laufen automatisch mit.</p></div>
+      <div class="card rv d2"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M2.5 5.5 L21.5 5.5 L21.5 18.5 L2.5 18.5 Z"/><path pathLength="1" d="M2.5 9.8 L21.5 9.8"/><path pathLength="1" d="M6 14.5 L11 14.5"/></svg></div><h3>Zahlung ohne Nachlaufen</h3><p class="sm muted">Der Beitrag wird per
+        <strong>SEPA-Lastschrift</strong> eingezogen oder über die gängigen
+        <strong>Online-Zahlungsanbieter</strong> bezahlt, Karte, PayPal, Sofortüberweisung.
+        Rechnungen und Mahnungen laufen automatisch mit. Niemand muss offenen Beträgen
+        hinterhertelefonieren.</p></div>
       <div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 3 L14 3 L18 7 L18 21 L6 21 Z"/><path pathLength="1" d="M14 3 L14 7 L18 7"/><path pathLength="1" d="M3.5 21.5 L20.5 2.5"/></svg></div><h3>Kein Blatt Papier</h3>
-        <p class="sm muted">Der Vertrag wird digital unterschrieben, das SEPA-Mandat digital erteilt,
+        <p class="sm muted">Der Vertrag wird digital abgeschlossen, das SEPA-Mandat digital erteilt,
         die Rechnung kommt per Mail. Der Check-in läuft über Handy oder Karte, die Anwesenheit
         schreibt sich von selbst mit. <strong>Es gibt nichts, was jemand abtippen muss.</strong></p></div>
     </div>
@@ -573,13 +610,17 @@ h2{font-size:clamp(34px,6.6vw,84px)}
     <div class="chapter rv"><span class="num">06</span>
       <span><span class="lbl">Akquise</span><span class="sub">Wie wir Studios gewinnen</span></span></div>
     <h2 class="rv d1">Ein Akquise-Team,<br>das nicht <em class="s">müde wird.</em></h2>
-    <p class="lead rv d2" style="margin-top:24px;max-width:56ch">Es gibt tausende Studios, Tanzschulen
-      und Vereine in Deutschland. Von Hand schafft die niemand. Deshalb baue ich ein Team aus
-      KI-Bots und einem E-Mail-Funnel, das die Arbeit übernimmt, für die sonst drei Leute nötig wären.</p>
+    <p class="lead rv d2" style="margin-top:24px;max-width:58ch">Angesprochen werden zwei Gruppen:
+      <strong>Tanzschulen mit Erwachsenenprogramm</strong> und
+      <strong>inhabergeführte Fitnessstudios</strong>, also die, die selbst entscheiden dürfen und
+      nicht auf eine Zentrale warten müssen. Dazu Boutique-Studios und Vereine. Von Hand schafft das
+      niemand. Deshalb baue ich ein Team aus KI-Bots und einem E-Mail-Funnel, das die Arbeit
+      übernimmt, für die sonst drei Leute nötig wären.</p>
     <div class="g3" style="margin-top:clamp(30px,4.5vw,48px)">
-      <div class="card rv"><h3>KI-Bots</h3><p class="sm muted">Sie finden passende Betriebe, sortieren
-        sie nach Größe und Region, recherchieren Ansprechpartner und bereiten jedes Gespräch vor.
-        Was ein Mensch in Wochen recherchiert, steht über Nacht in der Liste.</p></div>
+      <div class="card rv"><h3>KI-Bots</h3><p class="sm muted">Sie durchsuchen Tanzschulen und
+        Fitnessstudios, sortieren nach Größe, Region und Kursprogramm, erkennen, ob ein Betrieb
+        inhabergeführt oder Teil einer Kette ist, recherchieren die Ansprechpartnerin und bereiten
+        jedes Gespräch vor. Was ein Mensch in Wochen zusammensucht, steht über Nacht in der Liste.</p></div>
       <div class="card rv d1"><h3>Der E-Mail-Funnel</h3><p class="sm muted">Jeder Kontakt bekommt die
         passende nächste Nachricht, automatisch, im richtigen Abstand, bis er zusagt oder absagt.
         Keine Anfrage bleibt liegen, weil gerade niemand Zeit hatte.</p></div>
@@ -589,6 +630,45 @@ h2{font-size:clamp(34px,6.6vw,84px)}
     </div>
     <p class="rv d2" style="margin-top:24px;font-size:16px"><strong>Was Menschen machen:</strong>
       <span class="muted">das Gespräch und die Live-Stunde. Alles davor macht die Technik.</span></p>
+
+    <h3 class="rv" style="margin-top:clamp(44px,5.5vw,70px)">Wie groß das Feld wirklich ist</h3>
+    <p class="sm muted rv d1" style="margin-top:10px;max-width:58ch">Nicht die große Zahl, sondern die
+      Zahl, die man auch verteidigen kann, wenn jemand nachfragt. Stand der Erhebungen: Ende 2025.</p>
+    <div class="feld rv d1">
+      <div><div class="n">4.202</div><div class="k">Inhabergeführte Studios</div>
+        <div class="d">Anlagen im Einzelsegment, also Betreiber mit einer bis höchstens vier Anlagen.
+          Die entscheiden selbst, ohne Zentrale.</div></div>
+      <div><div class="n">2.443</div><div class="k">Boutique und Spezialstudios</div>
+        <div class="d">Special-Interest-Anlagen, darunter Frauenstudios und reine Kurskonzepte.
+          Genau die Umgebung, in die das Format passt.</div></div>
+      <div><div class="n">1.500<span style="font-size:.5em"> bis </span>2.000</div>
+        <div class="k">Tanzschulen mit eigenem Raum</div>
+        <div class="d">Betriebe mit eigenem Saal und laufendem Kursbetrieb, davon 850 im ADTV.
+          Nicht die 5.000 aus den Gewerbelisten, die halten keiner Nachfrage stand.</div></div>
+      <div class="off"><div class="n">3.002</div><div class="k">Kettenanlagen</div>
+        <div class="d">Bewusst nicht unser erstes Ziel. Dort entscheidet eine Zentrale,
+          das dauert Jahre. Später interessant, jetzt nicht.</div></div>
+    </div>
+    <p class="xs muted rv d2" style="margin-top:12px;max-width:62ch">Quellen: Eckdaten der deutschen
+      Fitnesswirtschaft 2026 von DSSV, Deloitte und DHfPG, Stichtag 31.12.2025, insgesamt 9.647 Anlagen.
+      Tanzschulen: eigene Auswertung aus dem ADTV-Verzeichnis und offenen Kartendaten.</p>
+
+    <h3 class="rv" style="margin-top:clamp(38px,4.6vw,58px)">Was davon realistisch ist</h3>
+    <p class="sm muted rv d1" style="margin-top:10px;max-width:58ch">Ansprechbar sind rund
+      <strong>5.700 bis 6.200 Betriebe</strong>. Zum Vergleich, damit die Zahlen unten nicht aus der
+      Luft kommen: ein durchschnittliches deutsches Franchisesystem gewinnt <strong>zehn neue Partner
+      im Jahr</strong>. Ich rechne bewusst darunter statt darüber.</p>
+    <div class="rv d1" style="margin-top:22px;max-width:640px">
+      <div class="szen"><b>Jahr 1</b><span class="z">15</span><span>Lizenzstudios, das sind
+        0,25 Prozent des Feldes. Die ersten kommen aus Netzwerk und Empfehlung, nicht aus Kaltakquise.</span></div>
+      <div class="szen"><b>Jahr 2</b><span class="z">35</span><span>Wenn das Format läuft und die
+        ersten Studios Zahlen vorzeigen können. 0,6 Prozent.</span></div>
+      <div class="szen"><b>Jahr 3</b><span class="z">60</span><span>Ein Prozent des Feldes. Das ist
+        die Zahl, mit der ich plane, nicht die, die ich verspreche.</span></div>
+    </div>
+    <p class="sm muted rv d2" style="margin-top:18px;max-width:58ch">Ein Prozent nach drei Jahren
+      klingt klein. Genau deshalb steht es hier. Wenn es mehr wird, ist es eine gute Überraschung,
+      und keine gerissene Zusage.</p>
   </div>
 </section>
 
@@ -597,17 +677,30 @@ h2{font-size:clamp(34px,6.6vw,84px)}
     <div class="chapter rv"><span class="num">07</span>
       <span><span class="lbl">Die Videothek</span><span class="sub">Wie deine Arbeit geschützt wird</span></span></div>
     <h2 class="rv d1" style="color:var(--on-dark)">Zugang.<br>Keine <em class="s">Datei.</em></h2>
-    <p class="lead rv d2" style="margin-top:24px;max-width:54ch;color:var(--on-dark-62)">Deine
+    <p class="lead rv d2" style="margin-top:24px;max-width:56ch;color:var(--on-dark-62)">Deine
       Choreografien sind das Herz des Produkts. Sie werden nie verschickt, nie zum Download angeboten,
-      nie in einer Dropbox liegen. Sie liegen in einem Portal, das an das Abo gekoppelt ist.</p>
+      nie in einer Dropbox liegen. Sie liegen in einem Portal, das an den Vertrag gekoppelt ist.</p>
+    <p class="rv d2" style="margin-top:18px;max-width:56ch;color:var(--on-dark-62)">
+      <strong style="color:var(--on-dark)">Und zwar in derselben Software wie alles andere.</strong>
+      Die Videothek wird in Nimbuscloud verwaltet, dort, wo auch Mitglieder, Kurse und Zahlungen
+      liegen. Kein zweites System, kein zweiter Login, keine zweite Rechnung.</p>
+    <div class="toolrow rv d2" style="margin-top:14px">
+      <img src="../assets/nimbuscloud-logo.png" alt="Nimbuscloud">
+      <span style="color:var(--on-dark-62)">Ein Ort für Schule und Lizenz.</span></div>
     <div class="path rv d2">
-      <div class="p"><div><b>Studio schließt das Abo ab</b><span>monatlich, per Lastschrift</span></div></div>
-      <div class="p"><div><b>Zugang wird automatisch freigeschaltet</b><span>ohne dass jemand etwas von Hand macht</span></div></div>
+      <div class="p"><div><b>Studio schließt die Lizenz ab</b><span>monatlich, per Lastschrift</span></div></div>
+      <div class="p"><div><b>Der Zugang wird freigeschaltet</b><span>automatisch, ohne dass jemand etwas von Hand macht</span></div></div>
+      <div class="p"><div><b>Er sieht nur die Videothek</b><span>nicht deine Mitglieder, nicht deine Kurse, nicht deine Zahlen</span></div></div>
       <div class="p"><div><b>Die Bibliothek wächst mit</b><span>alle bisherigen Choreografien plus jede neue</span></div></div>
       <div class="p"><div><b>Kündigung sperrt den Zugang</b><span>am nächsten Tag, automatisch</span></div></div>
     </div>
-    <p class="rv d2" style="margin-top:26px;color:var(--on-dark-62)">So hängt deine Arbeit am Vertrag
+    <p class="rv d2" style="margin-top:26px;max-width:58ch;color:var(--on-dark-62)">So hängt deine Arbeit am Vertrag
       statt am Vertrauen. <strong style="color:var(--on-dark)">Wer aufhört zu zahlen, sieht nichts mehr.</strong></p>
+    <p class="sm rv d2" style="margin-top:16px;max-width:58ch;color:var(--on-dark-62)">Ehrlich dazu:
+      Nimbuscloud steuert den Zugang, ausgeliefert werden die Videos von einem Videodienst. Wie stark
+      wir sie darüber hinaus schützen, mit sichtbarer Kennung im Bild und mit Links, die von selbst
+      ablaufen, entscheiden wir, bevor die erste Lizenz verkauft wird. An diesem Punkt hängt dein
+      Eigentum, deshalb steht er hier und nicht im Kleingedruckten.</p>
   </div>
 </section>
 
@@ -623,13 +716,19 @@ h2{font-size:clamp(34px,6.6vw,84px)}
       <div class="card rv d1"><h3>Gebietsschutz</h3><p class="sm muted">Wer zuerst da ist, bekommt sein
         Gebiet, über eine feste Postleitzahlen-Liste im Vertrag. Gekoppelt an eine Mindestzahl an
         Kursen: wer nicht liefert, verliert den Schutz.</p></div>
-      <div class="card rv d2"><h3>Trainerausbildung</h3><p class="sm muted">Zwei Tage in Berlin. Wer
-        danach unterrichtet, hat vorher selbst unterrichtet. Später bilden Master-Trainer aus, damit
-        dein Kalender nicht die Grenze des Geschäfts ist.</p></div>
+      <div class="card rv d2"><h3>Ausbildung ohne Anreise</h3><p class="sm muted">Live und online,
+        an festen Terminen, mit Kamera und offenem Mikrofon in beide Richtungen. Fragen jederzeit,
+        wie in einem echten Raum. <strong>Keine Anreise, kein Hotel, kein Ausfalltag.</strong>
+        Für alle dieselbe Gebühr, egal ob das Studio in Berlin oder in Rosenheim sitzt.</p>
+        <p class="xs muted" style="margin-top:12px">Bewusst ohne Aufzeichnung zum Nachschauen und ohne
+        Selbstlernkurs. Das hat einen rechtlichen Grund, den ich dir in zwei Sätzen erkläre, und es
+        macht die Ausbildung nebenbei verbindlicher. Wer nicht kann, bekommt einen Nachholtermin.</p></div>
       <div class="card rv"><h3>Marke und Material</h3><p class="sm muted">Name, Logo, Formatbibel,
         Marketingpaket für die eigenen Kanäle des Studios. Alles vorbereitet, nichts selbst zu bauen.</p></div>
-      <div class="card rv d1"><h3>Das Portal</h3><p class="sm muted">Zugang zur Choreo-Bibliothek,
-        solange das Abo läuft. Videos, Ablaufpläne, Sicherheitshinweise.</p></div>
+      <div class="card rv d1"><h3>Zugang zur Videothek</h3><p class="sm muted">Jedes Lizenzstudio
+        bekommt einen eigenen Zugang zur Choreo-Bibliothek, solange die Lizenz läuft. Videos,
+        Ablaufpläne, Musikempfehlungen, Sicherheitshinweise. Alles, was eine Trainerin braucht,
+        um die Stunde am nächsten Tag zu halten.</p></div>
       <div class="card rv d2"><h3>Verträge</h3><p class="sm muted">Lizenzvertrag und Schulungsvertrag,
         anwaltlich geprüft, bevor der erste Betrieb unterschreibt. Das Studio bekommt Rechtssicherheit,
         nicht ein Handschlagversprechen.</p></div>
@@ -665,6 +764,36 @@ h2{font-size:clamp(34px,6.6vw,84px)}
         <p class="xs muted" style="margin-top:12px">Daraus wird ein Vorschlag mit Begründung,
           keine Zahl aus dem Bauch.</p></div>
     </div>
+
+    <h3 class="rv" style="margin-top:clamp(44px,5.5vw,70px)">Eine zweite Einnahmequelle: die Stepper</h3>
+    <p class="rv d1" style="margin-top:12px;max-width:58ch">Jedes Lizenzstudio braucht Geräte,
+      etwa fünfzehn bis zwanzig Stück pro Kursraum. Bisher kauft die jeder selbst. Wir können sie
+      mitliefern, und daran verdienen.</p>
+    <div class="g3" style="margin-top:clamp(24px,3.4vw,34px)">
+      <div class="card rv"><h3>Warum sich das lohnt</h3>
+        <p class="sm muted">Im deutschen Fachhandel kostet ein guter Stepper zwischen 40 und 90 Euro,
+          und der Mengenrabatt ist lächerlich: Das Zehnerset kostet pro Stück nur gut vier Prozent
+          weniger als das Einzelgerät. <strong>Genau da ist die Lücke.</strong> Wer im Container
+          einkauft, liegt bei rund zwölf Euro pro Stück frei Lager.</p>
+        <p class="xs muted" style="margin-top:12px">Bei zwanzig Steppern je Studio ist das eine
+          spürbare Zahl, jedes Mal, wenn eine Lizenz startet.</p></div>
+      <div class="card rv d1"><h3>Der einfache Weg</h3>
+        <p class="sm muted">Fertige Geräte in Menge einkaufen und als Startpaket an das Lizenzstudio
+          weitergeben. Ohne eigenen Namen darauf bleiben wir <strong>reiner Händler</strong> und
+          müssen nur prüfen, ob der Hersteller seine Angaben gemacht hat. Wenig Aufwand,
+          ordentliche Spanne.</p></div>
+      <div class="card rv d2"><h3>Der Weg mit eigenem Namen</h3>
+        <p class="sm muted">Sobald unser Logo auf dem Gerät steht, gelten wir rechtlich als
+          <strong>Hersteller</strong>, auch wenn wir nichts selbst bauen. Dann brauchen wir
+          Risikobewertung, technische Unterlagen für zehn Jahre, unsere Anschrift auf jedem Stück
+          und einen Meldeweg für Mängel. Mehr Marge, aber ein eigenes kleines Geschäft.</p>
+        <p class="xs muted" style="margin-top:12px">Meine Empfehlung: erst ohne Branding starten.
+          Wenn die Stückzahl da ist, den zweiten Schritt gehen. Direktversand aus Asien an den
+          Kunden fällt aus, dabei fehlt der Verantwortliche in Europa.</p></div>
+    </div>
+    <p class="sm muted rv d2" style="margin-top:18px;max-width:58ch">Das ist eine Überlegung,
+      keine Entscheidung. Sie gehört aber in die Preisrechnung, weil sie den Einstiegspreis für ein
+      Studio senken kann, ohne dass wir weniger verdienen.</p>
   </div>
 </section>
 
@@ -684,8 +813,9 @@ h2{font-size:clamp(34px,6.6vw,84px)}
           <li><strong>Markenanmeldung vorbereiten</strong>, als Wort-Bild-Marke plus deinem Namen
             im Zusatz. Ein Anwalt sieht vorher drüber, bevor etwas eingereicht wird.</li>
           <li><strong>Instagram und TikTok sichern</strong>, alle Handles, die zum Namen passen.</li>
-          <li><strong>Klären, wem was gehört</strong>, schriftlich. Marke, Domains, Choreos,
-            Videomaterial und Kundendaten.</li>
+          <li><strong>Wem was gehört, bereite ich vor</strong>: eine kurze schriftliche
+            Vereinbarung über Marke, Domains, Choreografien, Videomaterial und Kundendaten.
+            Du musst nichts formulieren, du liest und entscheidest.</li>
         </ul></div>
       <div class="step rv"><div class="when">ab September</div><h3>Infrastruktur und Design</h3>
         <p>Die Technik wird eingerichtet und die Marke entsteht, beides gleichzeitig, damit das
@@ -695,8 +825,10 @@ h2{font-size:clamp(34px,6.6vw,84px)}
             eingerichteten Postfächern.</li>
           <li><strong>Designrichtungen</strong>, die wir zusammen durchgehen und auf eine
             reduzieren.</li>
-          <li><strong>Fotos und Videos planen</strong>, ein Drehtag, aus dem Homepage, Instagram
-            und die Lizenzunterlagen bedient werden.</li>
+          <li><strong>Ein Pool für Fotos und Videos</strong>: ein Drehtag, und alles landet an
+            einer Stelle, sortiert und beschriftet. Homepage, Instagram, Anzeigen und die
+            Lizenzunterlagen bedienen sich daraus. Nichts wird zweimal gesucht und nichts
+            zweimal gedreht.</li>
         </ul></div>
       <div class="step rv"><div class="when">Ende September</div><h3>Markenbibel und CRM stehen</h3>
         <p>Ab hier ist die Marke festgeschrieben und das System läuft mit.</p>
@@ -713,8 +845,8 @@ h2{font-size:clamp(34px,6.6vw,84px)}
         <ul>
           <li><strong>Zwei Anmeldewege</strong>, Newsletter für Interessentinnen und die
             Founder-Member-Anmeldung für die, die von Anfang an dabei sein wollen.</li>
-          <li><strong>Rechtstexte</strong>, Impressum, Datenschutz, AGB und Widerruf,
-            vom Anwalt geprüft.</li>
+          <li><strong>Rechtstexte</strong>, Impressum, Datenschutz, AGB und Widerruf.
+            Die machen wir selbst, sauber und auf die Schule zugeschnitten.</li>
           <li><strong>Zahlungsdienstleister einrichten</strong>, SEPA-Lastschrift und
             Online-Zahlung, mit echten Testbuchungen abgenommen.</li>
           <li><strong>E-Mail-Funnel scharf stellen</strong>, die Strecke von der ersten Anmeldung
