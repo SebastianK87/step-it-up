@@ -333,6 +333,32 @@ th{font-variation-settings:'wdth' 110,'wght' 700;text-transform:uppercase;font-s
   letter-spacing:.15em;color:var(--ink-38)}
 .dark th,.deep th{color:var(--on-dark-62)}
 td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+/* Die Rechnung, dunkel eingelassen */
+.rechnung{display:grid;grid-template-columns:1fr auto 1fr auto 1.25fr;align-items:center;
+  gap:clamp(10px,2vw,26px);background:var(--plum-deep);color:var(--on-dark);
+  padding:clamp(24px,3.4vw,42px) clamp(20px,3vw,38px);margin-top:clamp(30px,4vw,44px)}
+@media(max-width:760px){.rechnung{grid-template-columns:1fr;text-align:left}
+  .rechnung .rx{font-size:22px;padding:2px 0}}
+.rechnung .v{font-variation-settings:'wdth' 118,'wght' 900;font-size:clamp(34px,5.4vw,72px);
+  line-height:.9;letter-spacing:-.035em;color:var(--on-dark)}
+.rechnung .gross .v{color:#E8825E}
+.rechnung .k{font-variation-settings:'wdth' 108,'wght' 700;text-transform:uppercase;font-size:11px;
+  letter-spacing:.18em;margin-top:10px;color:var(--on-dark)}
+.rechnung .d{font-size:13.5px;line-height:1.45;color:var(--on-dark-62);margin-top:6px}
+.rechnung .rx{font-variation-settings:'wdth' 112,'wght' 700;font-size:clamp(20px,2.6vw,34px);
+  color:var(--on-dark-62);line-height:1}
+/* Die Leiter */
+.leiter{margin-top:clamp(26px,3.4vw,38px);border-top:1px solid var(--hair)}
+.leiter .r{display:grid;grid-template-columns:clamp(78px,10vw,124px) 1fr 1fr;
+  gap:clamp(10px,2vw,22px);align-items:baseline;padding:14px 0;border-bottom:1px solid var(--hair)}
+.leiter .r.ziel{background:var(--blush);margin:0 calc(-1 * clamp(8px,1.4vw,16px));
+  padding-left:clamp(8px,1.4vw,16px);padding-right:clamp(8px,1.4vw,16px)}
+.leiter .n{font-variation-settings:'wdth' 118,'wght' 900;font-size:clamp(22px,2.6vw,32px);line-height:1}
+.leiter .r.ziel .n{color:var(--terra)}
+.leiter .m{font-size:15px;color:var(--ink-64)}
+.leiter .j{font-size:15px;font-variation-settings:'wdth' 110,'wght' 700}
+.leiter .head{font-variation-settings:'wdth' 108,'wght' 700;text-transform:uppercase;
+  font-size:10.5px;letter-spacing:.18em;color:var(--ink-38);padding:10px 0}
 .feld{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));
   gap:1px;background:var(--hair);margin-top:clamp(26px,3.4vw,38px);border:1px solid var(--hair)}
 .feld>div{background:var(--cream);padding:clamp(18px,2.2vw,26px)}
@@ -647,22 +673,24 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
       Fitnesswirtschaft 2026 von DSSV, Deloitte und DHfPG, Stichtag 31.12.2025, insgesamt 9.647 Anlagen.
       Tanzschulen: eigene Auswertung aus dem ADTV-Verzeichnis und offenen Kartendaten.</p>
 
-    <h3 class="rv" style="margin-top:clamp(38px,4.6vw,58px)">Was davon realistisch ist</h3>
+    <h3 class="rv" style="margin-top:clamp(38px,4.6vw,58px)">Was wir uns vornehmen</h3>
     <p class="sm muted rv d1" style="margin-top:10px;max-width:58ch">Ansprechbar sind rund
-      <strong>5.700 bis 6.200 Betriebe</strong>. Zum Vergleich, damit die Zahlen unten nicht aus der
-      Luft kommen: ein durchschnittliches deutsches Franchisesystem gewinnt <strong>zehn neue Partner
-      im Jahr</strong>. Ich rechne bewusst darunter statt darüber.</p>
-    <div class="rv d1" style="margin-top:22px;max-width:640px">
-      <div class="szen"><b>Jahr 1</b><span class="z" data-c="15">0</span><span>Lizenzstudios, das sind
-        0,25 Prozent des Feldes. Die ersten kommen aus Netzwerk und Empfehlung, nicht aus Kaltakquise.</span></div>
-      <div class="szen"><b>Jahr 2</b><span class="z" data-c="35">0</span><span>Wenn das Format läuft und die
-        ersten Studios Zahlen vorzeigen können. 0,6 Prozent.</span></div>
-      <div class="szen"><b>Jahr 3</b><span class="z" data-c="60">0</span><span>Ein Prozent des Feldes. Das ist
-        die Zahl, mit der ich plane, nicht die, die ich verspreche.</span></div>
+      <strong>5.700 bis 6.200 Betriebe</strong>. Davon wollen wir im ersten Jahr hundert.</p>
+    <div class="rv d1" style="margin-top:22px;max-width:660px">
+      <div class="szen"><b>Das Ziel</b><span class="z" data-c="100">0</span><span>Lizenzstudios im
+        ersten Jahr. Das ist der Maßstab, an dem wir das Jahr messen.</span></div>
+      <div class="szen"><b>Der Takt</b><span class="z" data-c="8">0</span><span>Abschlüsse im Monat,
+        also etwa zwei in der Woche. Deshalb baue ich die Ansprache als Maschine und nicht als
+        Aufgabe, die jemand nebenbei erledigt.</span></div>
+      <div class="szen"><b>Der Anteil</b><span class="z">2 %</span><span>des Feldes. Auch wenn es
+        klappt, sagen achtundneunzig von hundert Betrieben nein. Genau deshalb ist die Zahl
+        erreichbar.</span></div>
     </div>
-    <p class="sm muted rv d2" style="margin-top:18px;max-width:58ch">Ein Prozent nach drei Jahren
-      klingt klein. Genau deshalb steht es hier. Wenn es mehr wird, ist es eine gute Überraschung,
-      und keine gerissene Zusage.</p>
+    <p class="sm muted rv d2" style="margin-top:18px;max-width:60ch">Ehrlich dazu: Ein
+      durchschnittliches deutsches Franchisesystem gewinnt <strong>zehn neue Partner im Jahr</strong>.
+      Wir wollen acht im Monat. Das geht nur, weil bei uns keine Investition von fünfzigtausend Euro
+      im Raum steht, sondern ein Betrag, über den ein Inhaber in fünf Minuten entscheidet. Was jede
+      Stufe darunter wert ist, steht im nächsten Kapitel.</p>
   </div>
 </section>
 
@@ -746,11 +774,11 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
           ohne sich zu binden.</p>
         <p class="xs muted" style="margin-top:12px">Dazu der Founder-Member-Preis, der lebenslang gilt.</p></div>
       <div class="card rv d1"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle pathLength="1" cx="12" cy="9" r="5"/><path pathLength="1" d="M8.6 13.4 L7 21.5 L12 19 L17 21.5 L15.4 13.4"/></svg></div><h3>Für die Studios</h3>
-        <p class="sm muted">Eine monatliche Lizenzgebühr, gestaffelt nach der Zahl der Kurse, plus eine
-          einmalige Gebühr für Einrichtung und Ausbildung. Die Höhe rechnen wir gegen die Preise durch,
-          die im Markt tatsächlich bezahlt werden.</p>
-        <p class="xs muted" style="margin-top:12px">Erst wenn die Preise stehen, rechnen wir aus, wie
-          viele Lizenznehmer das Geschäft trägt.</p></div>
+        <p class="sm muted"><strong>99 Euro im Monat je Lizenz.</strong> Ein Preis, keine Staffel,
+          kein Verhandeln. Dazu eine einmalige Gebühr für Einrichtung und Ausbildung.</p>
+        <p class="xs muted" style="margin-top:12px">Bewusst niedrig gehalten. Für ein Studio ist das
+          weniger als ein einziger Kursabend einbringt. Damit ist es keine Investition, über die
+          jemand wochenlang nachdenkt.</p></div>
       <div class="card rv d2"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 2.5 L19 2.5 L19 21.5 L5 21.5 Z"/><path pathLength="1" d="M8 7 L16 7"/><path pathLength="1" d="M8 12 L10 12 M14 12 L16 12 M8 16.5 L10 16.5 M14 16.5 L16 16.5"/></svg></div><h3>Was ich vorher prüfe</h3>
         <p class="sm muted">Was in Berlin für vergleichbare Formate tatsächlich bezahlt wird. Was eine
           Stunde dich wirklich kostet, mit Raum, Trainerin und Technik. Und ab welcher Auslastung
@@ -758,6 +786,42 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
         <p class="xs muted" style="margin-top:12px">Daraus wird ein Vorschlag mit Begründung,
           keine Zahl aus dem Bauch.</p></div>
     </div>
+
+    <h3 class="rv" style="margin-top:clamp(44px,5.5vw,70px)">Was hundert Lizenzen bedeuten</h3>
+    <p class="rv d1" style="margin-top:12px;max-width:58ch">Hundert Studios, jedes 99 Euro im Monat.
+      So sieht die Zahl aus, auf die alles zuläuft.</p>
+
+    <div class="rechnung rv d1">
+      <div class="rz"><div class="v"><span data-c="99">0</span> €</div><div class="k">im Monat</div>
+        <div class="d">je Lizenz, ein Preis für alle</div></div>
+      <div class="rx">×</div>
+      <div class="rz"><div class="v" data-c="100">0</div><div class="k">Lizenzen</div>
+        <div class="d">Ziel im ersten Jahr</div></div>
+      <div class="rx">=</div>
+      <div class="rz gross"><div class="v"><span data-c="9900">0</span> €</div><div class="k">im Monat</div>
+        <div class="d">das sind 118.800 Euro im Jahr, jeden Monat aufs Neue, ohne dass jemand
+          etwas verkaufen muss</div></div>
+    </div>
+
+    <p class="sm muted rv d2" style="margin-top:18px;max-width:60ch"><strong>Zwei Zahlen, nicht eine.</strong>
+      118.800 Euro ist die <em>Laufrate</em>, also was hereinkommt, wenn alle hundert laufen. Im ersten
+      Jahr kommen sie nicht alle im Januar. Bei gleichmäßigem Aufbau, rund acht neue Lizenzen im Monat,
+      sind es <strong>im ersten Jahr etwa 64.000 Euro</strong>, und ab Januar darauf die vollen 118.800.</p>
+
+    <h3 class="rv" style="margin-top:clamp(36px,4.4vw,52px)">Und wenn es langsamer läuft</h3>
+    <p class="sm muted rv d1" style="margin-top:10px;max-width:56ch">Damit die hundert nicht die
+      einzige Zahl sind, an der alles hängt. Jede Stufe darunter trägt auch.</p>
+    <div class="leiter rv d1">
+      <div class="r" style="border-bottom:1px solid var(--hair)">
+        <span class="head">Lizenzen</span><span class="head">im Monat</span><span class="head">im Jahr, volle Laufrate</span></div>
+      <div class="r"><span class="n">15</span><span class="m">1.485 €</span><span class="j">17.820 €</span></div>
+      <div class="r"><span class="n">35</span><span class="m">3.465 €</span><span class="j">41.580 €</span></div>
+      <div class="r"><span class="n">60</span><span class="m">5.940 €</span><span class="j">71.280 €</span></div>
+      <div class="r ziel"><span class="n">100</span><span class="m">9.900 €</span><span class="j">118.800 €</span></div>
+    </div>
+    <p class="xs muted rv d2" style="margin-top:14px;max-width:60ch">Das ist die reine Lizenzgebühr,
+      vor Kosten und vor der Aufteilung zwischen uns. Die Einrichtungsgebühr, die Trainerausbildung
+      und die Stepper kommen obendrauf.</p>
 
     <h3 class="rv" style="margin-top:clamp(44px,5.5vw,70px)">Eine zweite Einnahmequelle: die Stepper</h3>
     <p class="rv d1" style="margin-top:12px;max-width:58ch">Jedes Lizenzstudio braucht Geräte,
@@ -836,8 +900,9 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
         <ul>
           <li><strong>Zwei Anmeldewege</strong>, Newsletter für Interessentinnen und die
             Founder-Member-Anmeldung für die, die von Anfang an dabei sein wollen.</li>
-          <li><strong>Rechtstexte</strong>, Impressum, Datenschutz, AGB und Widerruf.
-            Die machen wir selbst, sauber und auf die Schule zugeschnitten.</li>
+          <li><strong>Alle Texte</strong>, die verkaufen: Homepage, Landingpage, die Mails an
+            Interessentinnen, die Ansprache an Studios und die Anzeigen. Eine Stimme, überall
+            dieselbe. Die Pflichttexte der Seite laufen nebenbei mit.</li>
           <li><strong>Zahlungsdienstleister einrichten</strong>, SEPA-Lastschrift und
             Online-Zahlung, mit echten Testbuchungen abgenommen.</li>
           <li><strong>E-Mail-Funnel scharf stellen</strong>, die Strecke von der ersten Anmeldung
@@ -928,7 +993,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Server, Hosting und E-Mail-Konten einrichten</span></li>
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Die Homepage der Schule bauen</span></li>
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Die Landingpage für die Lizenz bauen</span></li>
-        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Rechtstexte schreiben</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Alle Texte schreiben, Seite, Mails, Anzeigen</span></li>
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Nimbuscloud als CRM einrichten</span></li>
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Zahlungsdienstleister anbinden, SEPA und online</span></li>
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Die Videothek aufsetzen und befüllen</span></li>
