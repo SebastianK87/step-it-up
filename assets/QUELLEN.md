@@ -29,3 +29,30 @@
 ## Was ersetzt werden muss, bevor die Seite öffentlich geht
 1. Hero-Video → eigenes Material vom Fototag / aus den Pilotkursen
 2. Portrait → freigegebenes Pressefoto über ZTA
+
+## Kapitelhintergründe, ergänzt 23.08.2026
+
+Damit beim Scrollen nicht überall dasselbe Standbild liegt, hat jedes dunkle Kapitel
+ein eigenes Hintergrundmotiv. Alle unter Pexels-Lizenz, kommerziell nutzbar, keine
+Namensnennung nötig.
+
+| Datei | Kapitel | Quelle |
+|---|---|---|
+| `bg-warum.jpg` | 01 Warum | Pexels-Foto 8957646, Frauen im Tanzfitness-Kurs |
+| `bg-studio.jpg` | 04 Homepage | Pexels-Foto 5935969, Kursraum mit gemischter Gruppe |
+| `bg-video.mp4` | 07 Videothek | Pexels-Video 8956004, Frauen proben einen Tanzschritt (sd 960x540) |
+| `bg-plan.jpg` | 10 Fahrplan | Pexels-Foto 7894568, synchrone Gruppe im Studio |
+
+Alle liegen hinter einem Ink-Schleier bei 26 Prozent Deckung. Gemessen bleibt der
+Kontrast von weißer Schrift zum hellsten Hintergrundpunkt zwischen 5,0:1 und 12,7:1.
+In diesen vier Kapiteln schreibt deshalb alles in Weiß, die Akzentfarbe wäre über
+einem Foto zu schwach.
+
+**Nicht verwendet: ein Ausschnitt aus einem Stepper-Ton-Video.** Ein fremdes Video zu
+schneiden und selbst auszuliefern ist eine Vervielfältigung plus öffentliche
+Zugänglichmachung, dafür bräuchte es die Erlaubnis von Julius Burphy. Stattdessen
+läuft im Kapitel „Das Vorbild" die offizielle TikTok-Einbettung, dort bleibt das Video
+bei TikTok gehostet und der Urheber ist genannt.
+
+⚠️ Wie beim Hero gilt: erkennbare Personen, kein Model Release. Vor einem echten
+Livegang durch eigenes Material vom Drehtag ersetzen.
