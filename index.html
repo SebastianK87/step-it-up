@@ -74,7 +74,15 @@ nav.stuck{background:rgba(37,16,31,.93);backdrop-filter:blur(14px);box-shadow:0 
 .rings a.on{color:var(--on-dark)}
 .rings a i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--on-dark-20);transition:.4s var(--e);flex:none}
 .rings a.on i{background:var(--terra);border-color:var(--terra);transform:scale(1.25)}
-@media(max-width:760px){.rings a span{display:none}.rings{gap:10px}}
+@media(max-width:760px){
+  /* Ohne Beschriftung bleibt nur der Punkt. Der braucht eine Trefferflaeche,
+     sonst trifft auf dem Handy niemand. */
+  .rings a span{display:none}
+  .rings{gap:0}
+  .rings a{padding:21px 13px;margin:-21px -13px}
+  .rings a i{width:11px;height:11px}
+  .logo{padding:12px 0;margin:-12px 0}
+}
 
 /* HERO */
 .hero{position:sticky;top:0;z-index:0;min-height:100svh;display:flex;align-items:flex-end;
