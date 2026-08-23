@@ -30,29 +30,33 @@
 1. Hero-Video → eigenes Material vom Fototag / aus den Pilotkursen
 2. Portrait → freigegebenes Pressefoto über ZTA
 
-## Kapitelhintergründe, ergänzt 23.08.2026
+## Kapitelhintergründe, Stand 23.08.2026
 
-Damit beim Scrollen nicht überall dasselbe Standbild liegt, hat jedes dunkle Kapitel
-ein eigenes Hintergrundmotiv. Alle unter Pexels-Lizenz, kommerziell nutzbar, keine
-Namensnennung nötig.
+Damit beim Scrollen nicht überall dasselbe Bild liegt, hat jedes dunkle Kapitel ein eigenes
+Motiv. **Das Bild steht neben dem Satzspiegel, nicht darunter**, dadurch bleibt der Text auf
+ruhiger Fläche und das Bild ist trotzdem zu sehen. Gemessen liegt der Kontrast von weißer
+Schrift zum hellsten Hintergrundpunkt in der Textspalte zwischen 10,0:1 und 13,4:1.
 
-| Datei | Kapitel | Quelle |
-|---|---|---|
-| `bg-warum.jpg` | 01 Warum | Pexels-Foto 8957646, Frauen im Tanzfitness-Kurs |
-| `bg-studio.jpg` | 04 Homepage | Pexels-Foto 5935969, Kursraum mit gemischter Gruppe |
-| `bg-video.mp4` | 07 Videothek | Pexels-Video 8956004, Frauen proben einen Tanzschritt (sd 960x540) |
-| `bg-plan.jpg` | 10 Fahrplan | Pexels-Foto 7894568, synchrone Gruppe im Studio |
+| Datei | Kapitel | Motiv | Quelle |
+|---|---|---|---|
+| `bg-01-boden.jpg` | 01 Warum | Studioboden mit Spiegelung, Stangen unscharf | Pexels-Foto 6713385 |
+| `bg-04-raum.jpg` | 04 Homepage | heller leerer Kursraum mit Sonnenlicht | Pexels-Foto 7319683 |
+| `bg-video.mp4` | 07 Videothek | Frauen proben einen Tanzschritt (sd 960x540) | Pexels-Video 8956004 |
+| `bg-10-gruppe.jpg` | 10 Fahrplan | Gruppe Frauen im Tanzfitness-Kurs | Pexels-Foto 8957646 |
 
-Alle liegen hinter einem Ink-Schleier bei 26 Prozent Deckung. Gemessen bleibt der
-Kontrast von weißer Schrift zum hellsten Hintergrundpunkt zwischen 5,0:1 und 12,7:1.
-In diesen vier Kapiteln schreibt deshalb alles in Weiß, die Akzentfarbe wäre über
-einem Foto zu schwach.
+Alle unter Pexels-Lizenz, kommerziell nutzbar, keine Namensnennung nötig.
 
-**Nicht verwendet: ein Ausschnitt aus einem Stepper-Ton-Video.** Ein fremdes Video zu
-schneiden und selbst auszuliefern ist eine Vervielfältigung plus öffentliche
-Zugänglichmachung, dafür bräuchte es die Erlaubnis von Julius Burphy. Stattdessen
-läuft im Kapitel „Das Vorbild" die offizielle TikTok-Einbettung, dort bleibt das Video
-bei TikTok gehostet und der Urheber ist genannt.
+**Verworfen:** Nahaufnahmen von tanzenden Füßen (Pexels 5895168 und 10475302) zeigen Ballett-
+und Stepptanzschuhe, falsches Genre für ein Stepper-Format in Sneakern.
 
-⚠️ Wie beim Hero gilt: erkennbare Personen, kein Model Release. Vor einem echten
-Livegang durch eigenes Material vom Drehtag ersetzen.
+**Nicht verwendet: ein Ausschnitt aus einem Stepper-Ton-Video.** Ein fremdes Video zu schneiden
+und selbst auszuliefern ist Vervielfältigung plus öffentliche Zugänglichmachung, dafür bräuchte
+es die Erlaubnis von Julius Burphy. Stattdessen läuft im Kapitel „Das Vorbild" die offizielle
+TikTok-Einbettung, dort bleibt das Video bei TikTok gehostet und der Urheber ist genannt.
+
+**`nikeata-portrait.jpg` liegt hier, wird aber derzeit nicht angezeigt.** Der Bildnachweis im
+Fußbereich wurde entsprechend berichtigt, sonst stünde dort eine Namensnennung für ein Bild,
+das gar nicht auf der Seite ist.
+
+⚠️ Wie beim Hero gilt: erkennbare Personen, kein Model Release. Vor einem echten Livegang
+durch eigenes Material vom Drehtag ersetzen.

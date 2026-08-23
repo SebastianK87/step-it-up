@@ -34,10 +34,12 @@ a{color:inherit}
 h1,h2,h3{font-variation-settings:'wdth' 118,'wght' 900;text-transform:uppercase;line-height:.9;letter-spacing:-.028em}
 h2{font-size:clamp(32px,6vw,76px)}
 h3{font-size:clamp(17px,1.7vw,21px);font-variation-settings:'wdth' 112,'wght' 800;line-height:1.1;
-  letter-spacing:-.01em;overflow-wrap:anywhere;hyphens:auto;min-width:0}
+  letter-spacing:-.01em;hyphens:none;overflow-wrap:normal;text-wrap:balance;min-width:0}
 em.s{font-family:'Fraunces',Georgia,serif;font-style:italic;font-variation-settings:'SOFT' 45,'WONK' 1,'opsz' 90;
   font-weight:400;text-transform:none;letter-spacing:-.005em;color:var(--terra)}
-p{max-width:64ch}
+p{max-width:64ch;text-wrap:pretty;hyphens:none}
+h2{text-wrap:balance}
+.card li,.chk li span,.step ul li{hyphens:none;overflow-wrap:normal}
 .lead{font-size:clamp(18px,2vw,23px);line-height:1.48;color:var(--ink-64)}
 .muted{color:var(--ink-64)} .sm{font-size:15px;line-height:1.6} .xs{font-size:13px;line-height:1.55}
 .kicker{font-variation-settings:'wdth' 110,'wght' 700;text-transform:uppercase;font-size:11px;
@@ -137,18 +139,29 @@ body.flat .hero .datum,body.flat .hero .cta{animation:none;opacity:1;clip-path:n
 .feld>div:hover{background:#fff}
 .deep .feld>div:hover,.dark .feld>div:hover{background:var(--plum-2)}
 
-/* Eigener Hintergrund je Kapitel, damit sich beim Scrollen das Bild ändert */
+/* Eigener Hintergrund je Kapitel. Das Bild steht NEBEN dem Satzspiegel,
+   nicht darunter. So bleibt der Text auf ruhiger Fläche und das Bild sichtbar. */
 .secbg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-.secbg img,.secbg video{position:absolute;inset:0;width:100%;height:118%;top:-9%;
-  object-fit:cover;opacity:.26;filter:grayscale(.42) contrast(1.06) saturate(.9);
-  will-change:transform}
-.secbg::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,var(--plum-deep) 0%,rgba(37,16,31,.72) 40%,
-    rgba(37,16,31,.72) 60%,var(--plum-deep) 100%)}
-.dark .secbg::after{background:linear-gradient(180deg,var(--plum) 0%,rgba(58,27,48,.72) 40%,
-    rgba(58,27,48,.72) 60%,var(--plum) 100%)}
+.secbg img,.secbg video{position:absolute;right:0;top:-6%;width:48%;height:112%;
+  object-fit:cover;opacity:.72;filter:grayscale(.45) contrast(1.06) saturate(.85);will-change:transform}
+.secbg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,var(--plum-deep) 0%,var(--plum-deep) 48%,rgba(37,16,31,.72) 60%,
+    rgba(37,16,31,.24) 80%,rgba(37,16,31,.24) 100%),
+  linear-gradient(180deg,var(--plum-deep) 0%,transparent 12%,transparent 88%,var(--plum-deep) 100%)}
+.dark .secbg::after{background:
+  linear-gradient(90deg,var(--plum) 0%,var(--plum) 48%,rgba(58,27,48,.72) 60%,
+    rgba(58,27,48,.24) 80%,rgba(58,27,48,.24) 100%),
+  linear-gradient(180deg,var(--plum) 0%,transparent 12%,transparent 88%,var(--plum) 100%)}
 section>.wrap{position:relative;z-index:2}
-@media(max-width:640px){.secbg img,.secbg video{opacity:.2}}
+@media(min-width:1001px){[data-bg]>.wrap>*{max-width:min(100%,650px)}
+  [data-bg] .path,[data-bg] .tl,[data-bg] .g2{max-width:650px}}
+@media(max-width:1000px){
+  .secbg img,.secbg video{width:100%;opacity:.2}
+  .secbg::after{background:linear-gradient(180deg,var(--plum-deep) 0%,rgba(37,16,31,.8) 26%,
+    rgba(37,16,31,.8) 74%,var(--plum-deep) 100%)}
+  .dark .secbg::after{background:linear-gradient(180deg,var(--plum) 0%,rgba(58,27,48,.8) 26%,
+    rgba(58,27,48,.8) 74%,var(--plum) 100%)}
+}
 
 /* Über einem Foto ist selbst der aufgehellte Akzent zu schwach. Dort schreibt alles weiß. */
 [data-bg] em.s,[data-bg] .negations span:last-child,[data-bg] .kicker,
@@ -229,7 +242,7 @@ section>.wrap{position:relative;z-index:2}
 .lb{height:18px;display:flex;background:var(--hair)}
 .lb i{display:block;height:100%;width:0;transition:width 1.4s var(--e)}
 .lb .du{background:var(--ink)} .lb .ich{background:var(--terra)}
-.flat .lb .du{width:18%} .flat .lb .ich{width:82%}
+.flat .lb .du{width:17%} .flat .lb .ich{width:83%}
 .lbfoot{display:flex;justify-content:space-between;gap:14px;margin-top:10px;
   font-size:12.5px;letter-spacing:.04em;color:var(--ink-64)}
 .lbfoot b{font-variation-settings:'wdth' 112,'wght' 800;color:var(--ink)}
@@ -283,7 +296,8 @@ body.flat .cue{display:none}
 .band .l{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-38);margin-top:10px;font-variation-settings:'wdth' 108,'wght' 700}
 .dark .band .l,.deep .band .l{color:var(--on-dark-62)}
 .g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:clamp(16px,2.4vw,26px)}
-.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,238px),1fr));gap:clamp(14px,1.8vw,20px)}
+.g4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,24px)}
+@media(max-width:720px){.g4{grid-template-columns:1fr}}
 .g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,282px),1fr));gap:clamp(16px,2.4vw,24px)}
 .card{background:var(--blush);border-radius:4px;padding:clamp(24px,3vw,34px)}
 .dark .card,.deep .card{background:var(--plum-2)} .tint .card{background:#fff}
@@ -392,6 +406,15 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
 .rechnung .d{font-size:13.5px;line-height:1.45;color:var(--on-dark-62);margin-top:6px}
 .rechnung .rx{font-variation-settings:'wdth' 112,'wght' 700;font-size:clamp(20px,2.6vw,34px);
   color:var(--on-dark-62);line-height:1}
+/* Etwas, das noch nicht entschieden ist */
+.optbox{border:1.5px dashed rgba(30,20,24,.28);padding:clamp(22px,3vw,34px);
+  margin-top:clamp(40px,5vw,62px);background:transparent;border-radius:2px}
+.opttag{display:inline-flex;align-items:center;gap:9px;font-variation-settings:'wdth' 110,'wght' 800;
+  text-transform:uppercase;font-size:11px;letter-spacing:.2em;color:var(--ink-64);margin-bottom:14px}
+.opttag::before{content:"";width:9px;height:9px;border-radius:50%;border:2px solid var(--ink-38)}
+.optbox h3{margin-bottom:0}
+.optbox .card{background:rgba(255,255,255,.55);border:1px solid var(--hair)}
+
 /* Die Leiter */
 .leiter{margin-top:clamp(26px,3.4vw,38px);border-top:1px solid var(--hair)}
 .leiter .r{display:grid;grid-template-columns:clamp(78px,10vw,124px) 1fr 1fr;
@@ -486,7 +509,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
   <div class="cue"><i></i>scrollen</div>
 </header>
 <section data-bg class="deep" id="warum">
-  <div class="secbg" aria-hidden="true"><img src="assets/bg-warum.jpg" alt="" loading="lazy"></div>
+  <div class="secbg" aria-hidden="true"><img src="assets/bg-01-boden.jpg" alt="" loading="lazy"></div>
   <div class="wrap">
     <div class="chapter rv"><span class="num">01</span>
       <span><span class="lbl">Warum</span><span class="sub">Der Satz, auf dem alles steht</span></span></div>
@@ -520,6 +543,26 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
         <p class="sm muted">Parallel dazu bauen wir alles, was ein Studio braucht, um STEP IT UP in
           seinen Kursplan zu nehmen: Choreografien, Videoportal, Verträge, Ausbildung, Gebietsschutz.</p></div>
     </div>
+
+    <h3 class="rv" style="margin-top:clamp(40px,5vw,62px)">Und beim Ausbau helfe ich auch</h3>
+    <p class="rv d1" style="margin-top:12px;max-width:58ch">Ein Raum, in dem Menschen tanzen, ist
+      etwas anderes als ein leeres Ladenlokal. Wenn der Ton scheppert oder das Licht kalt ist, merkt
+      das jede Teilnehmerin in der ersten Minute, auch wenn sie nicht sagen kann, woran es liegt.
+      <strong>Ich kenne die Gewerke und hole sie an einen Tisch</strong>, damit das nicht am Ende
+      unter Zeitdruck zusammengeschustert wird.</p>
+    <div class="g3 rv d1" style="margin-top:clamp(24px,3.2vw,34px)">
+      <div class="card"><h3>Ton</h3><p class="sm muted">Anlage, Boxenplatzierung, Verkabelung,
+        Mikrofon für den Unterricht. Damit die Musik trägt und deine Stimme darüber steht, ohne
+        dass du schreien musst.</p></div>
+      <div class="card"><h3>Licht</h3><p class="sm muted">Warm statt Neonröhre, dimmbar, mit
+        Szenen für Kurs, Warmup und Fotos. Licht entscheidet mit darüber, ob sich jemand im
+        Spiegel wohlfühlt.</p></div>
+      <div class="card"><h3>Der Rest drumherum</h3><p class="sm muted">Boden, Spiegel, Lüftung,
+        Umkleiden, Schallschutz zum Nachbarn. Ich koordiniere die Betriebe, prüfe die Angebote und
+        halte die Termine nach.</p></div>
+    </div>
+    <p class="sm muted rv d2" style="margin-top:16px;max-width:58ch">Du sagst, wie es sich anfühlen
+      soll. Ich kümmere mich darum, dass es am Ende auch so klingt und aussieht.</p>
   </div>
 </section>
 
@@ -566,7 +609,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
 </section>
 
 <section data-bg class="dark" id="homepage">
-  <div class="secbg" aria-hidden="true"><img src="assets/bg-studio.jpg" alt="" loading="lazy"></div>
+  <div class="secbg" aria-hidden="true"><img src="assets/bg-04-raum.jpg" alt="" loading="lazy"></div>
   <div class="wrap">
     <div class="chapter rv"><span class="num">04</span>
       <span><span class="lbl">Homepage-Konzeption</span><span class="sub">Aufbau, Inhalte, Anmeldungen</span></span></div>
@@ -667,7 +710,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
     <div class="big rv d2">
       <div><div class="v">1</div><div class="k">System</div><div class="d">Kunden, Kurse, Zahlungen und Videothek an einer Stelle.</div></div>
       <div><div class="v">0</div><div class="k">Listen</div><div class="d">Keine Anmeldeliste am Eingang, keine Excel im Hintergrund, kein Zettel, den jemand abtippt.</div></div>
-      <div><div class="v">24/7</div><div class="k">Live-Monitoring</div><div class="d">Anmeldungen laufen live ein, die Kennzahlen werden laufend überwacht, nicht am Monatsende, sondern in dem Moment, in dem sich etwas ändert.</div></div>
+      <div><div class="v">24/7</div><div class="k">Live im Blick</div><div class="d">Anmeldungen laufen live ein, die Kennzahlen werden laufend überwacht, nicht am Monatsende, sondern in dem Moment, in dem sich etwas ändert.</div></div>
     </div>
   </div>
 </section>
@@ -702,14 +745,14 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
     <p class="sm muted rv d1" style="margin-top:10px;max-width:58ch">Nicht die große Zahl, sondern die
       Zahl, die man auch verteidigen kann, wenn jemand nachfragt. Stand der Erhebungen: Ende 2025.</p>
     <div class="feld rv d1">
-      <div><div class="n" data-c="4202">0</div><div class="k">Inhabergeführte Studios</div>
+      <div><div class="n" data-c="4202">0</div><div class="k">Inhabergeführt</div>
         <div class="d">Anlagen im Einzelsegment, also Betreiber mit einer bis höchstens vier Anlagen.
           Die entscheiden selbst, ohne Zentrale.</div></div>
-      <div><div class="n" data-c="2443">0</div><div class="k">Boutique und Spezialstudios</div>
+      <div><div class="n" data-c="2443">0</div><div class="k">Boutique-Studios</div>
         <div class="d">Special-Interest-Anlagen, darunter Frauenstudios und reine Kurskonzepte.
           Genau die Umgebung, in die das Format passt.</div></div>
       <div><div class="n">1.500<span style="font-size:.5em"> bis </span>2.000</div>
-        <div class="k">Tanzschulen mit eigenem Raum</div>
+        <div class="k">Tanzschulen mit Saal</div>
         <div class="d">Betriebe mit eigenem Saal und laufendem Kursbetrieb, davon 850 im ADTV.
           Nicht die 5.000 aus den Gewerbelisten, die halten keiner Nachfrage stand.</div></div>
       <div class="off"><div class="n" data-c="3002">0</div><div class="k">Kettenanlagen</div>
@@ -743,7 +786,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
 
 <section data-bg class="dark" id="videothek">
   <div class="secbg" aria-hidden="true"><video id="bgv" muted loop playsinline preload="none"
-    poster="assets/bg-plan.jpg"><source src="assets/bg-video.mp4" type="video/mp4"></video></div>
+    poster="assets/bg-10-gruppe.jpg"><source src="assets/bg-video.mp4" type="video/mp4"></video></div>
   <div class="wrap">
     <div class="chapter rv"><span class="num">07</span>
       <span><span class="lbl">Die Videothek</span><span class="sub">Wie deine Arbeit geschützt wird</span></span></div>
@@ -828,7 +871,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
         <p class="xs muted" style="margin-top:12px">Bewusst niedrig gehalten. Für ein Studio ist das
           weniger als ein einziger Kursabend einbringt. Damit ist es keine Investition, über die
           jemand wochenlang nachdenkt.</p></div>
-      <div class="card rv d2"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 2.5 L19 2.5 L19 21.5 L5 21.5 Z"/><path pathLength="1" d="M8 7 L16 7"/><path pathLength="1" d="M8 12 L10 12 M14 12 L16 12 M8 16.5 L10 16.5 M14 16.5 L16 16.5"/></svg></div><h3>Was ich vorher prüfe</h3>
+      <div class="card rv d2"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 2.5 L19 2.5 L19 21.5 L5 21.5 Z"/><path pathLength="1" d="M8 7 L16 7"/><path pathLength="1" d="M8 12 L10 12 M14 12 L16 12 M8 16.5 L10 16.5 M14 16.5 L16 16.5"/></svg></div><h3>Vorher geprüft</h3>
         <p class="sm muted">Was in Berlin für vergleichbare Formate tatsächlich bezahlt wird. Was eine
           Stunde dich wirklich kostet, mit Raum, Trainerin und Technik. Und ab welcher Auslastung
           ein Kurs trägt.</p>
@@ -872,12 +915,16 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
       vor Kosten und vor der Aufteilung zwischen uns. Die Einrichtungsgebühr, die Trainerausbildung
       und die Stepper kommen obendrauf.</p>
 
-    <h3 class="rv" style="margin-top:clamp(44px,5.5vw,70px)">Eine zweite Einnahmequelle: die Stepper</h3>
-    <p class="rv d1" style="margin-top:12px;max-width:58ch">Jedes Lizenzstudio braucht Geräte,
-      etwa fünfzehn bis zwanzig Stück pro Kursraum. Bisher kauft die jeder selbst. Wir können sie
-      mitliefern, und daran verdienen.</p>
+    <div class="optbox rv">
+      <span class="opttag">Option, noch nicht entschieden</span>
+      <h3>Die Stepper selbst liefern</h3>
+      <p style="margin-top:12px;max-width:58ch">Jedes Lizenzstudio braucht Geräte, etwa fünfzehn bis
+        zwanzig Stück pro Kursraum. Bisher kauft die jeder selbst. Wir <em>könnten</em> sie
+        mitliefern und daran verdienen. <strong>Das ist ein Gedanke, den ich dir vorlege, keine
+        Planung.</strong> Er gehört trotzdem hierher, weil er den Einstiegspreis für ein Studio
+        senken kann, ohne dass wir weniger verdienen.</p>
     <div class="g3" style="margin-top:clamp(24px,3.4vw,34px)">
-      <div class="card rv"><h3>Warum sich das lohnt</h3>
+      <div class="card rv"><h3>Die Preislücke</h3>
         <p class="sm muted">Im deutschen Fachhandel kostet ein guter Stepper zwischen 40 und 90 Euro,
           und der Mengenrabatt ist lächerlich: Das Zehnerset kostet pro Stück nur gut vier Prozent
           weniger als das Einzelgerät. <strong>Genau da ist die Lücke.</strong> Wer im Container
@@ -895,14 +942,14 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
         <p class="xs muted" style="margin-top:12px">Meine Empfehlung: erst ohne Branding starten,
           später prüfen.</p></div>
     </div>
-    <p class="sm muted rv d2" style="margin-top:18px;max-width:58ch">Das ist eine Überlegung,
-      keine Entscheidung. Sie gehört aber in die Preisrechnung, weil sie den Einstiegspreis für ein
-      Studio senken kann, ohne dass wir weniger verdienen.</p>
+    <p class="sm muted" style="margin-top:18px;max-width:58ch">Wenn du sagst, das willst du nicht,
+      fällt es ersatzlos weg. Am Lizenzmodell ändert sich dadurch nichts.</p>
+    </div>
   </div>
 </section>
 
 <section data-bg class="deep" id="fahrplan">
-  <div class="secbg" aria-hidden="true"><img src="assets/bg-plan.jpg" alt="" loading="lazy"></div>
+  <div class="secbg" aria-hidden="true"><img src="assets/bg-10-gruppe.jpg" alt="" loading="lazy"></div>
   <div class="wrap">
     <div class="chapter rv"><span class="num">10</span>
       <span><span class="lbl">Der Fahrplan</span><span class="sub">Arbeitsstand, wir gehen ihn zusammen durch</span></span></div>
@@ -1024,7 +1071,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
     <div class="split">
       <div class="col rv" data-chk>
         <div class="colhead"><span class="who">Du</span>
-          <span class="cnt"><b data-cnt>0</b> von 22</span></div>
+          <span class="cnt"><b data-cnt>0</b> von 24</span></div>
         <ul class="chk">
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Dein Gesicht und dein Name</span></li>
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Die Choreografien und der Unterricht</span></li>
@@ -1034,7 +1081,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
       </div>
       <div class="col mine rv d1" data-chk>
         <div class="colhead"><span class="who">Ich</span>
-          <span class="cnt"><b data-cnt>0</b> von 22</span></div>
+          <span class="cnt"><b data-cnt>0</b> von 24</span></div>
         <ul class="chk cols2">
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Domains sichern</span></li>
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Marke zur Anmeldung vorbereiten</span></li>
@@ -1054,13 +1101,15 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Das Akquise-Team aus KI-Bots aufbauen</span></li>
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Google Ads und Meta Ads betreuen</span></li>
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Anmeldungen und Auslastung live beobachten</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Den Ausbau begleiten, Ton, Licht, Boden</span></li>
+        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Gewerke koordinieren und Angebote prüfen</span></li>
         </ul>
       </div>
     </div>
 
     <div class="loadbar rv d2">
       <div class="lb"><i class="du"></i><i class="ich"></i></div>
-      <div class="lbfoot"><span><b>18 Prozent</b> liegen bei dir</span><span><b>82 Prozent</b> liegen bei mir</span></div>
+      <div class="lbfoot"><span><b>17 Prozent</b> liegen bei dir</span><span><b>83 Prozent</b> liegen bei mir</span></div>
     </div>
 
     <p class="rv d2" style="margin-top:clamp(26px,3.4vw,36px);max-width:56ch;font-size:17px">
@@ -1094,11 +1143,11 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
     </div>
     <p class="legal">
       Entwurf zur Abstimmung, kein Angebot, keine Buchung.
-      Portrait: Anelia Janeva, CC BY 3.0, via Wikimedia Commons.
-      Hero-Video: Pexels (ID 8956012), Pexels-Lizenz. Das eingebettete Video stammt von
+      Hero-Video und Kapitelbilder: Pexels (IDs 8956012, 8956004, 6713385, 7319683, 8957646),
+      Pexels-Lizenz. Das eingebettete Video stammt von
       <a href="https://www.tiktok.com/@juliusburphy" target="_blank" rel="noopener">@juliusburphy</a>
       und wird über die offizielle TikTok-Einbettung geladen, es bleibt dort gehostet.
-      Vor einer Veröffentlichung werden Video und Portrait durch eigenes Material ersetzt.
+      Vor einer Veröffentlichung wird alles Bildmaterial durch eigenes ersetzt.
     </p>
   </div>
 </footer>
@@ -1207,8 +1256,8 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
       if (!e.isIntersecting) return;
       lbIo.unobserve(e.target);
       var du = e.target.querySelector('.lb .du'), ich = e.target.querySelector('.lb .ich');
-      setTimeout(function(){ du.style.width = '18%'; }, 200);
-      setTimeout(function(){ ich.style.width = '82%'; }, 480);
+      setTimeout(function(){ du.style.width = '17%'; }, 200);
+      setTimeout(function(){ ich.style.width = '83%'; }, 480);
     });
   }, {threshold:.5});
   document.querySelectorAll('.loadbar').forEach(function(e){ lbIo.observe(e); });
