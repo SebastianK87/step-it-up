@@ -40,7 +40,7 @@ Schrift zum hellsten Hintergrundpunkt in der Textspalte zwischen 10,0:1 und 13,4
 | Datei | Kapitel | Motiv | Quelle |
 |---|---|---|---|
 | `bg-01-boden.jpg` | 01 Warum | Studioboden mit Spiegelung, Stangen unscharf | Pexels-Foto 6713385 |
-| `bg-04-raum.jpg` | 04 Homepage | heller leerer Kursraum mit Sonnenlicht | Pexels-Foto 7319683 |
+| `bg-04-klasse.jpg` | 04 Homepage | Kurs im hellen Studio, eine Frau vorn, weitere dahinter, gleiche Bewegung | Pexels-Foto 4807082 |
 | `bg-video.mp4` | 07 Videothek | Frauen proben einen Tanzschritt (sd 960x540) | Pexels-Video 8956004 |
 | `bg-10-gruppe.jpg` | 10 Fahrplan | Gruppe Frauen im Tanzfitness-Kurs | Pexels-Foto 8957646 |
 
@@ -60,3 +60,11 @@ das gar nicht auf der Seite ist.
 
 ⚠️ Wie beim Hero gilt: erkennbare Personen, kein Model Release. Vor einem echten Livegang
 durch eigenes Material vom Drehtag ersetzen.
+
+**Zu „ein Saal voll Menschen, synchron auf Steppern":** Ein solches Foto gibt es im freien
+Stockmaterial nicht. Step-Aerobic mit mehreren Reihen auf Stepp-Brettern ist ein Format der
+neunziger Jahre, aktuelle Bildarchive decken es nicht ab. Geprüft wurden Pexels-Suchen zu
+„step aerobics class group" und „aerobics step platform gym class", Treffer zeigen entweder
+Einzelpersonen auf einem Stepper oder Gruppen ohne Geräte. Verwendet wird deshalb Foto 4807082:
+eine Frau vorn, weitere dahinter, alle in derselben Bewegung. Es liest sich als ihre Klasse,
+zeigt aber keine Stepper. Der Stepper selbst ist an anderer Stelle auf der Seite gesetzt.

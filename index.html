@@ -46,7 +46,7 @@ h2{text-wrap:balance}
   letter-spacing:.26em;color:var(--terra);display:flex;align-items:center;gap:12px;margin-bottom:20px}
 .kicker::before{content:"";width:34px;height:2px;background:var(--terra);flex:none}
 .dark .kicker{color:var(--blush-2)} .dark .kicker::before{background:var(--blush-2)}
-section{padding:clamp(70px,9.5vw,138px) 0;position:relative}
+section{padding:clamp(70px,9.5vw,138px) 0;position:relative;background:var(--cream)}
 .dark{background:var(--plum);color:var(--on-dark)}
 .deep{background:var(--plum-deep);color:var(--on-dark)}
 .dark p,.dark .muted,.deep p,.deep .muted{color:var(--on-dark-62)}
@@ -79,7 +79,7 @@ nav.stuck{background:rgba(37,16,31,.93);backdrop-filter:blur(14px);box-shadow:0 
 /* HERO */
 .hero{position:sticky;top:0;z-index:0;min-height:100svh;display:flex;align-items:flex-end;
   overflow:hidden;background:var(--plum-deep)}
-section{position:relative;z-index:1}
+section{position:relative;z-index:1;isolation:isolate}
 body.flat .hero{position:relative}
 /* Standbild: Endzustand erzwingen, sonst friert der Export auf dem Startbild ein */
 body.flat .hero h1 span,body.flat .hero .by,body.flat .hero .claim,
@@ -242,7 +242,7 @@ section>.wrap{position:relative;z-index:2}
 .lb{height:18px;display:flex;background:var(--hair)}
 .lb i{display:block;height:100%;width:0;transition:width 1.4s var(--e)}
 .lb .du{background:var(--ink)} .lb .ich{background:var(--terra)}
-.flat .lb .du{width:17%} .flat .lb .ich{width:83%}
+.flat .lb .du{width:18%} .flat .lb .ich{width:82%}
 .lbfoot{display:flex;justify-content:space-between;gap:14px;margin-top:10px;
   font-size:12.5px;letter-spacing:.04em;color:var(--ink-64)}
 .lbfoot b{font-variation-settings:'wdth' 112,'wght' 800;color:var(--ink)}
@@ -543,26 +543,6 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
         <p class="sm muted">Parallel dazu bauen wir alles, was ein Studio braucht, um STEP IT UP in
           seinen Kursplan zu nehmen: Choreografien, Videoportal, Verträge, Ausbildung, Gebietsschutz.</p></div>
     </div>
-
-    <h3 class="rv" style="margin-top:clamp(40px,5vw,62px)">Und beim Ausbau helfe ich auch</h3>
-    <p class="rv d1" style="margin-top:12px;max-width:58ch">Ein Raum, in dem Menschen tanzen, ist
-      etwas anderes als ein leeres Ladenlokal. Wenn der Ton scheppert oder das Licht kalt ist, merkt
-      das jede Teilnehmerin in der ersten Minute, auch wenn sie nicht sagen kann, woran es liegt.
-      <strong>Ich kenne die Gewerke und hole sie an einen Tisch</strong>, damit das nicht am Ende
-      unter Zeitdruck zusammengeschustert wird.</p>
-    <div class="g3 rv d1" style="margin-top:clamp(24px,3.2vw,34px)">
-      <div class="card"><h3>Ton</h3><p class="sm muted">Anlage, Boxenplatzierung, Verkabelung,
-        Mikrofon für den Unterricht. Damit die Musik trägt und deine Stimme darüber steht, ohne
-        dass du schreien musst.</p></div>
-      <div class="card"><h3>Licht</h3><p class="sm muted">Warm statt Neonröhre, dimmbar, mit
-        Szenen für Kurs, Warmup und Fotos. Licht entscheidet mit darüber, ob sich jemand im
-        Spiegel wohlfühlt.</p></div>
-      <div class="card"><h3>Der Rest drumherum</h3><p class="sm muted">Boden, Spiegel, Lüftung,
-        Umkleiden, Schallschutz zum Nachbarn. Ich koordiniere die Betriebe, prüfe die Angebote und
-        halte die Termine nach.</p></div>
-    </div>
-    <p class="sm muted rv d2" style="margin-top:16px;max-width:58ch">Du sagst, wie es sich anfühlen
-      soll. Ich kümmere mich darum, dass es am Ende auch so klingt und aussieht.</p>
   </div>
 </section>
 
@@ -593,15 +573,15 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
       das später die Lizenz kauft.</p>
     <div class="g3 rv d1" style="margin-top:clamp(26px,3.6vw,38px)">
       <div class="card"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M4 20 L4 9"/><path pathLength="1" d="M12 20 L12 5"/><path pathLength="1" d="M20 20 L20 12"/><path pathLength="1" d="M2 20 L22 20"/></svg></div>
-        <h3>Ich zeige Richtungen</h3><p class="sm muted">Fertige Welten, keine Skizzen. Jede mit
+        <h3>Ich schlage vor</h3><p class="sm muted">Fertige Welten, keine Skizzen. Jede mit
         Farben, Schriften, Bildsprache und Ton. Du siehst sofort, wie sich eine anfühlt, statt sie
         dir vorstellen zu müssen.</p></div>
       <div class="card"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M3 7 L11 7"/><path pathLength="1" d="M3 17 L11 17"/><path pathLength="1" d="M14 12 L17 15 L22 8"/></svg></div>
-        <h3>Du wählst und wirfst raus</h3><p class="sm muted">Wir gehen sie zusammen durch. Was nicht
+        <h3>Du wählst aus</h3><p class="sm muted">Wir gehen sie zusammen durch. Was nicht
         nach dir klingt, fliegt. Aus dem, was bleibt, wird eine Richtung, und die schärfen wir so
         lange, bis du sie unterschreiben würdest.</p></div>
       <div class="card"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M4 4 L11 4 L11 20 L4 20 Z"/><path pathLength="1" d="M13 4 L20 4 L20 20 L13 20 Z"/><path pathLength="1" d="M11 4 L13 4"/></svg></div>
-        <h3>Dann wird es festgeschrieben</h3><p class="sm muted">Am Ende steht die Markenbibel:
+        <h3>Dann steht es</h3><p class="sm muted">Am Ende steht die Markenbibel:
         Logo, Farben, Schriften, Bildregeln, Sprache. Ab da sieht jede Anzeige und jedes
         Lizenzstudio gleich aus, auch ohne dich.</p></div>
     </div>
@@ -609,7 +589,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
 </section>
 
 <section data-bg class="dark" id="homepage">
-  <div class="secbg" aria-hidden="true"><img src="assets/bg-04-raum.jpg" alt="" loading="lazy"></div>
+  <div class="secbg" aria-hidden="true"><img src="assets/bg-04-klasse.jpg" alt="" loading="lazy"></div>
   <div class="wrap">
     <div class="chapter rv"><span class="num">04</span>
       <span><span class="lbl">Homepage-Konzeption</span><span class="sub">Aufbau, Inhalte, Anmeldungen</span></span></div>
@@ -734,7 +714,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
       <div class="card rv d1"><h3>Der E-Mail-Funnel</h3><p class="sm muted">Jeder Kontakt bekommt die
         passende nächste Nachricht, automatisch, im richtigen Abstand, bis er zusagt oder absagt.
         Keine Anfrage bleibt liegen, weil gerade niemand Zeit hatte.</p></div>
-      <div class="card rv d2"><h3>Der Weg zum Abschluss</h3><p class="sm muted">Jeder Kontakt hat einen
+      <div class="card rv d2"><h3>Bis zum Abschluss</h3><p class="sm muted">Jeder Kontakt hat einen
         Status: angesprochen, interessiert, Testkurs, Angebot, unterschrieben. Ich sehe jederzeit, wo
         jemand hängen bleibt, und wo nachgefasst werden muss.</p></div>
     </div>
@@ -952,8 +932,8 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
   <div class="secbg" aria-hidden="true"><img src="assets/bg-10-gruppe.jpg" alt="" loading="lazy"></div>
   <div class="wrap">
     <div class="chapter rv"><span class="num">10</span>
-      <span><span class="lbl">Der Fahrplan</span><span class="sub">Arbeitsstand, wir gehen ihn zusammen durch</span></span></div>
-    <h2 class="rv d1" style="color:var(--on-dark)">September bis Januar.</h2>
+      <span><span class="lbl">Der Fahrplan</span><span class="sub">Vom Aufbau bis ins erste Betriebsjahr</span></span></div>
+    <h2 class="rv d1" style="color:var(--on-dark)">September bis Januar.<br>Und dann <em class="s">weiter.</em></h2>
     <div class="tl" id="tl" style="margin-top:clamp(34px,4.5vw,52px)">
       <div class="tl-fill" id="tlfill"></div>
       <div class="step rv"><div class="when">Anfang September</div><h3>Die Grundlage sichern</h3>
@@ -1051,6 +1031,36 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
           <li><strong>Ab hier zählt, was ankommt</strong>, Anmeldungen laufen live ein und werden
             laufend beobachtet, nicht am Monatsende.</li>
         </ul></div>
+      <div class="step rv"><div class="when">Januar bis März</div><h3>Die ersten Wochen entscheiden</h3>
+        <p>Ein Start sagt wenig. Was zählt, ist die dritte Stunde.</p>
+        <ul>
+          <li><strong>Die eine Zahl, auf die ich schaue</strong>: wie viele von denen, die einmal da
+            waren, ein zweites und drittes Mal kommen. Daran hängt alles andere.</li>
+          <li><strong>Der Kursplan wächst mit der Nachfrage</strong>, nicht auf Verdacht. Ein neuer
+            Termin kommt erst dazu, wenn der bestehende regelmäßig voll ist.</li>
+          <li><strong>Die Founder Member sind der erste Motor</strong>. Aus ihnen kommen die
+            Empfehlungen, und sie sagen dir ehrlich, was in der Stunde noch nicht sitzt.</li>
+        </ul></div>
+      <div class="step rv"><div class="when">Frühjahr</div><h3>Die Schule löst sich von dir</h3>
+        <p>Damit dein Kalender nicht zur Grenze des Geschäfts wird.</p>
+        <ul>
+          <li><strong>Eine zweite Trainerin</strong> wird nach dem Format ausgebildet. Ab dann kann
+            ein Kurs stattfinden, auch wenn du drehst.</li>
+          <li><strong>Die Preise werden nachgeschärft</strong>, jetzt mit echten Zahlen statt mit
+            Annahmen: Auslastung, Verweildauer, Beitrag je Mitglied.</li>
+          <li><strong>Aus dem Kursbetrieb wird Material</strong>, echte Bilder und Videos aus echten
+            Stunden, die in die Werbung und in die Lizenzmappe wandern.</li>
+        </ul></div>
+      <div class="step rv"><div class="when">Zweite Jahreshälfte</div><h3>Die Schule wird zum Beweis</h3>
+        <p>Ab hier arbeitet die Schule für das Lizenzgeschäft mit.</p>
+        <ul>
+          <li><strong>Jedes Studio, das anfragt, bekommt Zahlen zu sehen</strong>, keine
+            Versprechen. Was ein Kurs bringt, wie voll er wird, wie lange Teilnehmerinnen bleiben.</li>
+          <li><strong>Die Schule wird der Ort für die Ausbildung</strong>, hier sehen Lizenznehmer,
+            wie eine Stunde wirklich läuft.</li>
+          <li><strong>Und dann die ehrliche Frage</strong>: trägt ein zweiter Standort, oder ist die
+            Lizenz der bessere Weg zu wachsen. Das entscheiden wir mit den Zahlen, nicht vorher.</li>
+        </ul></div>
     </div>
     <p class="rv d2" style="margin-top:30px;max-width:54ch;color:var(--on-dark-62)">
       <strong style="color:var(--on-dark)">Das ist der Arbeitsstand, nicht das letzte Wort.</strong>
@@ -1071,7 +1081,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
     <div class="split">
       <div class="col rv" data-chk>
         <div class="colhead"><span class="who">Du</span>
-          <span class="cnt"><b data-cnt>0</b> von 24</span></div>
+          <span class="cnt"><b data-cnt>0</b> von 22</span></div>
         <ul class="chk">
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Dein Gesicht und dein Name</span></li>
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Die Choreografien und der Unterricht</span></li>
@@ -1081,7 +1091,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
       </div>
       <div class="col mine rv d1" data-chk>
         <div class="colhead"><span class="who">Ich</span>
-          <span class="cnt"><b data-cnt>0</b> von 24</span></div>
+          <span class="cnt"><b data-cnt>0</b> von 22</span></div>
         <ul class="chk cols2">
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Domains sichern</span></li>
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Marke zur Anmeldung vorbereiten</span></li>
@@ -1101,15 +1111,13 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Das Akquise-Team aus KI-Bots aufbauen</span></li>
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Google Ads und Meta Ads betreuen</span></li>
         <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Anmeldungen und Auslastung live beobachten</span></li>
-        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Den Ausbau begleiten, Ton, Licht, Boden</span></li>
-        <li><span class="bx"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 12.4 L10.2 16.4 L18 7.8"/></svg></span><span>Gewerke koordinieren und Angebote prüfen</span></li>
         </ul>
       </div>
     </div>
 
     <div class="loadbar rv d2">
       <div class="lb"><i class="du"></i><i class="ich"></i></div>
-      <div class="lbfoot"><span><b>17 Prozent</b> liegen bei dir</span><span><b>83 Prozent</b> liegen bei mir</span></div>
+      <div class="lbfoot"><span><b>18 Prozent</b> liegen bei dir</span><span><b>82 Prozent</b> liegen bei mir</span></div>
     </div>
 
     <p class="rv d2" style="margin-top:clamp(26px,3.4vw,36px);max-width:56ch;font-size:17px">
@@ -1256,8 +1264,8 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
       if (!e.isIntersecting) return;
       lbIo.unobserve(e.target);
       var du = e.target.querySelector('.lb .du'), ich = e.target.querySelector('.lb .ich');
-      setTimeout(function(){ du.style.width = '17%'; }, 200);
-      setTimeout(function(){ ich.style.width = '83%'; }, 480);
+      setTimeout(function(){ du.style.width = '18%'; }, 200);
+      setTimeout(function(){ ich.style.width = '82%'; }, 480);
     });
   }, {threshold:.5});
   document.querySelectorAll('.loadbar').forEach(function(e){ lbIo.observe(e); });
