@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STEP IT UP, drei Designrichtungen</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'><rect width='80' height='80' fill='%23171615'/><circle cx='40' cy='34' r='17' fill='none' stroke='%23EDE8E1' stroke-width='2'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Cormorant:ital,wght@0,300;0,400;0,500;1,300&family=Jost:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --kohle:#171615; --kohle-2:#211F1E; --rauch:#2C2A28;
+  --nebel:#95908A; --bein:#EDE8E1; --weiss:#F8F6F2;
+  --e:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--kohle);color:var(--bein);font-family:'Jost',system-ui,sans-serif;
+  font-weight:300;font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(22px,5vw,56px)}
+
+/* ---------- Rahmen der Vorlage ---------- */
+.intro{padding:clamp(70px,10vw,130px) 0 clamp(46px,6vw,72px);border-bottom:1px solid #302E2C}
+.intro .kicker{font-family:'Jost';font-weight:400;font-size:11px;letter-spacing:.42em;
+  text-transform:uppercase;color:var(--nebel);margin-bottom:26px}
+.intro h1{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(30px,4.6vw,58px);
+  line-height:1.14;letter-spacing:.02em}
+.intro p{max-width:62ch;margin-top:22px;color:var(--nebel);font-size:16.5px}
+.intro p strong{color:var(--bein);font-weight:400}
+.intro .note{margin-top:30px;padding-left:18px;border-left:1px solid #3A3735;font-size:15px}
+
+/* ---------- Gemeinsames Gerüst der Muster ---------- */
+.muster{border-bottom:1px solid #302E2C;position:relative}
+.mkopf{padding:clamp(40px,5vw,64px) 0 0}
+.mkopf .nr{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;color:#8A857F}
+.mkopf .name{font-family:'Bodoni Moda',serif;font-size:clamp(22px,3vw,34px);font-weight:400;
+  letter-spacing:.14em;text-transform:uppercase;margin-top:10px}
+.mkopf .was{color:var(--nebel);max-width:58ch;margin-top:14px;font-size:15.5px}
+.buehne{margin-top:clamp(30px,4vw,48px);border:1px solid #34312F;overflow:hidden;position:relative}
+.urteil{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));
+  gap:clamp(16px,2.4vw,30px);padding:clamp(26px,3.4vw,40px) 0 clamp(46px,6vw,72px)}
+.urteil h4{font-family:'Jost';font-weight:400;font-size:11px;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--nebel);margin-bottom:9px}
+.urteil p{font-size:15px;line-height:1.62}
+
+/* ============================================================
+   A · GRACE. Der Flyer eins zu eins übersetzt.
+   Zentriert, Lichtkegel, Bodoni in Versalien, senkrechte Randworte.
+   ============================================================ */
+.a{background:var(--kohle);padding:clamp(52px,7vw,96px) clamp(20px,4vw,60px);position:relative;
+  text-align:center;isolation:isolate}
+.a::before{content:"";position:absolute;left:50%;top:-6%;width:min(76%,620px);height:96%;
+  transform:translateX(-50%);z-index:0;
+  background:radial-gradient(58% 62% at 50% 42%,rgba(237,232,225,.30),rgba(237,232,225,.10) 46%,transparent 72%);
+  clip-path:polygon(30% 0,70% 0,100% 100%,0 100%)}
+.a>*{position:relative;z-index:1}
+.a .ueber{font-family:'Jost';font-weight:300;font-size:11px;letter-spacing:.46em;
+  text-transform:uppercase;color:var(--nebel)}
+.a h2{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(30px,6.6vw,74px);
+  letter-spacing:.14em;line-height:1.1;margin-top:20px;color:var(--weiss)}
+.a .unter{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(12px,1.5vw,17px);
+  letter-spacing:.34em;text-transform:uppercase;color:var(--bein);margin-top:16px}
+.a .satz{font-family:'Cormorant',serif;font-weight:300;font-style:italic;
+  font-size:clamp(19px,2.6vw,30px);line-height:1.5;color:var(--bein);
+  max-width:26ch;margin:clamp(34px,4.4vw,52px) auto 0}
+.a .fakten{margin-top:clamp(36px,4.6vw,56px);font-size:14.5px;color:var(--nebel);line-height:2}
+.a .fakten b{font-weight:400;color:var(--bein)}
+.a .flanke{position:absolute;top:50%;font-family:'Jost';font-weight:300;font-size:10.5px;
+  letter-spacing:.5em;text-transform:uppercase;color:#8A857F;z-index:1}
+.a .fl{left:clamp(6px,1.6vw,22px);transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl}
+.a .fr{right:clamp(6px,1.6vw,22px);transform:translateY(-50%);writing-mode:vertical-rl}
+.a .zahlen{display:flex;justify-content:center;align-items:baseline;gap:clamp(16px,3vw,42px);
+  margin-top:clamp(34px,4.4vw,52px);flex-wrap:wrap}
+.a .zahlen div{text-align:center}
+.a .zahlen .z{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(30px,4.6vw,54px);
+  line-height:1;color:var(--weiss)}
+.a .zahlen .l{font-family:'Jost';font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--nebel);margin-top:12px}
+.a .zahlen .op{font-family:'Cormorant',serif;font-size:clamp(18px,2.4vw,28px);color:#8A857F}
+
+/* ============================================================
+   B · BÜHNE. Dieselbe Monochromie, aber asymmetrisch.
+   Foto als Bühne, Text links, Haarlinien, Ziffern in Mono.
+   ============================================================ */
+.b{background:var(--kohle-2);position:relative;overflow:hidden;
+  padding:clamp(52px,7vw,92px) clamp(22px,4vw,58px)}
+.b::before{content:"";position:absolute;right:-8%;top:-14%;width:62%;height:128%;z-index:0;
+  background:radial-gradient(48% 46% at 62% 40%,rgba(237,232,225,.22),transparent 66%)}
+.b .inhalt{position:relative;z-index:1;max-width:640px}
+.b .ueber{font-family:'JetBrains Mono',monospace;font-weight:300;font-size:11px;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--nebel)}
+.b h2{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(32px,5.8vw,66px);
+  line-height:1.06;letter-spacing:-.01em;margin-top:22px;color:var(--weiss)}
+.b h2 em{font-style:italic;color:var(--nebel)}
+.b .satz{font-family:'Source Serif 4',serif;font-weight:300;font-size:clamp(17px,2vw,21px);
+  line-height:1.62;color:var(--bein);max-width:46ch;margin-top:26px}
+.b .linie{height:1px;background:#3A3735;margin:clamp(32px,4vw,46px) 0 0}
+.b .reihe{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:20px;align-items:baseline;
+  padding:15px 0;border-bottom:1px solid #302E2C}
+.b .reihe .n{font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A857F;letter-spacing:.1em}
+.b .reihe .t{font-family:'Source Serif 4',serif;font-size:16px;color:var(--bein)}
+.b .reihe .v{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--weiss);
+  font-variant-numeric:tabular-nums}
+.b .reihe.stark{border-bottom-color:#4A4643}
+.b .reihe.stark .v{font-size:16px}
+
+/* ============================================================
+   C · BEIN. Umgedreht, heller Grund wie eine Modestrecke.
+   ============================================================ */
+.c{background:var(--bein);color:#1D1B19;padding:clamp(52px,7vw,96px) clamp(22px,4vw,58px)}
+.c .ueber{font-family:'Jost';font-weight:400;font-size:11px;letter-spacing:.42em;
+  text-transform:uppercase;color:#6B665F}
+.c h2{font-family:'Cormorant',serif;font-weight:300;font-size:clamp(36px,7.4vw,86px);
+  line-height:1.02;letter-spacing:-.01em;margin-top:20px;color:#141312;max-width:16ch}
+.c h2 em{font-style:italic}
+.c .satz{font-family:'Jost';font-weight:300;font-size:clamp(16px,1.9vw,19px);line-height:1.72;
+  color:#453F3A;max-width:48ch;margin-top:26px}
+.c .raster{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));
+  gap:1px;background:#CFC8BF;margin-top:clamp(34px,4.4vw,52px);border:1px solid #CFC8BF}
+.c .raster>div{background:var(--bein);padding:clamp(20px,2.6vw,30px)}
+.c .raster .z{font-family:'Cormorant',serif;font-weight:400;font-size:clamp(30px,4vw,46px);
+  line-height:1;color:#141312}
+.c .raster .l{font-family:'Jost';font-weight:400;font-size:10.5px;letter-spacing:.26em;
+  text-transform:uppercase;color:#5F5A54;margin-top:12px}
+.c .raster .d{font-size:14px;line-height:1.55;color:#4F4A45;margin-top:8px}
+
+/* ---------- Auswahl ---------- */
+.wahl{padding:clamp(56px,7vw,100px) 0 clamp(70px,9vw,120px)}
+.wahl h3{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(24px,3.4vw,40px);
+  letter-spacing:.04em}
+.wahl p{color:var(--nebel);max-width:60ch;margin-top:18px}
+.wahl ol{margin:26px 0 0;padding-left:20px;color:var(--nebel);max-width:60ch}
+.wahl ol li{margin-top:10px}
+.wahl ol li strong{color:var(--bein);font-weight:400}
+
+@media(max-width:640px){
+  .a .flanke{display:none}
+  .a::before{width:96%}
+}
+</style>
+</head>
+<body>
+
+<section class="intro">
+  <div class="wrap">
+    <div class="kicker">Move Society · Designrichtungen</div>
+    <h1>Drei Wege, die aus deinem Flyer kommen.</h1>
+    <p>Der Geburtstagsflyer sagt sehr genau, was die Marke sein soll: <strong>kein Akzentton,
+      Licht statt Farbe, Serifen in Versalien mit weiter Laufweite, zentriert, viel Ruhe.</strong>
+      Genau das Gegenteil der ersten Fassung. Hier sind drei Übersetzungen davon auf eine Website.</p>
+    <p class="note">Jede Richtung zeigt zwei Dinge: wie sich ein Kapitelanfang anfühlt, und wie
+      Zahlen darin aussehen. Der zweite Punkt entscheidet mit, denn diese Seite muss Marktzahlen,
+      eine Preisleiter und einen Zeitstrahl tragen. Ein reines Modeplakat kann das nicht.</p>
+  </div>
+</section>
+
+<!-- ============ A ============ -->
+<section class="muster">
+  <div class="wrap">
+    <div class="mkopf">
+      <div class="nr">Richtung 01</div>
+      <div class="name">Grace</div>
+      <p class="was">Der Flyer eins zu eins. Zentriert, ein Lichtkegel hinter der Schrift,
+        Bodoni in Versalien, senkrechte Worte an den Rändern. Am nächsten an dem, was sie
+        schon selbst gewählt hat.</p>
+    </div>
+  </div>
+  <div class="wrap"><div class="buehne">
+    <div class="a">
+      <span class="flanke fl">Keep Moving</span>
+      <span class="flanke fr">Keep Shining</span>
+      <div class="ueber">Kapitel 09</div>
+      <h2>Preise</h2>
+      <div class="unter">Was hundert Lizenzen bedeuten</div>
+      <p class="satz">Hundert Studios, jedes neunundneunzig Euro im Monat.</p>
+      <div class="zahlen">
+        <div><div class="z">99 €</div><div class="l">im Monat</div></div>
+        <span class="op">&times;</span>
+        <div><div class="z">100</div><div class="l">Lizenzen</div></div>
+        <span class="op">=</span>
+        <div><div class="z">9.900 €</div><div class="l">im Monat</div></div>
+      </div>
+      <div class="fakten">
+        <b>118.800 €</b> im Jahr, volle Laufrate<br>
+        <b>64.300 €</b> im ersten Jahr, mit Aufbau
+      </div>
+    </div>
+  </div></div>
+  <div class="wrap"><div class="urteil">
+    <div><h4>Was dafür spricht</h4><p>Sie erkennt ihre eigene Handschrift sofort wieder.
+      Ruhig, teuer, erwachsen. Der Lichtkegel ist ein eigenes Motiv, das keine Konkurrenz hat.</p></div>
+    <div><h4>Wo es eng wird</h4><p>Zentrierter Satz trägt keine langen Texte. Für Fahrplan und
+      Checkliste müsste die Seite dort auf linksbündig wechseln, sonst wird sie anstrengend.</p></div>
+    <div><h4>Mein Rat</h4><p>Nimm das als Kapitelanfang und als Titelseite, nicht als Layout
+      für alles. Als Auftakt ist es das Stärkste von den dreien.</p></div>
+  </div></div>
+</section>
+
+<!-- ============ B ============ -->
+<section class="muster">
+  <div class="wrap">
+    <div class="mkopf">
+      <div class="nr">Richtung 02</div>
+      <div class="name">Bühne</div>
+      <p class="was">Dieselbe Monochromie, aber der Satz steht links und das Licht rechts.
+        Playfair für die Überschriften, Ziffern in einer schmalen Monospace. Gebaut, um Zahlen
+        zu tragen, ohne laut zu werden.</p>
+    </div>
+  </div>
+  <div class="wrap"><div class="buehne">
+    <div class="b">
+      <div class="inhalt">
+        <div class="ueber">09 · Preise</div>
+        <h2>Erst rechnen.<br><em>Dann festlegen.</em></h2>
+        <p class="satz">Neunundneunzig Euro im Monat je Lizenz. Ein Preis, keine Staffel,
+          kein Verhandeln. Für ein Studio ist das weniger, als ein einziger Kursabend einbringt.</p>
+        <div class="linie"></div>
+        <div class="reihe"><span class="n">01</span><span class="t">15 Lizenzen</span><span class="v">17.820 €</span></div>
+        <div class="reihe"><span class="n">02</span><span class="t">35 Lizenzen</span><span class="v">41.580 €</span></div>
+        <div class="reihe"><span class="n">03</span><span class="t">60 Lizenzen</span><span class="v">71.280 €</span></div>
+        <div class="reihe stark"><span class="n">04</span><span class="t">100 Lizenzen, das Ziel</span><span class="v">118.800 €</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="wrap"><div class="urteil">
+    <div><h4>Was dafür spricht</h4><p>Trägt lange Texte, Tabellen und den Zeitstrahl ohne
+      Bruch. Die Monospace-Ziffern geben den Zahlen Autorität, ohne Farbe zu brauchen.</p></div>
+    <div><h4>Wo es eng wird</h4><p>Weiter weg vom Flyer. Es fühlt sich weniger nach Einladung
+      an und mehr nach Dokument. Das kann gewollt sein, muss es aber nicht.</p></div>
+    <div><h4>Mein Rat</h4><p>Das ist die Richtung, in der die ganze Seite am wenigsten
+      kämpft. Als Grundgerüst mit Grace als Auftakt wäre es die beste Kombination.</p></div>
+  </div></div>
+</section>
+
+<!-- ============ C ============ -->
+<section class="muster">
+  <div class="wrap">
+    <div class="mkopf">
+      <div class="nr">Richtung 03</div>
+      <div class="name">Bein</div>
+      <p class="was">Umgedreht. Heller Grund, Kohle als Schrift, Cormorant sehr groß und leicht.
+        Wie eine Modestrecke im Magazin. Dieselbe Familie wie der Flyer, nur bei Tageslicht.</p>
+    </div>
+  </div>
+  <div class="wrap"><div class="buehne">
+    <div class="c">
+      <div class="ueber">Kapitel 06 · Akquise</div>
+      <h2>Wie groß das Feld <em>wirklich</em> ist</h2>
+      <p class="satz">Nicht die große Zahl, sondern die Zahl, die man auch verteidigen kann,
+        wenn jemand nachfragt.</p>
+      <div class="raster">
+        <div><div class="z">4.202</div><div class="l">Inhabergeführt</div>
+          <div class="d">Anlagen im Einzelsegment, Betreiber mit einer bis vier Anlagen.</div></div>
+        <div><div class="z">2.443</div><div class="l">Boutique</div>
+          <div class="d">Special-Interest, darunter Frauenstudios und reine Kurskonzepte.</div></div>
+        <div><div class="z">1.750</div><div class="l">Tanzschulen</div>
+          <div class="d">Betriebe mit eigenem Saal und laufendem Kursbetrieb.</div></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="wrap"><div class="urteil">
+    <div><h4>Was dafür spricht</h4><p>Am besten lesbar von allen dreien, gerade auf dem Handy
+      und bei langen Absätzen. Wirkt im besten Sinn wie gedrucktes Papier.</p></div>
+    <div><h4>Wo es eng wird</h4><p>Der Flyer lebt vom Dunkel. Hell nimmt ihm das Dramatische.
+      Und Fotos von Tanzenden brauchen auf hellem Grund eine sehr saubere Freistellung.</p></div>
+    <div><h4>Mein Rat</h4><p>Stark für die Lizenzseite an Studios, wo es sachlich zugeht.
+      Für ihre eigene Schule wäre mir das zu brav.</p></div>
+  </div></div>
+</section>
+
+<section class="wahl">
+  <div class="wrap">
+    <h3>Was ich dir vorschlage</h3>
+    <p>Nicht eine der drei pur, sondern eine Kombination. Der Flyer selbst macht es genauso vor:
+      ein starker dunkler Auftakt, darunter ruhige Information.</p>
+    <ol>
+      <li><strong>Grace für die Auftakte.</strong> Der Kopf der Seite und jeder Kapitelanfang,
+        zentriert, mit Lichtkegel. Das ist der Moment, in dem sie ihre Marke wiedererkennt.</li>
+      <li><strong>Bühne für alles dahinter.</strong> Linksbündig, Haarlinien, Ziffern in
+        Monospace. Damit tragen Marktzahlen, Preisleiter, Zeitstrahl und Checkliste, ohne dass
+        die Ruhe kippt.</li>
+      <li><strong>Bein als Ausnahme.</strong> Ein bis zwei helle Kapitel als Atempause im
+        dunklen Verlauf, so wie jetzt der Wechsel hell und dunkel funktioniert, nur eben in
+        Bein statt in Rosé.</li>
+    </ol>
+    <p style="margin-top:26px">Sag mir, welche Richtung es wird, dann baue ich die ganze Seite
+      darin neu. Farben, Schriften und Bewegung liegen als Bausteine schon fertig, das ist
+      Arbeit von einem Tag, nicht von einer Woche.</p>
+  </div>
+</section>
+
+</body>
+</html>
