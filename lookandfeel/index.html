@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Look and Feel, aus deinen Worten</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'><rect width='80' height='80' fill='%230A1338'/><rect x='14' y='52' width='52' height='8' fill='%23E8B93A'/><rect x='14' y='36' width='36' height='8' fill='%23E8B93A'/><rect x='14' y='20' width='20' height='8' fill='%23E8B93A'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinte:#0A1338; --royal:#1B3FA0; --royal-tief:#12245E;
+  --gold:#E8B93A; --bein:#F4F1EA; --bein-2:#E6E1D6;
+  --nebel:rgba(244,241,234,.72); --nebel-2:rgba(244,241,234,.52);
+  --hair:rgba(244,241,234,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--tinte);color:var(--bein);font-family:'Inter',system-ui,sans-serif;
+  font-weight:300;font-size:16.5px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.wrap{max-width:1140px;margin:0 auto;padding:0 clamp(22px,5vw,58px)}
+h1,h2,h3{font-family:'Archivo',sans-serif;font-weight:900;letter-spacing:-.03em;line-height:.94;
+  text-wrap:balance}
+em.s{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:300;
+  letter-spacing:-.01em;text-transform:none;color:var(--gold)}
+p{max-width:64ch;text-wrap:pretty}
+
+.kicker{font-family:'Archivo';font-weight:600;font-size:11px;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.kicker::before{content:"";width:26px;height:2px;background:var(--gold);flex:none}
+section{padding:clamp(64px,8.5vw,120px) 0;position:relative;border-top:1px solid var(--hair)}
+section:first-of-type{border-top:0}
+.lead{font-size:clamp(17px,2vw,21px);line-height:1.55;color:var(--nebel);margin-top:22px}
+h2{font-size:clamp(28px,4.6vw,58px)}
+
+/* ---------- Kopf ---------- */
+.kopf{min-height:86svh;display:flex;align-items:center;border:0;
+  background:radial-gradient(70% 60% at 22% 30%,rgba(27,63,160,.55),transparent 62%),
+             radial-gradient(50% 44% at 84% 76%,rgba(232,185,58,.14),transparent 66%),var(--tinte)}
+.kopf h1{font-size:clamp(40px,7.4vw,96px);max-width:16ch}
+.kopf .unter{margin-top:clamp(26px,3.4vw,38px);font-family:'Fraunces',serif;font-style:italic;
+  font-weight:300;font-size:clamp(19px,2.6vw,30px);color:var(--bein);max-width:30ch;line-height:1.4}
+.kopf .hinweis{margin-top:clamp(34px,4.4vw,48px);font-size:14px;color:var(--nebel-2);max-width:56ch}
+
+/* ---------- Zeichen ---------- */
+.zeichen{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));
+  gap:1px;background:var(--hair);border:1px solid var(--hair);margin-top:clamp(30px,4vw,44px)}
+.zeichen>div{background:var(--tinte);padding:clamp(26px,3.4vw,40px);display:flex;
+  flex-direction:column;align-items:center;justify-content:center;gap:20px;min-height:200px}
+.zeichen .bez{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--nebel-2);
+  font-family:'Archivo';font-weight:600;text-align:center}
+.mono{width:74px;height:74px}
+.mono path,.mono line{fill:none;stroke:var(--gold);stroke-width:5;
+  stroke-linecap:square;stroke-linejoin:miter}
+.mono rect{fill:var(--gold)}
+
+/* ---------- Farbe ---------- */
+.pal{margin-top:clamp(30px,4vw,44px);border:1px solid var(--hair)}
+.pal + .pal{margin-top:clamp(18px,2.4vw,28px)}
+.pal .kopfz{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
+  gap:12px;padding:clamp(18px,2.4vw,26px)}
+.pal .kopfz b{font-family:'Archivo';font-weight:800;font-size:clamp(17px,2vw,22px);letter-spacing:-.01em}
+.pal .kopfz span{font-size:14px;color:var(--nebel);max-width:52ch}
+.streifen{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,108px),1fr))}
+.streifen div{height:110px;display:flex;align-items:flex-end;padding:11px;
+  font-family:'Archivo';font-weight:600;font-size:10.5px;letter-spacing:.08em}
+.probe{padding:clamp(20px,2.6vw,30px);border-top:1px solid var(--hair);display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(14px,2vw,22px)}
+.probe .karte{padding:clamp(18px,2.2vw,26px)}
+.probe .karte .gr{font-family:'Archivo';font-weight:900;font-size:clamp(22px,2.8vw,32px);
+  line-height:1.02;letter-spacing:-.03em}
+.probe .karte .kl{font-size:13.5px;margin-top:10px;line-height:1.5}
+.messwert{font-family:'Archivo';font-weight:600;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--nebel-2);padding:0 clamp(20px,2.6vw,30px) clamp(18px,2.4vw,24px)}
+
+/* ---------- Sprache ---------- */
+.saetze{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));
+  gap:1px;background:var(--hair);border:1px solid var(--hair);margin-top:clamp(28px,3.6vw,40px)}
+.saetze>div{background:var(--tinte);padding:clamp(24px,3vw,34px)}
+.saetze .satz{font-family:'Archivo';font-weight:900;font-size:clamp(21px,2.6vw,30px);
+  line-height:1.06;letter-spacing:-.03em}
+.saetze .quelle{font-size:13.5px;color:var(--nebel-2);margin-top:14px;line-height:1.55}
+.saetze .quelle b{color:var(--gold);font-weight:500}
+
+/* ---------- Werte ---------- */
+.werte{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));
+  gap:clamp(16px,2.4vw,28px);margin-top:clamp(30px,4vw,44px)}
+.werte>div{border-left:2px solid var(--gold);padding-left:18px}
+.werte h3{font-family:'Archivo';font-weight:800;font-size:17px;letter-spacing:-.01em;line-height:1.15}
+.werte p{font-size:14.5px;color:var(--nebel);margin-top:9px;line-height:1.55}
+
+/* ---------- Typografie ---------- */
+.typo{margin-top:clamp(30px,4vw,44px);border:1px solid var(--hair);padding:clamp(24px,3.2vw,40px)}
+.typo .zeile{padding:20px 0;border-bottom:1px solid var(--hair)}
+.typo .zeile:last-child{border-bottom:0;padding-bottom:0}
+.typo .name{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--nebel-2);
+  font-family:'Archivo';font-weight:600;margin-bottom:12px}
+.t1{font-family:'Archivo';font-weight:900;font-size:clamp(28px,5vw,58px);letter-spacing:-.035em;line-height:1}
+.t2{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(23px,3.6vw,42px);line-height:1.15}
+.t3{font-family:'Inter';font-weight:300;font-size:clamp(15px,1.7vw,18px);line-height:1.65;color:var(--nebel)}
+
+/* ---------- Namen ---------- */
+.namen{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));
+  gap:1px;background:var(--hair);border:1px solid var(--hair);margin-top:clamp(28px,3.6vw,40px)}
+.namen>div{background:var(--tinte);padding:clamp(22px,2.8vw,32px)}
+.namen .n{font-family:'Archivo';font-weight:900;font-size:clamp(19px,2.3vw,26px);
+  letter-spacing:-.02em;line-height:1.05}
+.namen .w{font-size:13.5px;color:var(--nebel-2);margin-top:12px;line-height:1.55}
+
+/* ---------- Hinweis ---------- */
+.warn{border:1px dashed rgba(232,185,58,.5);padding:clamp(20px,2.6vw,30px);
+  margin-top:clamp(28px,3.6vw,40px)}
+.warn b{color:var(--gold);font-weight:500}
+.warn p{max-width:70ch}
+.warn p + p{margin-top:12px}
+
+.schluss{background:var(--bein);color:#2A3047}
+.schluss .kicker{color:#7A5C08}
+.schluss .kicker::before{background:#7A5C08}
+.schluss h2{color:#0A1338}
+.schluss p{color:#3D4356}
+.schluss ol{margin-top:24px;padding-left:20px;max-width:62ch;color:#3D4356}
+.schluss ol li{margin-top:11px}
+.schluss ol li b{color:#0A1338;font-weight:600}
+</style>
+</head>
+<body>
+
+<section class="kopf">
+  <div class="wrap">
+    <div class="kicker">Look and Feel · Arbeitsstand</div>
+    <h1>Jeder soll <em class="s">gesehen</em> werden.</h1>
+    <p class="unter">Aus deinen eigenen Worten gebaut. Königsblau, Gold, viel Raum und ein Ton,
+      der niemanden von oben herab anschaut.</p>
+    <p class="hinweis">Der Name STEP IT UP ist raus. Diese Seite zeigt deshalb die Welt, nicht
+      das Wort. Wie das Ding am Ende heißt, entscheiden wir danach.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">01 · Der Kern</div>
+    <h2 style="max-width:18ch">Nicht Fitness.<br><em class="s">Zugehörigkeit.</em></h2>
+    <p class="lead">Du hast im Gespräch dreimal dasselbe gesagt, in verschiedenen Worten: jeder
+      soll gesehen werden, Gleichheit ist wichtig, und du willst Community und ein Familiengefühl
+      schaffen. Das ist nicht die Verpackung, das ist der Kern.</p>
+    <p class="lead" style="margin-top:16px">Dazu kommt dein eigener Satz, dass du dich selbst
+      immer unterschätzt hast. Genau daraus entsteht die Haltung: Hier muss niemand etwas können,
+      bevor er anfängt.</p>
+
+    <div class="werte">
+      <div><h3>Gesehen werden</h3><p>Keine hinteren Reihen. Der Raum ist so gebaut, dass jede
+        einmal vorne steht.</p></div>
+      <div><h3>Zugehörigkeit</h3><p>Danach strebt jeder. Wir bieten es an, ohne dass man sich
+        dafür qualifizieren muss.</p></div>
+      <div><h3>Leichtigkeit</h3><p>Kein Leistungsgedanke. Wer lacht, macht es richtig.</p></div>
+      <div><h3>Momentum</h3><p>Dein Wort. Glück ist Momentum, und Momentum entsteht durch
+        Bewegung, nicht durch Vorsätze.</p></div>
+      <div><h3>The Roots</h3><p>Deine jamaikanischen Wurzeln sind kein Dekor. Sie sind der
+        Grund, warum es klingt, wie es klingt.</p></div>
+      <div><h3>Tribe</h3><p>Im Kreis, nicht in Reihen. Wer im Kreis steht, sieht die anderen
+        und wird selbst gesehen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">02 · Farbe</div>
+    <h2 style="max-width:17ch">Königsblau.<br>Und <em class="s">eine</em> Signalfarbe.</h2>
+    <p class="lead">Du willst reich und edel, aber nicht abgehoben. Das entsteht nicht durch das
+      Blau allein, sondern durch das, was daneben liegt. Vier Paarungen, jede mit gemessenem
+      Kontrast, damit später nichts unlesbar wird.</p>
+
+    <div class="pal">
+      <div class="kopfz"><b>A · Königsblau und Gold</b><span>Reich, warm, mit einem Nicken
+        Richtung Jamaika, ohne Flagge zu sein. Mein Favorit.</span></div>
+      <div class="streifen">
+        <div style="background:#0A1338;color:#F4F1EA">Tinte 0A1338</div>
+        <div style="background:#12245E;color:#F4F1EA">Tief 12245E</div>
+        <div style="background:#1B3FA0;color:#F4F1EA">Royal 1B3FA0</div>
+        <div style="background:#E8B93A;color:#12245E">Gold E8B93A</div>
+        <div style="background:#F4F1EA;color:#12245E">Bein F4F1EA</div>
+      </div>
+      <div class="probe">
+        <div class="karte" style="background:#1B3FA0;color:#F4F1EA">
+          <div class="gr">Jeder soll gesehen werden.</div>
+          <div class="kl" style="color:rgba(244,241,234,.82)">Weiß auf Royal, 9,2 zu 1.</div></div>
+        <div class="karte" style="background:#12245E;color:#E8B93A">
+          <div class="gr">One, two, three.</div>
+          <div class="kl" style="color:rgba(244,241,234,.76)">Gold auf Tief, 6,5 zu 1.</div></div>
+        <div class="karte" style="background:#F4F1EA;color:#1B3FA0">
+          <div class="gr">Du kannst das.</div>
+          <div class="kl" style="color:#454B60">Royal auf Bein, 7,9 zu 1.</div></div>
+      </div>
+      <div class="messwert">Gold auf Royal nur groß setzen, dort sind es 4,1 zu 1.</div>
+    </div>
+
+    <div class="pal">
+      <div class="kopfz"><b>B · Königsblau und Signalgrün</b><span>Jünger, lauter, näher an einer
+        Sportmarke. Trägt Zahlen und Knöpfe sehr gut.</span></div>
+      <div class="streifen">
+        <div style="background:#0A1338;color:#F4F1EA">Tinte 0A1338</div>
+        <div style="background:#1E3FCB;color:#F4F1EA">Royal 1E3FCB</div>
+        <div style="background:#C6FF3D;color:#0A1338">Signal C6FF3D</div>
+        <div style="background:#F4F1EA;color:#12245E">Bein F4F1EA</div>
+      </div>
+      <div class="probe">
+        <div class="karte" style="background:#1E3FCB;color:#C6FF3D">
+          <div class="gr">No time. Just move.</div>
+          <div class="kl" style="color:rgba(244,241,234,.82)">Signal auf Royal, 7,8 zu 1.</div></div>
+        <div class="karte" style="background:#C6FF3D;color:#0A1338">
+          <div class="gr">Anmelden</div>
+          <div class="kl" style="color:#2A3350">Als Knopf sehr stark, 14 zu 1.</div></div>
+      </div>
+      <div class="messwert">Dieses Grün ist laut. Es funktioniert als Akzent, nicht als Fläche.</div>
+    </div>
+
+    <div class="pal">
+      <div class="kopfz"><b>C · Kobalt und Koralle</b><span>Wärmer und menschlicher, weniger
+        königlich. Näher an Tanz als an Sport.</span></div>
+      <div class="streifen">
+        <div style="background:#0D1633;color:#F4F1EA">Tinte 0D1633</div>
+        <div style="background:#2340C8;color:#F4F1EA">Kobalt 2340C8</div>
+        <div style="background:#FF6A4D;color:#0D1633">Koralle FF6A4D</div>
+        <div style="background:#F6F2EC;color:#12245E">Bein F6F2EC</div>
+      </div>
+      <div class="probe">
+        <div class="karte" style="background:#2340C8;color:#F4F1EA">
+          <div class="gr">Be yourself.</div>
+          <div class="kl" style="color:rgba(244,241,234,.82)">Weiß auf Kobalt, 8,1 zu 1.</div></div>
+        <div class="karte" style="background:#FF6A4D;color:#12162E">
+          <div class="gr">Komm dazu.</div>
+          <div class="kl" style="color:#3A2018">Koralle als Fläche mit dunkler Schrift.</div></div>
+      </div>
+      <div class="messwert">Koralle auf Kobalt liegt bei 3,3 zu 1, also nur für große Schrift.</div>
+    </div>
+
+    <div class="pal">
+      <div class="kopfz"><b>D · Klein-Blau, fast ohne Akzent</b><span>Am edelsten und am
+        stillsten. Die Farbe ist das ganze Ereignis.</span></div>
+      <div class="streifen">
+        <div style="background:#001A55;color:#F4F1EA">Nacht 001A55</div>
+        <div style="background:#002FA7;color:#F4F1EA">Klein 002FA7</div>
+        <div style="background:#8FA8E8;color:#001A55">Dunst 8FA8E8</div>
+        <div style="background:#F4F1EA;color:#002FA7">Bein F4F1EA</div>
+      </div>
+      <div class="probe">
+        <div class="karte" style="background:#002FA7;color:#F4F1EA">
+          <div class="gr">Your sound. Your soul.</div>
+          <div class="kl" style="color:rgba(244,241,234,.82)">Weiß auf Klein, 10,7 zu 1.</div></div>
+      </div>
+      <div class="messwert">Sehr elegant, aber schwerer zu merken. Ohne Signalfarbe fehlt der Haken.</div>
+    </div>
+
+    <div class="warn">
+      <p><b>Was ich noch prüfe:</b> welche Marken dieses Blau schon stark besetzen, damit wir
+        nicht neben jemandem stehen, der es zuerst hatte. Das Ergebnis kommt nach.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">03 · Das Zeichen</div>
+    <h2 style="max-width:17ch">Drei Stufen.<br>Zwei <em class="s">Buchstaben.</em></h2>
+    <p class="lead">Du willst ein Monogramm aus N und T. Die drei Stufen sind der zweite Weg:
+      ein Zeichen, das ohne Buchstaben funktioniert und in jeder Größe lesbar bleibt, vom
+      Profilbild bis zum Boden im Studio.</p>
+
+    <div class="zeichen">
+      <div>
+        <svg class="mono" viewBox="0 0 80 80" aria-hidden="true">
+          <rect x="14" y="52" width="52" height="8"/>
+          <rect x="14" y="36" width="36" height="8"/>
+          <rect x="14" y="20" width="20" height="8"/>
+        </svg>
+        <span class="bez">Die Stufe</span>
+      </div>
+      <div>
+        <svg class="mono" viewBox="0 0 80 80" aria-hidden="true">
+          <path d="M18 62 V26 L46 62 V26"/>
+          <path d="M34 16 H70"/>
+        </svg>
+        <span class="bez">N mit Balken</span>
+      </div>
+      <div>
+        <svg class="mono" viewBox="0 0 80 80" aria-hidden="true">
+          <path d="M16 60 V22 L44 60 V22"/>
+          <path d="M52 30 V60"/><path d="M40 30 H64"/>
+        </svg>
+        <span class="bez">N und T verbunden</span>
+      </div>
+      <div>
+        <svg class="mono" viewBox="0 0 80 80" aria-hidden="true">
+          <path d="M40 12 A28 28 0 1 1 39.8 12"/>
+          <path d="M28 52 H54"/><path d="M28 40 H47"/><path d="M28 28 H40"/>
+        </svg>
+        <span class="bez">Stufen im Kreis</span>
+      </div>
+    </div>
+
+    <div class="warn">
+      <p><b>Zum NT-Monogramm nach Nike-Town-Vorbild:</b> Das lasse ich gerade markenrechtlich
+        prüfen, bevor wir Zeit hineinstecken. Nike geht bekanntlich sehr konsequent gegen
+        ähnliche Zeichen vor, und bekannte Marken sind auch außerhalb ihrer eigenen Warenklassen
+        geschützt. Ein N mit T im Sportkontext ist genau die Konstellation, die teuer werden kann.</p>
+      <p>Deshalb liegt hier auch <b>die Stufe</b> als zweiter Weg. Drei Balken, die steigen.
+        Unverwechselbar, gehört niemandem, und es erzählt die Sache in einem Bild.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">04 · Die Sprache</div>
+    <h2 style="max-width:16ch">Deine Sätze,<br>nur <em class="s">geschärft.</em></h2>
+    <p class="lead">Alles hier kommt aus deinen Worten. Ich habe nichts erfunden, nur sortiert
+      und da und dort ein Wort gedreht.</p>
+
+    <div class="saetze">
+      <div><div class="satz">Jeder soll gesehen werden.</div>
+        <div class="quelle"><b>Deins, wörtlich.</b> Der stärkste Satz des ganzen Gesprächs.
+          Er trägt Haltung, Versprechen und Unterschied auf einmal.</div></div>
+      <div><div class="satz">You can and you will.</div>
+        <div class="quelle"><b>Deins.</b> Funktioniert auf Englisch besser als auf Deutsch und
+          passt zu deiner Stimme im Unterricht.</div></div>
+      <div><div class="satz">Your sound. Your soul.</div>
+        <div class="quelle"><b>Deins.</b> Der Satz für die Musik und für den Moment, nicht für
+          die Werbung.</div></div>
+      <div><div class="satz">One, two, three.</div>
+        <div class="quelle"><b>Aus deinem „One two three Step".</b> Ohne das Wort dahinter wird
+          es zum Countdown und funktioniert auch, wenn das Format anders heißt.</div></div>
+      <div><div class="satz">Bleib in Bewegung.</div>
+        <div class="quelle"><b>Aus „In Bewegung bleiben schafft Fortschritt".</b> Der zweite Teil
+          ist wahr, klingt aber nach Ratgeber. Der erste reicht.</div></div>
+      <div><div class="satz">Wie Zumba. Nur besser.</div>
+        <div class="quelle"><b>Dein Satz, entschärft.</b> Der gehört nicht auf die Website, aber
+          er ist der beste Kompass für jede Entscheidung, die wir treffen.</div></div>
+    </div>
+
+    <div class="warn">
+      <p><b>Zu „Atta atta anaya":</b> Schreibweise und Bedeutung lasse ich gerade prüfen. Nach
+        allem, was ich bisher sehe, ist es kein Lied von Jean Paul, sondern mit hoher
+        Wahrscheinlichkeit <b>Sean Paul</b>, der jamaikanische Dancehall-Künstler. Das würde zu
+        deinen Wurzeln passen. Bevor der Ausruf irgendwo als Slogan steht, will ich wissen, was
+        er wörtlich heißt und ob er jemandem gehört.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">05 · Schrift</div>
+    <h2 style="max-width:16ch">Kräftig, aber<br>nicht <em class="s">schreiend.</em></h2>
+    <p class="lead">Eine breite, schwere Grotesk für die Aussagen, eine Serifenkursive für den
+      einen Moment, in dem es weich wird, und eine ruhige Schrift für alles zum Lesen.</p>
+
+    <div class="typo">
+      <div class="zeile"><div class="name">Aussagen · Archivo Black</div>
+        <div class="t1">Jeder soll gesehen werden.</div></div>
+      <div class="zeile"><div class="name">Der weiche Moment · Fraunces kursiv</div>
+        <div class="t2">Your sound, your soul.</div></div>
+      <div class="zeile"><div class="name">Lesetext · Inter Light</div>
+        <div class="t3">Fünfzig Minuten auf dem Stepper, zu Musik, die du kennst. Keine
+          Vorkenntnisse, keine Reihen, keine Blicke von der Seite. Du kommst rein, und nach drei
+          Minuten machst du mit.</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">06 · Der Name</div>
+    <h2 style="max-width:18ch">Step bleibt drin.<br>Der Rest ist <em class="s">offen.</em></h2>
+    <p class="lead">Du hast gesagt, dass Step im Namen vorkommen soll. Das sind Richtungen, keine
+      Vorschläge zum Abnicken. Bevor einer davon ernst wird, prüfe ich Marke und Domain, so wie
+      beim letzten Mal.</p>
+
+    <div class="namen">
+      <div><div class="n">STEP!</div><div class="w">Kurz, laut, mit dem Ausrufezeichen als
+        Zeichen. Als Wortmarke aber schwer zu schützen, weil zu allgemein.</div></div>
+      <div><div class="n">KEEP ON STEPPING</div><div class="w">Die Zeile aus meiner Karte an dich.
+        Lang, aber sie klingt wie ein Zuruf und passt zum Ton.</div></div>
+      <div><div class="n">STEPPING</div><div class="w">Ein Wort, ein Zustand. Funktioniert als
+        Verb, als Hashtag und als Ansage im Kurs.</div></div>
+      <div><div class="n">ONE TWO STEP</div><div class="w">Aus deinem Zählen. Achtung, es gibt
+        einen sehr bekannten Song dieses Namens, das muss geprüft werden.</div></div>
+      <div><div class="n">TRIBE STEP</div><div class="w">Nimmt dein Wort Tribe auf und die Sache
+        mit dem Kreis. Näher an Community als an Sport.</div></div>
+      <div><div class="n">NT STEP</div><div class="w">Deine Initialen plus die Sache. Hängt aber
+        an der Frage, ob NT markenrechtlich überhaupt geht.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="schluss">
+  <div class="wrap">
+    <div class="kicker">Was ich als Nächstes brauche</div>
+    <h2>Drei Entscheidungen,<br>dann kann ich bauen.</h2>
+    <p style="margin-top:20px">Alles andere kann warten. Du hast selbst gesagt, dass alles gut
+      überlegt sein muss und nichts überstürzt werden soll. Deshalb lieber drei klare
+      Entscheidungen als zehn halbe.</p>
+    <ol>
+      <li><b>Welche Farbpaarung?</b> A mit Gold, B mit Signalgrün, C mit Koralle oder D fast ohne
+        Akzent. Wenn dir keine passt, sag es genauso deutlich.</li>
+      <li><b>Buchstaben oder Stufe?</b> Gehen wir den Weg über das NT-Monogramm, oder über das
+        Zeichen mit den drei Stufen, das niemandem gehört?</li>
+      <li><b>Welcher Satz steht ganz oben?</b> Mein Vorschlag ist „Jeder soll gesehen werden",
+        weil er von dir kommt und alles andere darunter passt.</li>
+    </ol>
+    <p style="margin-top:26px"><b>Ein Hinweis, der mir wichtig ist:</b> Du hast gesagt, es soll
+      alles sehr gut überlegt sein und nicht zu schnell gehen. Der Fahrplan sieht bisher den
+      1. Januar als Start vor. Das passt nicht zusammen. Lass uns beim nächsten Mal ehrlich über
+      das Datum reden, bevor der Termin die Entscheidungen bestimmt statt umgekehrt.</p>
+  </div>
+</section>
+
+</body>
+</html>
