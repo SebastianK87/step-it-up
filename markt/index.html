@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wie wir das an den Markt bringen</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'><rect width='80' height='80' fill='%23012169'/><rect x='14' y='52' width='52' height='8' fill='%23F7B600'/><rect x='14' y='36' width='36' height='8' fill='%23F7B600'/><rect x='14' y='20' width='20' height='8' fill='%23F7B600'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinte:#050C24; --royal:#012169; --royal-2:#0A2E86; --royal-tief:#001744;
+  --gold:#F7B600; --bein:#F4F1EA;
+  --nebel:rgba(244,241,234,.74); --nebel-2:rgba(244,241,234,.54);
+  --hair:rgba(244,241,234,.15);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--tinte);color:var(--bein);font-family:'Inter',system-ui,sans-serif;
+  font-weight:300;font-size:16.5px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(22px,5vw,58px)}
+h1,h2,h3{font-family:'Archivo',sans-serif;font-weight:900;letter-spacing:-.03em;line-height:.95;
+  text-wrap:balance}
+em.s{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:300;color:var(--gold)}
+p{max-width:64ch;text-wrap:pretty}
+.kicker{font-family:'Archivo';font-weight:600;font-size:11px;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.kicker::before{content:"";width:26px;height:2px;background:var(--gold);flex:none}
+section{padding:clamp(60px,8vw,112px) 0;border-top:1px solid var(--hair)}
+section:first-of-type{border-top:0}
+h2{font-size:clamp(28px,4.6vw,56px)}
+.lead{font-size:clamp(17px,2vw,21px);line-height:1.55;color:var(--nebel);margin-top:22px}
+
+/* Kopf */
+.kopf{min-height:74svh;display:flex;align-items:center;
+  background:radial-gradient(66% 58% at 20% 32%,rgba(10,46,134,.62),transparent 62%),
+             radial-gradient(46% 40% at 86% 74%,rgba(247,182,0,.12),transparent 66%),var(--tinte)}
+.kopf h1{font-size:clamp(34px,6.4vw,84px);max-width:15ch}
+.kopf .unter{margin-top:clamp(24px,3.2vw,34px);font-family:'Fraunces',serif;font-style:italic;
+  font-weight:300;font-size:clamp(18px,2.4vw,28px);max-width:32ch;line-height:1.4}
+.kopf .rolle{margin-top:clamp(30px,4vw,44px);display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:1px;
+  background:var(--hair);border:1px solid var(--hair);max-width:760px}
+.kopf .rolle>div{background:var(--tinte);padding:22px}
+.kopf .rolle .w{font-family:'Archivo';font-weight:900;font-size:26px;letter-spacing:-.03em}
+.kopf .rolle .t{font-size:14.5px;color:var(--nebel);margin-top:8px;line-height:1.5}
+
+/* Bildschirm-Rahmen */
+.schirm{margin-top:clamp(30px,4vw,46px);border:1px solid var(--hair);background:#020817;
+  border-radius:6px;overflow:hidden}
+.leiste{display:flex;align-items:center;gap:8px;padding:11px 14px;background:#0A1330;
+  border-bottom:1px solid var(--hair)}
+.leiste i{width:9px;height:9px;border-radius:50%;background:rgba(244,241,234,.24);display:block}
+.leiste span{margin-left:10px;font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:var(--nebel-2)}
+
+/* Die Landingpage im Rahmen */
+.lp{background:linear-gradient(170deg,var(--royal) 0%,var(--royal-tief) 68%,var(--tinte) 100%);
+  padding:clamp(30px,4.4vw,60px) clamp(22px,3.4vw,50px)}
+.lp .marke{font-family:'Archivo';font-weight:900;font-size:13px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lp .marke svg{width:20px;height:20px;flex:none}
+.lp .marke svg rect{fill:var(--gold)}
+.lp h3{font-size:clamp(26px,4.4vw,52px);margin-top:clamp(26px,3.4vw,40px);max-width:15ch;
+  color:#fff;line-height:1}
+.lp .sub{margin-top:20px;font-size:clamp(15px,1.8vw,19px);color:rgba(255,255,255,.86);max-width:44ch}
+.lp .form{margin-top:clamp(26px,3.4vw,36px);display:flex;flex-wrap:wrap;gap:10px;max-width:520px}
+.lp .form input{flex:1 1 220px;min-width:0;padding:15px 17px;border:1px solid rgba(255,255,255,.34);
+  background:rgba(255,255,255,.08);color:#fff;font-family:'Inter';font-size:15px;border-radius:3px}
+.lp .form input::placeholder{color:rgba(255,255,255,.62)}
+.lp .form button{padding:15px 26px;border:0;background:var(--gold);color:#0A1338;
+  font-family:'Archivo';font-weight:800;font-size:14px;letter-spacing:.04em;text-transform:uppercase;
+  border-radius:3px;cursor:pointer}
+.lp .klein{margin-top:14px;font-size:12.5px;color:rgba(255,255,255,.68)}
+.lp .drei{margin-top:clamp(30px,4vw,44px);display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:clamp(14px,2vw,24px)}
+.lp .drei>div{border-top:2px solid var(--gold);padding-top:14px}
+.lp .drei b{font-family:'Archivo';font-weight:800;font-size:15px;color:#fff;display:block}
+.lp .drei span.t{font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5;display:block;margin-top:6px}
+.platz{display:inline-block;background:rgba(247,182,0,.18);border:1px dashed rgba(247,182,0,.55);
+  color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:11px;padding:1px 7px;
+  border-radius:3px;white-space:nowrap}
+/* In der Schlagzeile behaelt der Platzhalter die Groesse der Zeile */
+.lp h3 .platz{font-family:'Archivo',sans-serif;font-weight:900;font-size:inherit;
+  letter-spacing:-.03em;padding:2px 14px;white-space:normal;line-height:1}
+
+/* Strecke */
+.strecke{margin-top:clamp(30px,4vw,46px);border-left:2px solid var(--hair);
+  padding-left:clamp(20px,3vw,34px)}
+.stufe{position:relative;padding:0 0 clamp(28px,3.6vw,40px)}
+.stufe:last-child{padding-bottom:0}
+.stufe::before{content:"";position:absolute;left:calc(-1 * clamp(20px,3vw,34px) - 7px);top:7px;
+  width:12px;height:12px;border-radius:50%;background:var(--gold)}
+.stufe .zeit{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold)}
+.stufe h3{font-family:'Archivo';font-weight:800;font-size:clamp(18px,2.2vw,24px);margin-top:8px;
+  letter-spacing:-.02em;line-height:1.14}
+.stufe p{margin-top:9px;color:var(--nebel);font-size:15.5px}
+.stufe .wer{margin-top:12px;display:inline-block;font-family:'Archivo';font-weight:700;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:5px 11px;border-radius:3px}
+.wer.ich{background:rgba(247,182,0,.2);color:var(--gold)}
+.wer.sie{background:rgba(244,241,234,.14);color:var(--bein)}
+.wer.auto{background:rgba(10,46,134,.7);color:#C6D8FF}
+
+/* Kacheln */
+.gr3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));
+  gap:1px;background:var(--hair);border:1px solid var(--hair);margin-top:clamp(28px,3.6vw,42px)}
+.gr3>div{background:var(--tinte);padding:clamp(22px,2.8vw,32px)}
+.gr3 h3{font-family:'Archivo';font-weight:800;font-size:17px;letter-spacing:-.01em;line-height:1.15}
+.gr3 p{font-size:14.5px;color:var(--nebel);margin-top:10px;line-height:1.55}
+.zahl{font-family:'Archivo';font-weight:900;font-size:clamp(28px,3.6vw,42px);color:var(--gold);
+  line-height:1;letter-spacing:-.03em}
+
+/* Aufwand */
+.waage{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));
+  gap:clamp(16px,2.4vw,26px);margin-top:clamp(28px,3.6vw,42px)}
+.waage>div{border:1px solid var(--hair);padding:clamp(22px,2.8vw,32px)}
+.waage .top{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+  padding-bottom:14px;border-bottom:1px solid var(--hair)}
+.waage .top b{font-family:'Archivo';font-weight:900;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.03em}
+.waage .top span{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--nebel-2)}
+.waage ul{list-style:none;margin-top:16px}
+.waage li{padding:7px 0 7px 20px;position:relative;font-size:14.5px;color:var(--nebel);line-height:1.5}
+.waage li::before{content:"";position:absolute;left:0;top:.72em;width:9px;height:1px;background:var(--gold)}
+.waage.mein{border-color:rgba(247,182,0,.45)}
+
+.schluss{background:var(--bein);color:#2A3047}
+.schluss .kicker{color:#7A5C08} .schluss .kicker::before{background:#7A5C08}
+.schluss h2{color:#012169} .schluss p{color:#3D4356}
+.schluss .gr3{border-color:#D5CFC4;background:#D5CFC4}
+.schluss .gr3>div{background:var(--bein)}
+.schluss .gr3 h3{color:#012169} .schluss .gr3 p{color:#4A5064}
+</style>
+</head>
+<body>
+
+<section class="kopf">
+  <div class="wrap">
+    <div class="kicker">Move Society · Arbeitsstand</div>
+    <h1>Du machst den Kurs.<br>Ich sorge dafür, dass er <em class="s">voll ist.</em></h1>
+    <p class="unter">Inhalt, Aufbau und Choreografie sind dein Feld. Meins ist alles davor
+      und alles danach.</p>
+    <div class="rolle">
+      <div><div class="w">Du</div><div class="t">Das Programm, die Stunden, die Musik,
+        die Ausbildung. Das Gesicht.</div></div>
+      <div><div class="w">Ich</div><div class="t">Die Seite, die Anzeigen, die Mails, das
+        Nachfassen, die Zahlen. Die Maschine dahinter.</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">01 · Die Landingpage</div>
+    <h2 style="max-width:17ch">Eine Seite mit<br><em class="s">einer</em> Aufgabe.</h2>
+    <p class="lead">Keine Website mit Menü und Unterseiten. Eine Seite, ein Versprechen, ein
+      Formular. So sieht sie aus, in deinen Farben. Was gelb markiert ist, kommt von dir.</p>
+
+    <div class="schirm">
+      <div class="leiste"><i></i><i></i><i></i><span>deine-domain.de</span></div>
+      <div class="lp">
+        <div class="marke">
+          <svg viewBox="0 0 80 80" aria-hidden="true">
+            <rect x="14" y="52" width="52" height="8"/><rect x="14" y="36" width="36" height="8"/>
+            <rect x="14" y="20" width="20" height="8"/></svg>
+          <span class="platz">Name des Programms</span>
+        </div>
+        <h3><span class="platz">Dein Satz. Eine Zeile.</span></h3>
+        <p class="sub">Fünfzig Minuten auf dem Stepper. Keine Vorkenntnisse, keine hinteren
+          Reihen. <span class="platz">Dein Versprechen in einem Satz.</span></p>
+        <div class="form">
+          <input type="email" placeholder="Deine E-Mail-Adresse" aria-label="E-Mail">
+          <button type="button">Platz sichern</button>
+        </div>
+        <p class="klein">Kein Abo, keine Kosten. Du erfährst als Erste, wann es losgeht.</p>
+        <div class="drei">
+          <div><b>50 Minuten</b><span class="t">Ein Kurs, feste Länge, feste Zeiten.</span></div>
+          <div><b>Keine Erfahrung</b><span class="t">Der erste Schritt ist wörtlich ein Schritt.</span></div>
+          <div><b>Mit Nikeata</b><span class="t"><span class="platz">Was dich erwartet</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gr3">
+      <div><h3>Warum eine einzige Seite</h3><p>Jede weitere Verlinkung kostet Anmeldungen. Wer
+        hier landet, hat genau eine Sache zu tun. Deshalb lässt sich auch messen, was eine
+        Anzeige wirklich bringt. Auf einer vollen Website geht das unter.</p></div>
+      <div><h3>Zwei Versionen, ein System</h3><p>Dieselbe Seite gibt es zweimal: eine für
+        Teilnehmerinnen, eine für Studios, die das Programm einkaufen wollen. Gleiche Technik,
+        gleiche Anmeldung, unterschiedliche Ansprache.</p></div>
+      <div><h3>Sie steht vor dem Start</h3><p>Die Seite geht online, lange bevor der erste Kurs
+        läuft. Bis dahin sammelt sie Menschen ein. Am Tag der Eröffnung schreibst du nicht in
+        die Leere, sondern an eine Liste.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">02 · Von der Anzeige zur Anmeldung</div>
+    <h2 style="max-width:16ch">Was passiert,<br>nachdem jemand <em class="s">tippt.</em></h2>
+    <p class="lead">Das ist der Teil, den man nicht sieht, und der über alles entscheidet.
+      Jeder Schritt läuft von selbst, außer den beiden, die du machst.</p>
+
+    <div class="strecke">
+      <div class="stufe">
+        <div class="zeit">Vorher</div>
+        <h3>Die Anzeige findet die Richtige</h3>
+        <p>Google und Instagram, ausgesteuert auf Frauen im Umkreis, die nach Tanzkursen,
+          nach Fitness ohne Studio oder nach dir suchen. Das Budget läuft nicht auf gut Glück,
+          sondern auf die Suchbegriffe, die tatsächlich zu Anmeldungen führen.</p>
+        <span class="wer ich">Ich</span>
+      </div>
+      <div class="stufe">
+        <div class="zeit">Minute 0</div>
+        <h3>Sie trägt ihre Mail ein</h3>
+        <p>Ein Feld, ein Knopf. Kein Konto, kein Passwort, keine Pflichtangaben. Alles Weitere
+          fragen wir später, wenn sie schon dabei ist.</p>
+        <span class="wer auto">Automatisch</span>
+      </div>
+      <div class="stufe">
+        <div class="zeit">Minute 1</div>
+        <h3>Die erste Mail ist schon da</h3>
+        <p>Bestätigung, ein Satz von dir, und was als Nächstes passiert. Diese Mail wird öfter
+          geöffnet als jede andere danach. Deshalb steht darin das Wichtigste.</p>
+        <span class="wer auto">Automatisch</span>
+      </div>
+      <div class="stufe">
+        <div class="zeit">Tag 2 bis 14</div>
+        <h3>Vier Mails, die etwas erzählen</h3>
+        <p>Nicht vier Erinnerungen. Vier kurze Geschichten: warum es das gibt, wie eine Stunde
+          abläuft, wer sonst noch kommt, und was am ersten Tag passiert. Wer nicht öffnet,
+          bekommt eine andere Reihenfolge als wer alles liest.</p>
+        <span class="wer ich">Ich schreibe sie</span>
+      </div>
+      <div class="stufe">
+        <div class="zeit">Beim Start</div>
+        <h3>Die Liste wird zur ersten Stunde</h3>
+        <p>Alle auf der Liste bekommen den Termin zuerst, bevor irgendetwas öffentlich wird.
+          Wer zuerst da war, sitzt vorne. Das ist der Moment, an dem sich das Sammeln auszahlt.</p>
+        <span class="wer auto">Automatisch</span>
+      </div>
+      <div class="stufe">
+        <div class="zeit">Nach der ersten Stunde</div>
+        <h3>Der Punkt, an dem es sich entscheidet</h3>
+        <p>Wer einmal da war und nicht wiederkommt, ist verloren. Deshalb geht am Abend danach
+          eine Nachricht raus, und drei Tage später noch eine. Genau hier verlieren die meisten
+          Studios ihre Leute, ohne es zu merken.</p>
+        <span class="wer auto">Automatisch</span>
+      </div>
+      <div class="stufe">
+        <div class="zeit">Ab dann</div>
+        <h3>Aus Besuch wird Mitgliedschaft</h3>
+        <p>Anmeldung, Lastschrift, Kursplatz, Check-in. Alles digital, alles an einer Stelle.
+          Niemand tippt etwas ab, niemand telefoniert einem offenen Betrag hinterher.</p>
+        <span class="wer auto">Automatisch</span>
+      </div>
+      <div class="stufe">
+        <div class="zeit">Deine zwei Momente</div>
+        <h3>Unterrichten und einmal ins Handy sprechen</h3>
+        <p>Mehr brauche ich von dir in dieser Strecke nicht. Die Stunde, und ab und zu eine
+          Sprachnachricht oder ein kurzes Video, aus dem ich Text und Anzeigen mache.</p>
+        <span class="wer sie">Du</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">03 · Dieselbe Maschine für Studios</div>
+    <h2 style="max-width:18ch">Der zweite Weg<br>läuft <em class="s">daneben.</em></h2>
+    <p class="lead">Teilnehmerinnen füllen deine Kurse. Studios kaufen das Programm. Das ist
+      dieselbe Strecke, nur mit anderer Ansprache, und sie läuft parallel ohne Mehraufwand
+      für dich.</p>
+
+    <div class="gr3">
+      <div><h3>Wer angesprochen wird</h3><p>Inhabergeführte Studios und Tanzschulen mit
+        Erwachsenenprogramm, also die, die selbst entscheiden dürfen und nicht auf eine Zentrale
+        warten müssen.</p></div>
+      <div><h3>Wie sie gefunden werden</h3><p>Nicht von Hand. Ein Suchlauf sortiert Betriebe
+        nach Größe, Region und Kursprogramm, findet die Ansprechpartnerin und bereitet jedes
+        Gespräch vor.</p></div>
+      <div><h3>Was sie zuerst sehen</h3><p>Nicht ein Angebot, sondern eine Stunde. Video,
+        Ablauf, Zahlen. Ein Studio kauft ein Kursformat, weil es gesehen hat, dass es
+        funktioniert, nicht weil es ein PDF gelesen hat.</p></div>
+      <div><h3>Der Weg zum Abschluss</h3><p>Jeder Kontakt hat einen Status: angesprochen,
+        interessiert, Testkurs, Angebot, unterschrieben. Ich sehe jederzeit, wo jemand hängen
+        bleibt.</p></div>
+      <div><h3>Was ein Studio bekommt</h3><p>Zugang zur Videothek, Ausbildung, Material für die
+        eigenen Kanäle, Gebietsschutz. <span class="platz">Inhalt von dir</span></p></div>
+      <div><h3>Was daran wiederkehrt</h3><p>Eine monatliche Gebühr je Studio. Kein einmaliger
+        Verkauf, sondern eine Zahl, die jeden Monat wieder da ist, ohne dass jemand etwas
+        verkaufen muss.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">04 · Was ich dabei sehe</div>
+    <h2 style="max-width:16ch">Sechs Zahlen,<br><em class="s">live.</em></h2>
+    <p class="lead">Nicht am Monatsende, sondern in dem Moment, in dem sich etwas ändert.
+      Du musst nirgends hineinschauen, aber du kannst jederzeit.</p>
+
+    <div class="gr3">
+      <div><div class="zahl">01</div><h3 style="margin-top:12px">Anmeldungen heute</h3>
+        <p>Wie viele sich eingetragen haben, und über welchen Weg sie gekommen sind.</p></div>
+      <div><div class="zahl">02</div><h3 style="margin-top:12px">Kosten je Anmeldung</h3>
+        <p>Was eine Eintragung in der Anzeige gekostet hat. Die Zahl, an der das Budget hängt.</p></div>
+      <div><div class="zahl">03</div><h3 style="margin-top:12px">Wiederkehrquote</h3>
+        <p>Wie viele nach der ersten Stunde ein zweites und drittes Mal kommen. Die wichtigste
+          Zahl von allen.</p></div>
+      <div><div class="zahl">04</div><h3 style="margin-top:12px">Auslastung je Kurs</h3>
+        <p>Welcher Termin voll ist und welcher nicht. Daraus wächst der Stundenplan, nicht aus
+          dem Bauch.</p></div>
+      <div><div class="zahl">05</div><h3 style="margin-top:12px">Offene Anfragen von Studios</h3>
+        <p>Wer angesprochen ist, wer geantwortet hat, wo es hakt.</p></div>
+      <div><div class="zahl">06</div><h3 style="margin-top:12px">Wiederkehrender Umsatz</h3>
+        <p>Was jeden Monat automatisch hereinkommt, aus Mitgliedschaften und aus Lizenzen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">05 · Der Aufwand</div>
+    <h2 style="max-width:17ch">Was das für dich <em class="s">bedeutet.</em></h2>
+
+    <div class="waage">
+      <div>
+        <div class="top"><b>Du</b><span>4 Sachen</span></div>
+        <ul>
+          <li>Das Programm und die Stunden</li>
+          <li>Dein Gesicht und dein Name</li>
+          <li>Ein Fototag und die Drehtage</li>
+          <li>Entscheiden, wenn ich dir etwas vorlege</li>
+        </ul>
+      </div>
+      <div class="mein">
+        <div class="top"><b>Ich</b><span>alles andere</span></div>
+        <ul>
+          <li>Landingpage bauen und betreiben</li>
+          <li>Alle Texte, für Seite, Mails und Anzeigen</li>
+          <li>Google Ads und Meta Ads</li>
+          <li>Die Mailstrecke schreiben und schalten</li>
+          <li>Anmeldung, Zahlung und Check-in einrichten</li>
+          <li>Studios finden und ansprechen</li>
+          <li>Den Weg zum Abschluss überwachen</li>
+          <li>Die Zahlen im Blick behalten</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="schluss">
+  <div class="wrap">
+    <div class="kicker">Was ich von dir brauche</div>
+    <h2>Drei Antworten,<br>dann läuft das an.</h2>
+    <p style="margin-top:20px">Alles auf dieser Seite ist gebaut, sobald diese drei Sachen
+      geklärt sind. Für den Rest brauche ich dich nicht.</p>
+    <div class="gr3">
+      <div><h3>Wie heißt es?</h3><p>Ohne Namen keine Domain, ohne Domain keine Seite. Das ist
+        der einzige echte Blocker gerade.</p></div>
+      <div><h3>Wer bekommt die Lizenz?</h3><p>Die Trainerin oder das Studio? Zumba macht es über
+        Trainer, Les Mills über die Fläche. Beides funktioniert, die Mischung nicht, und später
+        lässt es sich kaum noch drehen.</p></div>
+      <div><h3>Welche Farbwelt?</h3><p>Blau steht. Welche zweite Farbe daneben liegt,
+        entscheidest du. Danach ziehe ich sie über alles hier.</p></div>
+    </div>
+    <p style="margin-top:28px"><b>Und zum Zeitplan:</b> Du hast gesagt, es soll gut überlegt
+      sein und nicht zu schnell gehen. Damit hast du recht. Das Einzige, was früh anfangen
+      sollte, ist die Landingpage, weil sie sammelt, während alles andere noch entsteht. Jeder
+      Monat, in dem sie nicht steht, ist eine Liste, die nicht wächst.</p>
+  </div>
+</section>
+
+</body>
+</html>
